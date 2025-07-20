@@ -2,7 +2,7 @@ site_name: AI Engineering 101
 theme:
   name: material
 nav:
-  - Home: index.md
+  - Introduction: index.md
   - Chapter 1 - From Rules to Learning: chapter_1.md
   - Chapter 2 - Plug In a Model: chapter_2.md
   - Chapter 3 - Train Your First Model: chapter_3.md

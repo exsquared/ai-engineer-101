@@ -1,4 +1,4 @@
-# 🌟 Introduction: Building AI That Ships (Without Losing Your Engineering Soul)
+# 🌟 Introduction : AI Engineer 101
 
 ---
 
