@@ -90,11 +90,13 @@ You don’t need to know what a “vectorizer” or “decision boundary” is. 
 ## 🧭 What This Book Is (and Isn’t)
 
 This book isn’t:
+
 - A math-heavy theory textbook
 - A prompt engineering magic trick guide
 - A build-your-own-GPT manual
 
 This book is:
+
 - A fast-moving, hands-on course for working engineers
 - Focused on intuition, system design, and reliability
 - Layered with real examples, deployment patterns, and tradeoffs
@@ -111,6 +113,7 @@ This book is:
 - How to design production-friendly workflows using small models, LLM APIs, and rules
 
 Every chapter includes:
+
 - 🔍 Real-world analogies to simplify concepts
 - 🧪 Code examples you can run and modify
 - 📝 Quizzes and reflections to reinforce intuition
@@ -127,6 +130,7 @@ Every chapter includes:
 - Projects that prove you understand the tools, not just watched them
 
 You’ll finish with:
+
 - Confidence  
 - Code  
 - A working AI intuition
@@ -149,6 +153,7 @@ And when something clicks, don’t stop there — *ship it*.
 This is the **Beginner Track** — the first step in your AI engineering journey.
 
 When you’re done, you’ll be ready for:
+
 - Intermediate AI Engineering (retrieval, vector search, agents)
 - Advanced AI Architectures (RAG pipelines, memory, orchestration)
 
