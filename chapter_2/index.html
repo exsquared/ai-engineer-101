@@ -711,10 +711,12 @@ You just gave it text — and it guessed the meaning.</p>
 <hr />
 <h2 id="dont-let-the-confidence-fool-you">⚠️ Don’t Let the Confidence Fool You</h2>
 <p>Just because it <em>feels</em> smart doesn’t mean it’s always right.</p>
-<p>Models can:
-- Misfire on sarcasm
-- Misclassify subtle language
-- Drift if user language changes over time</p>
+<p>Models can:</p>
+<ul>
+<li>Misfire on sarcasm</li>
+<li>Misclassify subtle language</li>
+<li>Drift if user language changes over time</li>
+</ul>
 <p>So yes — AI can feel like cheating.
 But you still have to think like an engineer.</p>
 <blockquote>
@@ -730,11 +732,13 @@ When do you fall back to rules?</p>
 <pre><code>Incoming Message → Classifier → Priority → Triage Queue
         ↘ Logging      ↘ Confidence Thresholds
 </code></pre>
-<p>Ask yourself:
-- What if it flags too many false positives?
-- How do support agents correct its decisions?
-- What would you log for auditing?
-- How will you know if “urgency language” evolves?</p>
+<p>Ask yourself:</p>
+<ul>
+<li>What if it flags too many false positives?</li>
+<li>How do support agents correct its decisions?</li>
+<li>What would you log for auditing?</li>
+<li>How will you know if “urgency language” evolves?</li>
+</ul>
 <p>Even without knowing the internals — you’re already designing like a real AI engineer.</p>
 <hr />
 <h2 id="tradeoff-table-rules-vs-pretrained-models">⚖️ Tradeoff Table: Rules vs. Pretrained Models</h2>
