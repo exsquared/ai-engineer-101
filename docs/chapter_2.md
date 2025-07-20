@@ -99,6 +99,7 @@ And that’s a massive shift.
 Just because it *feels* smart doesn’t mean it’s always right.
 
 Models can:
+
 - Misfire on sarcasm
 - Misclassify subtle language
 - Drift if user language changes over time
@@ -126,6 +127,7 @@ Incoming Message → Classifier → Priority → Triage Queue
 ```
 
 Ask yourself:
+
 - What if it flags too many false positives?
 - How do support agents correct its decisions?
 - What would you log for auditing?
