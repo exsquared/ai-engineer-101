@@ -3,10 +3,9 @@ theme:
   name: material
 nav:
   - Home: index.md
-  - Beginner Track:
-      - Chapter 1 - From Rules to Learning: chapter_1.md
-      - Chapter 2 - Plug In a Model: chapter_2.md
-      - Chapter 3 - Train Your First Model: chapter_3.md
-      - Chapter 4 - When to Trust the Model: chapter_4.md
-      - Chapter 4.5 (Optional) - The ML Toolbox: fun_ml_toolbox.md 
-      - Checkpoint Project 1: project_1.md
+  - Chapter 1 - From Rules to Learning: chapter_1.md
+  - Chapter 2 - Plug In a Model: chapter_2.md
+  - Chapter 3 - Train Your First Model: chapter_3.md
+  - Chapter 4 - When to Trust the Model: chapter_4.md
+  - Chapter 4.5 (Optional) - The ML Toolbox: fun_ml_toolbox.md 
+  - Checkpoint Project 1: project_1.md
