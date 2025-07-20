@@ -1,0 +1,1095 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../chapter_2/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Chapter 1 - From Rules to Learning - AI Engineering 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-rules-to-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Engineering 101" class="md-header__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1 - From Rules to Learning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Engineering 101" class="md-nav__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering 101
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Beginner Track
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginner Track
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youre-already-halfway-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 You're Already Halfway There
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 You&#39;re Already Halfway There">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lets-take-an-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Let’s Take an Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-rules-break-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      😩 Where Rules Break Down
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-new-user-interface-paradigm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 A New User Interface Paradigm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌍 A New User Interface Paradigm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variation-is-the-real-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      👁️ Variation Is the Real Problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-whats-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 So What’s the Alternative?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 So What’s the Alternative?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dont-worry-about-the-fancy-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙋‍♀️ Don’t Worry About the Fancy Words
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reality-check-ai-isnt-always-the-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⛔ Quick Reality Check: AI Isn’t Always the Answer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tradeoff-table-rules-vs-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Tradeoff Table: Rules vs. Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini-Experiment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner + Quiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏁 Quick Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-design-diary" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Production Design Diary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 What’s Next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Plug In a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fun_ml_toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4.5 (Optional) - The ML Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youre-already-halfway-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 You're Already Halfway There
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 You&#39;re Already Halfway There">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lets-take-an-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Let’s Take an Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-rules-break-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      😩 Where Rules Break Down
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-new-user-interface-paradigm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 A New User Interface Paradigm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌍 A New User Interface Paradigm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variation-is-the-real-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      👁️ Variation Is the Real Problem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-whats-the-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 So What’s the Alternative?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 So What’s the Alternative?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dont-worry-about-the-fancy-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      🙋‍♀️ Don’t Worry About the Fancy Words
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reality-check-ai-isnt-always-the-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⛔ Quick Reality Check: AI Isn’t Always the Answer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tradeoff-table-rules-vs-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Tradeoff Table: Rules vs. Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini-Experiment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner + Quiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏁 Quick Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-design-diary" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Production Design Diary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 What’s Next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="from-rules-to-learning">From Rules to Learning</h1>
+<hr />
+<h2 id="why-are-we-here">🎯 Why Are We Here?</h2>
+<p>Ever wondered how Netflix seems to know exactly what you’ll binge next or why your Instagram Explore page feels creepily accurate? They're not using billions of hand-coded <code>if/else</code> statements—they've upgraded from rules to smarter systems that learn from patterns.</p>
+<p>But before diving into these trendy AI models (yes, like ChatGPT or HuggingFace Transformers!), we need to grasp how our trusty old logic breaks down and why machine learning became necessary.</p>
+<p>Ready to level up? 🚀</p>
+<hr />
+<h2 id="youre-already-halfway-there">🧱 You're Already Halfway There</h2>
+<p>As a developer, you're already a decision-making pro:</p>
+<ul>
+<li>Writing <code>if/else</code> to filter data  </li>
+<li>Scoring items based on conditions  </li>
+<li>Automating alerts based on logic  </li>
+</ul>
+<p>You’ve built systems that make decisions — and for a while, they work great.</p>
+<hr />
+<h3 id="lets-take-an-example">🛠️ Let’s Take an Example</h3>
+<p>Imagine you’re building a simple tool to categorize customer feedback into:</p>
+<ul>
+<li>Praise  </li>
+<li>Complaint  </li>
+<li>Suggestion</li>
+</ul>
+<p>You start with rules:</p>
+<pre><code class="language-python">if &quot;great&quot; in text or &quot;love&quot; in text:
+    return &quot;Praise&quot;
+elif &quot;should&quot; in text or &quot;hate&quot; in text:
+    return &quot;Complaint&quot;
+else:
+    return &quot;Suggestion&quot;
+</code></pre>
+<p>It works! 🎉</p>
+<p>...for about 10 examples.</p>
+<p>Then someone writes:</p>
+<blockquote>
+<p>“I was hoping for more details, but overall it's fine.”</p>
+</blockquote>
+<p>Uhhh... is that a praise? A complaint? A suggestion? All three?</p>
+<hr />
+<h3 id="where-rules-break-down">😩 Where Rules Break Down</h3>
+<p>This is the moment all devs hit: the rule that felt so clever suddenly can’t keep up.</p>
+<p>And then, it begins:</p>
+<ul>
+<li><strong>Rules explode</strong> — Edge cases multiply like gremlins  </li>
+<li><strong>Maintenance becomes a nightmare</strong> — Logic updates faster than your morning coffee cools  </li>
+<li><strong>Inflexibility sets in</strong> — Users write like humans, not boolean expressions  </li>
+</ul>
+<p>Suddenly, your elegant logic system is buried under exceptions, overrides, and weird hacks to make “fine but also frustrated” map to something coherent.</p>
+<p>You’re not writing rules anymore. You’re debugging language.</p>
+<hr />
+<h2 id="a-new-user-interface-paradigm">🌍 A New User Interface Paradigm</h2>
+<p>Let’s zoom out for a second.</p>
+<p>Before ChatGPT, most systems were built around <strong>clear sequences</strong>. Want to cancel your subscription? You’d go to:</p>
+<blockquote>
+<p>Home → Account → Plans → Cancel</p>
+</blockquote>
+<p>Now?</p>
+<p>Users just type:</p>
+<blockquote>
+<p>"I’m moving out of the country. Can you help me stop the service next month?"</p>
+</blockquote>
+<p>Same intent. Different form.</p>
+<ul>
+<li>No button.  </li>
+<li>No dropdown.  </li>
+<li>No exact keyword.  </li>
+<li>Just <strong>intent</strong>, embedded in phrasing and context.</li>
+</ul>
+<p>Your old rule:</p>
+<pre><code class="language-python">if &quot;cancel&quot; in message:
+</code></pre>
+<p>won’t cut it anymore.</p>
+<p>This is why we need systems that can <em>listen</em>, <em>interpret</em>, and <em>adapt</em> — not just match words.</p>
+<hr />
+<h3 id="variation-is-the-real-problem">👁️ Variation Is the Real Problem</h3>
+<p>Real-world input is messy:</p>
+<ul>
+<li>Users express the same intent a dozen different ways</li>
+<li>Words change meaning based on context</li>
+<li>Tone, grammar, slang all vary wildly</li>
+</ul>
+<p>Soon, your carefully coded rules become duct tape on a leaky pipe.</p>
+<blockquote>
+<p>“I want to cancel everything.”<br />
+“Need to stop my plan after August.”<br />
+“How do I turn this thing off?”</p>
+</blockquote>
+<p>All mean the same thing. But rules don’t see that.</p>
+<hr />
+<h2 id="so-whats-the-alternative">🧠 So What’s the Alternative?</h2>
+<p>Let the machine <em>learn</em> from examples.</p>
+<p>Give it labeled examples like:</p>
+<pre><code class="language-json">&quot;This is amazing!&quot; → Praise
+&quot;You should fix the layout.&quot; → Complaint
+&quot;It’d be nice if it supported dark mode.&quot; → Suggestion
+</code></pre>
+<p>Then train a model:</p>
+<pre><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+X = [&quot;This is amazing!&quot;, &quot;You should fix the layout.&quot;, &quot;It’d be nice if...&quot;]
+y = [&quot;Praise&quot;, &quot;Complaint&quot;, &quot;Suggestion&quot;]
+
+vec = CountVectorizer()
+X_vec = vec.fit_transform(X)
+
+model = MultinomialNB()
+model.fit(X_vec, y)
+</code></pre>
+<p>Then:</p>
+<pre><code class="language-python">model.predict(vec.transform([&quot;I loved the new design!&quot;]))
+# → &quot;Praise&quot;
+</code></pre>
+<p>Welcome to your first classifier. 🎉</p>
+<hr />
+<h3 id="dont-worry-about-the-fancy-words">🙋‍♀️ Don’t Worry About the Fancy Words</h3>
+<p>MultinomialNB? CountVectorizer? 
+Think of them as prebuilt tools, like <code>.filter()</code> or <code>.map()</code> — but for text classification.</p>
+<p>We'll dig deeper later. For now, just know: you didn’t handwrite the logic, the machine learned it.</p>
+<hr />
+<h2 id="quick-reality-check-ai-isnt-always-the-answer">⛔ Quick Reality Check: AI Isn’t Always the Answer</h2>
+<p>Just because you <em>can</em> train a model doesn’t mean you <em>should</em>.</p>
+<p>Some problems are better solved with code you already know:</p>
+<ul>
+<li>Is the logic simple and stable?</li>
+<li>Are there only a few clear cases?</li>
+<li>Do you need full explainability?</li>
+</ul>
+<p>Stick to rules or automation.</p>
+<blockquote>
+<p>If your condition is:</p>
+</blockquote>
+<pre><code class="language-python">if hours_worked &gt; 40:
+    send_alert()
+</code></pre>
+<p>You don’t need AI. You just need good engineering.</p>
+<p>Use the <strong>cheapest tool</strong> that solves the problem:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Tool</th>
+<th>Example Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rule-based</td>
+<td>Exact match, short form logic</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Automation / Scripting</td>
+<td>Pattern detection, structured decisions</td>
+</tr>
+<tr>
+<td>3</td>
+<td>AI / ML</td>
+<td>Intent understanding, fuzzy matching</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tradeoff-table-rules-vs-models">⚖️ Tradeoff Table: Rules vs. Models</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Pros</th>
+<th>Cons</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hard-coded Rules</td>
+<td>Fast, transparent, easy to debug</td>
+<td>Brittle, doesn’t adapt</td>
+<td>Small, deterministic logic</td>
+</tr>
+<tr>
+<td>ML Model</td>
+<td>Learns from data, handles fuzziness</td>
+<td>Needs training, harder to debug</td>
+<td>Patterns too complex to hand-code</td>
+</tr>
+<tr>
+<td>Hybrid (Rules + ML)</td>
+<td>Best of both worlds</td>
+<td>More complex to manage</td>
+<td>When fallback or guardrails needed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mini-experiment">🧪 Mini-Experiment</h2>
+<p>Try tweaking the examples:</p>
+<ul>
+<li>What if you add more complaints with the word “slow”?</li>
+<li>What happens if you feed it a sarcastic sentence?</li>
+<li>Try switching <code>MultinomialNB</code> to <code>LogisticRegression</code></li>
+</ul>
+<p>You’re not just coding. You’re <em>choosing</em> between behaviors.</p>
+<hr />
+<h2 id="reflection-corner-quiz">🧠 Reflection Corner + Quiz</h2>
+<ul>
+<li>What kind of logic have you hardcoded in past projects?</li>
+<li>Where did it start breaking down?</li>
+<li>Can you imagine giving examples instead of rules?</li>
+<li>Give an example of a system where rules would still be better than AI.</li>
+<li>Think of a product you've built: where would learning-from-examples improve it?</li>
+</ul>
+<hr />
+<h2 id="quick-summary">🏁 Quick Summary</h2>
+<ul>
+<li>Rules work until they don’t.</li>
+<li>Models let us learn from data.</li>
+<li>Even basic models can outperform rigid logic.</li>
+<li>AI is powerful, but not always necessary.</li>
+</ul>
+<p>You’re already thinking like an AI engineer. Let’s push further.</p>
+<hr />
+<h2 id="production-design-diary">📦 Production Design Diary</h2>
+<blockquote>
+<p>🛠️ Imagine your tool needs to handle 1,000 users a day instead of 1.</p>
+</blockquote>
+<p>Start with what you know:</p>
+<ul>
+<li>Have you used <code>try/except</code> to avoid crashes?</li>
+<li>Have you added logs or print statements to debug weird behavior?</li>
+<li>Ever added flags or rules to patch up last-minute edge cases?</li>
+</ul>
+<p>Then you’re already thinking like a system designer.</p>
+<p>🧠 Try sketching this out:</p>
+<pre><code>Input → Rules → Model → Confidence Logic → Output
+</code></pre>
+<p>How would you:</p>
+<ul>
+<li>Detect silent failures?</li>
+<li>Handle bad GPT output?</li>
+<li>Know when it’s time to update the model?</li>
+<li>Log decisions for debugging later?</li>
+</ul>
+<p>That’s how real-world AI engineers operate.</p>
+<hr />
+<h2 id="whats-next">🔮 What’s Next</h2>
+<p>Next, you’ll build your first real ML model from scratch.
+We’ll keep it fun, small, and hands-on — but this time, with more control.</p>
+<p>No magic.
+No notebooks.
+Just Python, patterns, and progress.</p>
+<p>Let’s go. 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

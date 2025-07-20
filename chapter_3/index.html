@@ -1,0 +1,1017 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter_2/">
+      
+      
+        <link rel="next" href="../chapter_4/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Chapter 3 - Train Your First Model - AI Engineering 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#train-your-first-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Engineering 101" class="md-header__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 3 - Train Your First Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Engineering 101" class="md-nav__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering 101
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Beginner Track
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginner Track
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Plug In a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Chapter Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-dont-follow-instructions-they-learn-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models Don’t Follow Instructions — They Learn Patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-notes-new-terms-well-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Side Notes: New Terms We’ll Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-build-an-urgency-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Let's Build an Urgency Classifier
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✏️ Let&#39;s Build an Urgency Classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 The Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-simulate-labeled-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 1: Simulate Labeled Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-train-a-simple-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 2: Train a Simple Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-visualize-the-result-optional-but-helpful" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 3: Visualize the Result (Optional but Helpful)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-the-fuzzy-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 What About the Fuzzy Edge?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-just-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Just Happened?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-you-trick-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Can You Trick the Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Best Practices &amp; Gotchas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Production Sketch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏁 Quick Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fun_ml_toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4.5 (Optional) - The ML Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Chapter Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-dont-follow-instructions-they-learn-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models Don’t Follow Instructions — They Learn Patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#side-notes-new-terms-well-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Side Notes: New Terms We’ll Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-build-an-urgency-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Let's Build an Urgency Classifier
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✏️ Let&#39;s Build an Urgency Classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 The Problem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-simulate-labeled-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 1: Simulate Labeled Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-train-a-simple-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 2: Train a Simple Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-visualize-the-result-optional-but-helpful" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Step 3: Visualize the Result (Optional but Helpful)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-the-fuzzy-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤔 What About the Fuzzy Edge?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-just-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Just Happened?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-you-trick-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Can You Trick the Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Best Practices &amp; Gotchas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Production Sketch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏁 Quick Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="train-your-first-model">Train Your First Model</h1>
+<p><em>How learning models work and draw decision boundaries</em></p>
+<hr />
+<h2 id="why-this-chapter-exists">🎯 Why This Chapter Exists</h2>
+<p>In Chapter 2, you used a plug-and-play model to detect urgency — and it worked like magic.</p>
+<p>Now it’s time to look under the hood.</p>
+<p>This chapter is about training your <strong>own</strong> model from scratch. No AI magic, no pretraining — just raw data, logic, and a bit of code.</p>
+<p>By the end, you’ll understand:</p>
+<ul>
+<li>What it means for a model to "learn"</li>
+<li>How models draw decision boundaries</li>
+<li>Why confidence matters when models predict</li>
+</ul>
+<p>Let’s build your first real model.</p>
+<hr />
+<h2 id="models-dont-follow-instructions-they-learn-patterns">Models Don’t Follow Instructions — They Learn Patterns</h2>
+<p>Let’s get one thing clear:</p>
+<ul>
+<li><strong>Rules</strong> are exact. You write them. The system follows them.</li>
+<li><strong>Models</strong> are flexible. You don’t tell them what to do — you show them examples, and they figure out the pattern.</li>
+</ul>
+<p>You’ve probably written logic like:</p>
+<pre><code class="language-python">if &quot;ASAP&quot; in message: return &quot;urgent&quot;
+</code></pre>
+<p>That’s a rule. Precise, manual, brittle.</p>
+<p>A model sees dozens of urgent and non-urgent messages — even the vague ones like:</p>
+<blockquote>
+<p>“Would be great to get this today.”</p>
+</blockquote>
+<p>And it learns to <em>guess</em> what’s urgent — even when there’s no keyword.</p>
+<p>This chapter is your first taste of that kind of learning.</p>
+<hr />
+<h2 id="side-notes-new-terms-well-use">📦 Side Notes: New Terms We’ll Use</h2>
+<ul>
+<li><strong>Model</strong>: Think of it like a smart function. You give it inputs, it gives you an output — based on patterns it has learned.</li>
+<li><strong>Classifier</strong>: A model that puts inputs into categories (like "urgent" vs. "not urgent").</li>
+<li><strong>Logistic Regression</strong>: A very simple classifier that learns to draw a line between categories.</li>
+<li><strong>Features</strong>: The pieces of input data the model uses (e.g., email length, presence of keywords).</li>
+<li><strong>Decision Boundary</strong>: The dividing line (or curve) the model learns to separate categories.</li>
+<li><strong>Weights</strong>: Numbers the model learns to decide how important each feature is. Higher weight = more influence on the outcome.</li>
+<li><strong>Bias</strong>: A base value the model adds before deciding the final score.</li>
+<li><strong>scikit-learn (sklearn)</strong>: A Python library that gives you prebuilt ML models like logistic regression, decision trees, etc.</li>
+<li><strong>NumPy</strong>: A numerical library. Think of it as Python’s math-and-arrays toolbox.</li>
+<li><strong>matplotlib (plt)</strong>: A plotting library for visualizing data. Not for production — just to help <em>you</em> see what the model learned.</li>
+</ul>
+<hr />
+<h2 id="lets-build-an-urgency-classifier">✏️ Let's Build an Urgency Classifier</h2>
+<p>Let’s walk through a mini-project together — not to build a production tool, but to get a feel for how models actually <em>learn</em>.</p>
+<h3 id="the-problem">🧩 The Problem</h3>
+<p>Imagine your support team handles hundreds of messages a day. Some are critical (“This is blocking production”), others can wait (“Can I reschedule?”).</p>
+<p>You want to automatically flag messages that feel urgent.</p>
+<p>You’ve seen this done with a pretrained model (Chapter 2), but now we’ll train our own.</p>
+<h3 id="step-1-simulate-labeled-data">🧪 Step 1: Simulate Labeled Data</h3>
+<p>We’ll simulate incoming support tickets. Each one has two features:</p>
+<ul>
+<li>A <strong>length score</strong> (how long the message is)</li>
+<li>A binary <strong>urgency flag</strong> (does it mention “ASAP”, “now”, “urgent”?)</li>
+</ul>
+<pre><code class="language-python">from sklearn.datasets import make_classification
+
+X, y = make_classification(
+    n_samples=100,
+    n_features=2,
+    n_informative=2,
+    n_redundant=0,
+    n_clusters_per_class=1,
+    random_state=42
+)
+</code></pre>
+<blockquote>
+<p>🛠️ A quick note on what these arguments mean:</p>
+<ul>
+<li><code>n_samples=100</code>: We’re generating 100 fake messages (rows of data).</li>
+<li><code>n_features=2</code>: Each message has 2 features (e.g., length and urgency flag).</li>
+<li><code>n_informative=2</code>: Both features are useful for the model to decide.</li>
+<li><code>n_redundant=0</code>: No extra junk columns — keep it clean.</li>
+<li><code>n_clusters_per_class=1</code>: Makes the classification task more predictable.</li>
+<li><code>random_state=42</code>: Guarantees the same output every time (useful for demos). It’s like setting a random seed — it makes sure you always get the same random dataset. Why 42? It’s a geeky nod to <em>The Hitchhiker’s Guide to the Galaxy</em> — the “answer to life, the universe, and everything.” You can use any number, but 42 is the classic default.</li>
+</ul>
+</blockquote>
+<h3 id="step-2-train-a-simple-model">🧪 Step 2: Train a Simple Model</h3>
+<p>We’ll use <strong>Logistic Regression</strong>, one of the simplest ML models. It tries to draw a straight line that best separates class <code>0</code> from class <code>1</code>.</p>
+<pre><code class="language-python">from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+model.fit(X, y)
+</code></pre>
+<p>That’s it. You’ve now trained your first classifier.</p>
+<h3 id="step-3-visualize-the-result-optional-but-helpful">🧪 Step 3: Visualize the Result (Optional but Helpful)</h3>
+<p>This isn’t something you’d do in production — but plotting is a great way to <em>see what the model learned</em>.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap='bwr', alpha=0.8)
+
+coef = model.coef_[0]           # learned weights
+intercept = model.intercept_[0] # learned bias
+x_vals = np.array([X[:, 0].min(), X[:, 0].max()])
+y_vals = -(coef[0] * x_vals + intercept) / coef[1]
+
+plt.plot(x_vals, y_vals, label='Decision Boundary')
+plt.title(&quot;How the model separates urgent vs. not urgent&quot;)
+plt.legend()
+plt.show()
+</code></pre>
+<blockquote>
+<p>🖼️ <strong>Why the graph?</strong><br />
+Most devs don’t visualize models — and that’s okay. But here, plotting helps you <em>see</em> how a model thinks. This is a teaching tool — not a production feature.</p>
+</blockquote>
+<hr />
+<h2 id="what-about-the-fuzzy-edge">🤔 What About the Fuzzy Edge?</h2>
+<p>Here’s a question worth pausing on:</p>
+<blockquote>
+<p>What happens if a message lands <em>right on the line</em>?</p>
+</blockquote>
+<p>The model may not be confident. It might say:</p>
+<pre><code class="language-python">predict_proba → [0.48, 0.52]  # almost a coin flip
+</code></pre>
+<p>This is where models become uncertain — when examples are near the <strong>decision boundary</strong>.</p>
+<p>We’ll explore this more deeply in the next chapter — including:</p>
+<ul>
+<li>What confidence means</li>
+<li>How to set thresholds</li>
+<li>What to do when the model says, “I’m not sure”</li>
+</ul>
+<hr />
+<h2 id="what-just-happened">🧠 What Just Happened?</h2>
+<p>You:</p>
+<ul>
+<li>Created fake emails (as 2D data points)</li>
+<li>Trained a model on labeled examples</li>
+<li>Let it learn weights (how important each feature is)</li>
+<li>Visualized how it draws a boundary line between "urgent" and "not urgent"</li>
+</ul>
+<p>The model is just a function that scores inputs:</p>
+<pre><code>score = weight1 * input1 + weight2 * input2 + bias
+</code></pre>
+<p>If the score is high → predict urgent.<br />
+If low → not urgent.</p>
+<p>This is pattern learning.</p>
+<hr />
+<h2 id="can-you-trick-the-model">🔍 Can You Trick the Model?</h2>
+<p>Try running:</p>
+<pre><code class="language-python">model.predict([[4.2, 1]])
+model.predict_proba([[4.2, 1]])
+</code></pre>
+<p>What’s happening?</p>
+<ul>
+<li>The first line gives you the model’s <em>guess</em> (0 = not urgent, 1 = urgent).</li>
+<li>The second gives you the <em>confidence</em> — a probability score like <code>[0.14, 0.86]</code></li>
+</ul>
+<p>Now tweak the input:</p>
+<ul>
+<li>What happens if you change the length?</li>
+<li>Or remove the urgency flag?</li>
+</ul>
+<p>You’re not just using the model now.<br />
+You’re <strong>probing it</strong> — testing its judgment boundaries.</p>
+<hr />
+<h2 id="best-practices-gotchas">⚠️ Best Practices &amp; Gotchas</h2>
+<ul>
+<li><strong>Data matters</strong>: Your model is only as good as the examples it sees.</li>
+<li><strong>Simplicity wins early</strong>: Start with simple models. They're easier to debug.</li>
+<li><strong>Combine with rules when needed</strong>: Models aren’t magic. Add fallbacks when the stakes are high.</li>
+</ul>
+<hr />
+<h2 id="production-sketch">📦 Production Sketch</h2>
+<blockquote>
+<p>Let’s say this model is classifying emails in your system.</p>
+</blockquote>
+<p>How would you deploy it safely?</p>
+<pre><code>Incoming Email → Extract Features → Model → Label
+      ↘ Log Inputs/Outputs   ↘ Add Confidence Filter
+</code></pre>
+<p>Would you:</p>
+<ul>
+<li>Let agents override predictions?</li>
+<li>Use a threshold (e.g., only auto-label if &gt;90% confident)?</li>
+<li>Retrain weekly as new language comes in?</li>
+</ul>
+<p>You’re not just building a model — you’re architecting a system.</p>
+<hr />
+<h2 id="reflection-corner">🧠 Reflection Corner</h2>
+<ul>
+<li>Why does it help to think of a model as a smart scoring function?</li>
+<li>What part of the learning pipeline surprised you?</li>
+<li>Where would you use a simple model like this at work?</li>
+<li>What might break if your input features were poorly chosen?</li>
+</ul>
+<hr />
+<h2 id="quick-recap">🏁 Quick Recap</h2>
+<ul>
+<li>You trained a working model using scikit-learn.</li>
+<li>You visualized how it separates classes with a decision boundary.</li>
+<li>You experimented with inputs to understand model confidence.</li>
+<li>You started thinking about deploying models, not just building them.</li>
+</ul>
+<p>Up next? We’ll zoom in on that idea of <strong>confidence</strong> — and how to build systems that act <em>only when sure</em>. Because good AI systems don’t just guess — they know when <strong>not</strong> to guess.</p>
+<p>Let’s go. 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

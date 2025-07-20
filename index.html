@@ -1,0 +1,833 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="chapter_1/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>AI Engineering 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-building-ai-that-ships-without-losing-your-engineering-soul" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="AI Engineering 101" class="md-header__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="AI Engineering 101" class="md-nav__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering 101
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-tech-world-changed-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌪️ The Tech World Changed — Fast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals-didnt-change-they-got-more-valuable" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Fundamentals Didn’t Change — They Got More Valuable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-senior-engineers-matter-more-than-ever" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Senior Engineers Matter More Than Ever
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-book-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Book Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-this-book-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      👥 Who This Book Is For
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-book-is-and-isnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 What This Book Is (and Isn’t)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-walk-away-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 What You'll Walk Away With
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 How to Use This Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌱 Where This Leads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Beginner Track
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginner Track
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Plug In a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapter_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fun_ml_toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4.5 (Optional) - The ML Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-tech-world-changed-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌪️ The Tech World Changed — Fast
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamentals-didnt-change-they-got-more-valuable" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Fundamentals Didn’t Change — They Got More Valuable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-senior-engineers-matter-more-than-ever" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Senior Engineers Matter More Than Ever
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-book-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Book Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-this-book-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      👥 Who This Book Is For
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-book-is-and-isnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 What This Book Is (and Isn’t)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-walk-away-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 What You'll Walk Away With
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 How to Use This Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-leads" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌱 Where This Leads
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-building-ai-that-ships-without-losing-your-engineering-soul">🌟 Introduction: Building AI That Ships (Without Losing Your Engineering Soul)</h1>
+<hr />
+<h2 id="the-tech-world-changed-fast">🌪️ The Tech World Changed — Fast</h2>
+<p>If you're feeling overwhelmed right now, you're not alone.</p>
+<p>Since the ChatGPT moment, the tech industry has been running in fast-forward. You open Twitter or LinkedIn, and suddenly everyone is talking about:</p>
+<ul>
+<li>Vector databases</li>
+<li>LangChain, RAG, agents</li>
+<li>Transformers, finetuning, quantization</li>
+<li>Prompts, few-shot learning, LLMOps</li>
+</ul>
+<p>And it’s easy to feel like you’re already behind.</p>
+<p>Maybe you’ve thought:</p>
+<blockquote>
+<p>“Am I still relevant?”<br />
+“Will I be replaced by AI?”<br />
+“Should I stop writing backend code and start writing prompts?”</p>
+</blockquote>
+<p>Pause. Breathe. You’re not behind. You’re right on time.</p>
+<hr />
+<h2 id="fundamentals-didnt-change-they-got-more-valuable">🧱 Fundamentals Didn’t Change — They Got More Valuable</h2>
+<p>If you’ve been building production systems — shipping, debugging, scaling, reasoning — you already have the most important skill AI can’t replace: <strong>engineering judgment</strong>.</p>
+<blockquote>
+<p>That’s what this book is about: giving <em>builders</em> the AI tools to stay ahead, not by abandoning what they know, but by upgrading it.</p>
+</blockquote>
+<p>The pace of AI may be fast. But great engineering is still slow thinking:</p>
+<ul>
+<li>What’s the right abstraction?</li>
+<li>What can fail?</li>
+<li>Can this system be debugged, monitored, and improved?</li>
+</ul>
+<p>If fundamentals didn’t matter, we wouldn’t still be learning the <strong>Gang of Four</strong> or <strong>Unix philosophy</strong>. But we are — because principles last, tools change.</p>
+<p>LLMs are just a new layer of capability. The rules of good software still apply — now you just have more powerful building blocks.</p>
+<hr />
+<h2 id="why-senior-engineers-matter-more-than-ever">🧠 Why Senior Engineers Matter More Than Ever</h2>
+<p>The internet is now flooded with GenAI demos. But very few people can:</p>
+<ul>
+<li>Turn those ideas into <strong>real</strong>, reliable systems</li>
+<li>Integrate them into products with <strong>security, latency, cost</strong> in mind</li>
+<li>Design workflows that combine LLMs, APIs, databases, and humans</li>
+</ul>
+<p>And that’s where you come in.</p>
+<p>If you’ve been building APIs, frontends, microservices, or databases — congratulations. You’re not behind. You’re now in the <strong>most critical position</strong> of all:</p>
+<blockquote>
+<p>To lead the next generation of intelligent systems — and build things that actually work.</p>
+</blockquote>
+<hr />
+<h2 id="why-this-book-exists">🎯 Why This Book Exists</h2>
+<p>Artificial Intelligence is no longer just a futuristic buzzword. It’s here. It’s useful. And it’s changing how software is built.</p>
+<p>But with so many tutorials, frameworks, and papers out there, it’s easy to fall into <strong>tutorial hell</strong>—watching endlessly, building nothing.</p>
+<p>This book is your way out.</p>
+<p>We’ve designed this for developers who learn by doing, want to ship things that matter, and don’t have time for fluff.</p>
+<p>You’ll learn to:
+- Build real AI systems that solve real problems
+- Use confidence scores, fallback logic, and thresholds like a pro
+- Think like a system architect, not just a model tinkerer
+- Deploy and monitor your models in actual production flows</p>
+<p>Whether you're automating support tickets or experimenting with GPT-powered workflows, this book gets you shipping AI with confidence.</p>
+<hr />
+<h2 id="who-this-book-is-for">👥 Who This Book Is For</h2>
+<ul>
+<li><strong>Engineers</strong> who can code, but are new to AI/ML</li>
+<li><strong>Full-stack developers</strong> who want to add intelligence to their apps</li>
+<li><strong>Builders</strong> who want to go from “What’s an embedding?” to “Here’s my deployed AI system”</li>
+</ul>
+<p>You don’t need to know what a “vectorizer” or “decision boundary” is. We’ll meet you where you are — and move forward, together.</p>
+<hr />
+<h2 id="what-this-book-is-and-isnt">🧭 What This Book Is (and Isn’t)</h2>
+<p>This book isn’t:
+- A math-heavy theory textbook
+- A prompt engineering magic trick guide
+- A build-your-own-GPT manual</p>
+<p>This book is:
+- A fast-moving, hands-on course for working engineers
+- Focused on intuition, system design, and reliability
+- Layered with real examples, deployment patterns, and tradeoffs
+- Crafted to help you use AI <em>intelligently</em>, not just integrate it</p>
+<hr />
+<h2 id="what-youll-learn">🧰 What You'll Learn</h2>
+<ul>
+<li>What “learning from data” really means (and when to avoid it)</li>
+<li>How to go from hard-coded logic → models → agents</li>
+<li>How to use <code>.predict_proba()</code>, thresholds, fallbacks, and evaluation metrics</li>
+<li>Where GenAI fits into a real software stack (and where it breaks)</li>
+<li>How to design production-friendly workflows using small models, LLM APIs, and rules</li>
+</ul>
+<p>Every chapter includes:
+- 🔍 Real-world analogies to simplify concepts
+- 🧪 Code examples you can run and modify
+- 📝 Quizzes and reflections to reinforce intuition
+- 💻 Mini-projects and checkpoints
+- 📦 “Design Diary” prompts for thinking like an engineer</p>
+<hr />
+<h2 id="what-youll-walk-away-with">🚀 What You'll Walk Away With</h2>
+<ul>
+<li>Clear intuition about models and learning</li>
+<li>The confidence to debug or critique AI outputs</li>
+<li>A working knowledge of GenAI and classic ML techniques</li>
+<li>Projects that prove you understand the tools, not just watched them</li>
+</ul>
+<p>You’ll finish with:
+- Confidence<br />
+- Code<br />
+- A working AI intuition</p>
+<hr />
+<h2 id="how-to-use-this-book">🛠 How to Use This Book</h2>
+<ul>
+<li>Read the chapters in order. They build on each other.</li>
+<li>Run the code, even if it looks simple.</li>
+<li>Use the reflection and design sections — they’re how you think like an AI engineer.</li>
+<li>Don’t get stuck chasing perfection. Build and revisit.</li>
+</ul>
+<p>And when something clicks, don’t stop there — <em>ship it</em>.</p>
+<hr />
+<h2 id="where-this-leads">🌱 Where This Leads</h2>
+<p>This is the <strong>Beginner Track</strong> — the first step in your AI engineering journey.</p>
+<p>When you’re done, you’ll be ready for:
+- Intermediate AI Engineering (retrieval, vector search, agents)
+- Advanced AI Architectures (RAG pipelines, memory, orchestration)</p>
+<p>But first: let's escape tutorial hell. Let’s build real AI systems.</p>
+<p>Let’s go. 💡</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

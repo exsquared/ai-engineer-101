@@ -1,0 +1,804 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Chapter 5: Evaluation Beyond Accuracy — How to Know If a Model Is Actually Working - AI Engineering 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-evaluation-beyond-accuracy-how-to-know-if-a-model-is-actually-working" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Engineering 101" class="md-header__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 5: Evaluation Beyond Accuracy — How to Know If a Model Is Actually Working
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Engineering 101" class="md-nav__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering 101
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Beginner Track
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginner Track
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Plug In a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fun_ml_toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4.5 (Optional) - The ML Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Goal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-accuracy-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ The Accuracy Trap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-real-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 The Real Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#think-like-a-dev-not-a-statistician" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Think Like a Dev, Not a Statistician
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision-and-recall-in-plain-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏷️ Precision and Recall — In Plain English
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏷️ Precision and Recall — In Plain English">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precision-of-all-the-things-i-said-were-urgent-how-many-actually-were" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Precision = “Of all the things I said were urgent, how many actually were?”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recall-of-all-the-things-that-were-urgent-how-many-did-i-actually-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      🕵️ Recall = “Of all the things that were urgent, how many did I actually find?”
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tradeoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ The Tradeoff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-code-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Let's Code It
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-tuning-the-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Exercise: Tuning the Threshold
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-what" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 When to Use What
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      💭 Reflection Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hands-on-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Hands-On Exercise
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Exit Outcome
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏭️ Up Next
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-5-evaluation-beyond-accuracy-how-to-know-if-a-model-is-actually-working">Chapter 5: Evaluation Beyond Accuracy — How to Know If a Model Is <em>Actually</em> Working</h1>
+<hr />
+<h2 id="goal">🎯 Goal</h2>
+<p>To learn how to <strong>evaluate models intelligently</strong> — beyond just "how many did it get right?"<br />
+We’ll explore <em>why accuracy can lie</em>, and how to use <strong>precision</strong>, <strong>recall</strong>, and <strong>false positive/negative rates</strong> to debug and improve your model like an engineer — not just a data scientist.</p>
+<hr />
+<h3 id="the-accuracy-trap">⚖️ The Accuracy Trap</h3>
+<p>Let’s say you built a model that predicts whether a support ticket is <strong>urgent</strong>.</p>
+<p>Your model says:</p>
+<blockquote>
+<p>“I’m 95% accurate!”</p>
+</blockquote>
+<p>Sounds great, right?</p>
+<p>But here’s the catch:</p>
+<ul>
+<li>Only <strong>5%</strong> of your tickets are actually urgent.</li>
+<li>Your model is just saying <strong>“not urgent” every time</strong> — and still getting 95% right.</li>
+</ul>
+<p>That’s not intelligence — that’s cheating.</p>
+<blockquote>
+<p><strong>High accuracy doesn’t mean your model is useful.</strong></p>
+</blockquote>
+<hr />
+<h3 id="the-real-questions">🔍 The Real Questions</h3>
+<p>What you <em>really</em> care about is:</p>
+<ul>
+<li>🧨 <strong>Did it miss any urgent tickets?</strong> (That’s bad.)</li>
+<li>🚨 <strong>Did it raise too many false alarms?</strong> (Also bad.)</li>
+<li>🎯 <strong>Did it correctly flag the ones we needed to act on?</strong> (That’s the sweet spot.)</li>
+</ul>
+<hr />
+<h3 id="think-like-a-dev-not-a-statistician">🧠 Think Like a Dev, Not a Statistician</h3>
+<p>Let’s bring this into your world.</p>
+<pre><code class="language-python">def is_ticket_urgent(text):
+    return model.predict(text)  # Returns True or False
+</code></pre>
+<p>If your model messes up:</p>
+<ul>
+<li>A <em>true urgent</em> ticket goes unnoticed (bad customer experience).</li>
+<li>A <em>non-urgent</em> ticket clogs the queue (wasted time).</li>
+</ul>
+<p>So instead of “accuracy”, let’s ask:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it means</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ True Positive</td>
+<td>Correctly marked urgent</td>
+<td>Good — success</td>
+</tr>
+<tr>
+<td>❌ False Positive</td>
+<td>Said urgent, but wasn’t</td>
+<td>Bad — wasted priority</td>
+</tr>
+<tr>
+<td>❌ False Negative</td>
+<td>Missed an actual urgent message</td>
+<td>Worse — customer suffers</td>
+</tr>
+<tr>
+<td>✅ True Negative</td>
+<td>Correctly marked not urgent</td>
+<td>Good — low priority handled right</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="precision-and-recall-in-plain-english">🏷️ Precision and Recall — In Plain English</h3>
+<h4 id="precision-of-all-the-things-i-said-were-urgent-how-many-actually-were">🎯 Precision = “Of all the things I said were urgent, how many actually were?”</h4>
+<ul>
+<li>High precision = You don’t cry wolf</li>
+<li>Low precision = You flag lots of things that aren’t urgent</li>
+</ul>
+<h4 id="recall-of-all-the-things-that-were-urgent-how-many-did-i-actually-find">🕵️ Recall = “Of all the things that <em>were</em> urgent, how many did I actually find?”</h4>
+<ul>
+<li>High recall = You catch most real urgent cases</li>
+<li>Low recall = You miss lots of real issues</li>
+</ul>
+<hr />
+<h3 id="the-tradeoff">⚖️ The Tradeoff</h3>
+<p>Think of this like a <strong>spam filter</strong>:</p>
+<blockquote>
+<p>You can tweak your model to be more cautious or more aggressive — but you can’t max both.</p>
+</blockquote>
+<hr />
+<h3 id="lets-code-it">🧪 Let's Code It</h3>
+<pre><code class="language-python">from sklearn.metrics import classification_report
+
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred))
+</code></pre>
+<p>Sample output:</p>
+<pre><code>              precision    recall  f1-score   support
+
+    NotUrgent       0.96      0.98      0.97       80
+       Urgent       0.85      0.75      0.80       20
+</code></pre>
+<hr />
+<h3 id="exercise-tuning-the-threshold">🧩 Exercise: Tuning the Threshold</h3>
+<pre><code class="language-python">y_scores = model.predict_proba(X_test)[:, 1]  # Probabilities for 'urgent'
+
+threshold = 0.3  # Be more aggressive
+y_custom = (y_scores &gt; threshold).astype(int)
+
+print(classification_report(y_test, y_custom))
+</code></pre>
+<p>Try thresholds: <code>0.3</code>, <code>0.5</code>, <code>0.7</code>.</p>
+<hr />
+<h3 id="when-to-use-what">🔄 When to Use What</h3>
+<table>
+<thead>
+<tr>
+<th>You care about...</th>
+<th>Focus on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Avoiding false alarms</td>
+<td>Precision</td>
+</tr>
+<tr>
+<td>Not missing real cases</td>
+<td>Recall</td>
+</tr>
+<tr>
+<td>Balanced performance</td>
+<td>F1 Score</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="reflection-questions">💭 Reflection Questions</h3>
+<ol>
+<li>When is high accuracy <em>not</em> useful?</li>
+<li>Can you think of a product where false positives are dangerous?</li>
+<li>What’s more painful in your system: missing an error, or flagging too many?</li>
+<li>How would you explain precision/recall to a PM?</li>
+</ol>
+<hr />
+<h3 id="hands-on-exercise">💻 Hands-On Exercise</h3>
+<p>Extend your earlier project (checkpoint #1):</p>
+<ol>
+<li>Split your message dataset into train/test</li>
+<li>Train your <code>LogisticRegression</code> model</li>
+<li>Use <code>.predict_proba()</code> to extract confidence scores</li>
+<li>Try different thresholds (<code>0.3</code>, <code>0.5</code>, <code>0.7</code>)</li>
+<li>Print precision/recall/F1 at each threshold</li>
+</ol>
+<blockquote>
+<p>Bonus: Add a user-facing confidence score — and route low-confidence tickets to human review.</p>
+</blockquote>
+<hr />
+<h3 id="exit-outcome">✅ Exit Outcome</h3>
+<ul>
+<li>Go beyond “did it get it right?”</li>
+<li>Measure <em>how well</em> your model is doing in the ways that matter</li>
+<li>Debug performance using confusion matrices and probability scores</li>
+</ul>
+<hr />
+<h3 id="up-next">⏭️ Up Next</h3>
+<p>In the next chapter, we’ll shift from binary to <strong>multi-class</strong> predictions — and what changes when you have more than two possible answers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

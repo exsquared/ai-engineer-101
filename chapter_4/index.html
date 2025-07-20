@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../chapter_3/">
+      
+      
+        <link rel="next" href="../fun_ml_toolbox/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Chapter 4 - When to Trust the Model - AI Engineering 101</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#when-to-trust-the-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AI Engineering 101" class="md-header__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering 101
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 4 - When to Trust the Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI Engineering 101" class="md-nav__button md-logo" aria-label="AI Engineering 101" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering 101
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Beginner Track
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Beginner Track
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1 - From Rules to Learning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2 - Plug In a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3 - Train Your First Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 - When to Trust the Model
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-smart-systems-know-their-limits-and-act-accordingly" class="md-nav__link">
+    <span class="md-ellipsis">
+      How smart systems know their limits — and act accordingly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Chapter Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-model-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Is Model Confidence?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-confidence-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      📉 Visualizing Confidence Zones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-a-smart-system-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 What Should a Smart System Do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threshold-tuning-a-developers-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Threshold Tuning — A Developer’s Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Threshold Tuning — A Developer’s Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-experiment-try-threshold-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini-Experiment: Try Threshold Tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-intro-what-is-naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Quick Intro: What Is Naive Bayes?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-nlp-classifier-with-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 Real-World NLP Classifier with Confidence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence-in-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Confidence in Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-case-smartassist-co" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Real-World Case: SmartAssist Co.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-deep-dive-how-does-it-know-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Optional Deep Dive: “How Does It Know That?”
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Optional Deep Dive: “How Does It Know That?”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fun-ml-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      👉 🛠️ The Fun ML Toolbox
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Quick Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fun_ml_toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4.5 (Optional) - The ML Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-smart-systems-know-their-limits-and-act-accordingly" class="md-nav__link">
+    <span class="md-ellipsis">
+      How smart systems know their limits — and act accordingly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Why This Chapter Exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-model-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Is Model Confidence?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-confidence-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      📉 Visualizing Confidence Zones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-a-smart-system-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 What Should a Smart System Do?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threshold-tuning-a-developers-superpower" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Threshold Tuning — A Developer’s Superpower
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Threshold Tuning — A Developer’s Superpower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-experiment-try-threshold-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini-Experiment: Try Threshold Tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-intro-what-is-naive-bayes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Quick Intro: What Is Naive Bayes?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-nlp-classifier-with-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 Real-World NLP Classifier with Confidence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidence-in-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Confidence in Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-case-smartassist-co" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Real-World Case: SmartAssist Co.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-deep-dive-how-does-it-know-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Optional Deep Dive: “How Does It Know That?”
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Optional Deep Dive: “How Does It Know That?”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fun-ml-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      👉 🛠️ The Fun ML Toolbox
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Quick Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="when-to-trust-the-model">When to Trust the Model</h1>
+<h2 id="how-smart-systems-know-their-limits-and-act-accordingly"><em>How smart systems know their limits — and act accordingly</em></h2>
+<h2 id="why-this-chapter-exists">🎯 Why This Chapter Exists</h2>
+<p>In Chapter 3, you trained a model and saw how it drew a decision boundary — a line between “yes” and “no.”</p>
+<p>But not all decisions are clear.</p>
+<p>Some inputs land close to that boundary.</p>
+<blockquote>
+<p>What happens when the model isn’t confident?</p>
+</blockquote>
+<p>This chapter is about designing systems that can say:</p>
+<blockquote>
+<p>“I think it’s spam… but I’m only 60% sure.”</p>
+</blockquote>
+<p>And then act accordingly.</p>
+<hr />
+<h2 id="what-is-model-confidence">🧠 What Is Model Confidence?</h2>
+<p>When you call <code>.predict_proba()</code> on a model like logistic regression or Naive Bayes, it gives you a <strong>probability</strong>.</p>
+<pre><code class="language-python">model.predict_proba([[4.2, 1]])
+# Output: [0.13, 0.87] → 87% confidence in class 1
+</code></pre>
+<p>That number isn’t magic. It’s just how far the point is from the decision boundary.</p>
+<ul>
+<li>Far from the line = confident</li>
+<li>Close to the line = uncertain</li>
+</ul>
+<p>This is critical for real systems.</p>
+<hr />
+<h2 id="visualizing-confidence-zones">📉 Visualizing Confidence Zones</h2>
+<p>Imagine your decision boundary as a line:</p>
+<pre><code>← 0% confident ———|——— 100% confident →
+             boundary
+</code></pre>
+<p>Everything near the middle (45–55%) is <strong>dangerous territory</strong>.
+That’s where misclassifications are most likely.</p>
+<hr />
+<h2 id="what-should-a-smart-system-do">💡 What Should a Smart System Do?</h2>
+<blockquote>
+<p>🤔 If the model is 51% confident, should it act like it’s 100% sure?</p>
+</blockquote>
+<p>Of course not.</p>
+<p>Here’s a better plan:</p>
+<pre><code class="language-python">if confidence &gt; 0.85:
+    auto_accept()
+elif confidence &lt; 0.6:
+    flag_for_review()
+else:
+    fall_back_to_rules()
+</code></pre>
+<p>You’re designing not just a model — but a system that <strong>knows its own limits</strong>.</p>
+<hr />
+<h2 id="threshold-tuning-a-developers-superpower">🔄 Threshold Tuning — A Developer’s Superpower</h2>
+<p>Most models default to a 50% cutoff:</p>
+<pre><code class="language-python">if prob &gt; 0.5: predict class 1
+</code></pre>
+<p>But you can shift that line to make the system more conservative or aggressive.</p>
+<h3 id="example">Example:</h3>
+<pre><code class="language-python">y_scores = model.predict_proba(X_test)[:, 1]  # probability for class 1
+
+y_custom = (y_scores &gt; 0.7).astype(int)  # only predict 1 if very confident
+</code></pre>
+<p>Tuning this threshold changes everything:</p>
+<ul>
+<li>Higher threshold → fewer false positives, but more misses</li>
+<li>Lower threshold → more flags, but more risk</li>
+</ul>
+<hr />
+<h2 id="mini-experiment-try-threshold-tuning">🧪 Mini-Experiment: Try Threshold Tuning</h2>
+<p>Train a model using your support ticket data. Then try these:</p>
+<pre><code class="language-python">from sklearn.metrics import classification_report
+
+for t in [0.3, 0.5, 0.7]:
+    y_custom = (y_scores &gt; t).astype(int)
+    print(f&quot;\nThreshold = {t}&quot;)
+    print(classification_report(y_test, y_custom))
+</code></pre>
+<p>You’ll quickly see how your model behaves under different confidence strategies.</p>
+<hr />
+<h2 id="quick-intro-what-is-naive-bayes">🧠 Quick Intro: What Is Naive Bayes?</h2>
+<p>Before we dive into the next classifier, here's a quick intro:</p>
+<p><strong>Naive Bayes</strong> is a fast and effective algorithm for classifying text. It works by calculating how often certain words appear in each category — then makes a guess based on probability.</p>
+<p>It’s called “naive” because it assumes each word contributes independently to the outcome — even though that’s not always true.</p>
+<p>Despite the name, it works surprisingly well for things like spam detection or support ticket classification.</p>
+<p>🧠 Want to dig into how it works behind the scenes? We’ve got a clear explanation in the <a href="#">Fun ML Toolbox</a>.</p>
+<hr />
+<h2 id="real-world-nlp-classifier-with-confidence">🎮 Real-World NLP Classifier with Confidence</h2>
+<p>Let’s apply this to a real NLP example using Naive Bayes.</p>
+<pre><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Sample training data
+tickets = [&quot;help ASAP!&quot;, &quot;urgent issue&quot;, &quot;payment failed&quot;, &quot;slow loading&quot;]
+labels = [&quot;urgent&quot;, &quot;urgent&quot;, &quot;non-urgent&quot;, &quot;non-urgent&quot;]
+
+vectorizer = CountVectorizer()
+X_train = vectorizer.fit_transform(tickets)
+
+model = MultinomialNB().fit(X_train, labels)
+
+# Predict with confidence
+new_ticket = vectorizer.transform([&quot;can't login, help now&quot;])
+prediction = model.predict(new_ticket)
+prediction_proba = model.predict_proba(new_ticket)
+
+print(&quot;Prediction:&quot;, prediction)
+print(&quot;Confidence scores:&quot;, prediction_proba)
+</code></pre>
+<p>🎉 You’ve now used <code>.predict_proba()</code> on real text. This is how modern AI systems decide when to be bold — and when to back off.</p>
+<hr />
+<h2 id="confidence-in-production">⚙️ Confidence in Production</h2>
+<p>Here’s how real teams use confidence scores:</p>
+<table>
+<thead>
+<tr>
+<th>Confidence</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 0.9</td>
+<td>Auto-process, log result</td>
+</tr>
+<tr>
+<td>0.6–0.9</td>
+<td>Flag for human review</td>
+</tr>
+<tr>
+<td>&lt; 0.6</td>
+<td>Don’t act — trigger fallback rule</td>
+</tr>
+</tbody>
+</table>
+<p>This is <strong>how mature AI systems operate</strong> — not just “guess and go,” but “guess, evaluate, then act.”</p>
+<hr />
+<h2 id="real-world-case-smartassist-co">🔥 Real-World Case: SmartAssist Co.</h2>
+<p>SmartAssist had an urgency classifier.</p>
+<ul>
+<li>If the model was 95%+ confident, it auto-routed tickets</li>
+<li>If below 60%, it flagged the ticket and asked a support agent</li>
+</ul>
+<p>That simple confidence logic reduced routing errors by 70%.</p>
+<hr />
+<h2 id="optional-deep-dive-how-does-it-know-that">📚 Optional Deep Dive: “How Does It Know That?”</h2>
+<p>Feeling curious?</p>
+<p>Ever wondered:</p>
+<ul>
+<li>How does <code>.predict_proba()</code> calculate that number?</li>
+<li>Why does logistic regression give smooth scores?</li>
+<li>How does Naive Bayes combine probabilities?</li>
+</ul>
+<p>Then take a detour to the next chapter:</p>
+<h3 id="the-fun-ml-toolbox">👉 <a href="../fun_ml_toolbox/">🛠️ The Fun ML Toolbox</a></h3>
+<blockquote>
+<p>Get clear, visual explanations of vectorization, logistic regression, Naive Bayes, and more.</p>
+</blockquote>
+<p>Not essential — but very helpful if you want to peek under the hood.</p>
+<hr />
+<h2 id="reflection-corner">🧠 Reflection Corner</h2>
+<ul>
+<li>When should a model’s output be trusted without question?</li>
+<li>Where in your own product could confidence thresholds improve performance?</li>
+<li>Can you recall a time a “maybe” prediction should’ve been stopped or escalated?</li>
+</ul>
+<hr />
+<h2 id="quick-summary">📌 Quick Summary</h2>
+<ul>
+<li><code>.predict_proba()</code> shows how confident the model is</li>
+<li>Confidence ≠ correctness, but it helps design safer systems</li>
+<li>Use thresholds and fallbacks to handle low-certainty predictions</li>
+<li>Great AI systems don’t just predict — they <strong>know when they’re unsure</strong></li>
+</ul>
+<p>Up next: If you're curious how models calculate confidence, jump into the <strong>Fun ML Toolbox</strong>.
+Otherwise, we’ll move on to evaluating <em>how well</em> your model is performing — beyond just being “accurate.”</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
