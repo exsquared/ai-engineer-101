@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../project_3/">
+      
+      
+        <link rel="next" href="../chapter_10/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Serve Your Model Like an Engineer - AI Engineering 101</title>
+        <title>Chapter 9 - Serve Your Model Like an Engineer - AI Engineering 101</title>
       
     
     
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Serve Your Model Like an Engineer
+              Chapter 9 - Serve Your Model Like an Engineer
             
           </span>
         </div>
@@ -517,10 +521,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_9.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 9 - Serve Your Model Like an Engineer
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -531,6 +557,185 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What You'll Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-minimal-viable-serving-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ The Minimal Viable Serving Layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-define-a-clean-schema-with-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Step 1: Define a Clean Schema with Pydantic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-stub-a-dummy-model-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Step 2: Stub a Dummy Model Logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-build-your-prediction-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Step 3: Build Your Prediction Endpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-engineer-it-better" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Let’s Engineer It Better
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Part 1: Input Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Part 2: Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Part 3: Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-add-confidence-based-output-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Part 4: Add Confidence-Based Output Logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject-build-a-real-prediction-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Microproject: Build a Real Prediction API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Microproject: Build a Real Prediction API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-serving-ai-in-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Best Practices for Serving AI in Production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-now-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ You Now Know:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
