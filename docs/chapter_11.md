@@ -1,244 +1,217 @@
-# Let LLMs Read Your Data  
-### _The Power of Retrieval-Augmented Generation (RAG)_
+# Build Your First AI Microservice  
+*From API to Docker to Deployment*
 
 ---
 
 ## 🧭 Why Are We Here?
 
-Let’s say you’ve just deployed a customer-facing chatbot powered by GPT-4.
+You now have a solid, reliable FastAPI app wrapping your model — with retries, fallbacks, and caching. That’s great for development.
 
-It’s slick. It’s confident.  
-But then a customer asks:  
-> “What’s your enterprise SLA?”
+But if you want other teams, clients, or services to use your model in production, you need to:
+- Package it
+- Ship it
+- Monitor it
+- Make it easy to restart, scale, and secure
 
-And the bot responds:  
-> “We do not currently offer SLAs.”
-
-🤦‍♂️ Problem: The bot knows everything... _except your actual business._
-
-That’s because LLMs aren’t trained on your **internal data** — your:
-- PDFs
-- FAQs
-- Wiki pages
-- Meeting notes
-- Slack threads
-
-To fix this, we need to teach our LLM to **search** and **use** your private data — _without retraining it_.
-
-That’s what **RAG** does.
+> This chapter shows you how to take your working API and turn it into a **deployable, monitorable microservice**.
 
 ---
 
-## 🚀 What Is RAG?
+## 🎯 What You’ll Build
 
-**RAG = Retrieval-Augmented Generation**  
-It’s a system design pattern that makes LLMs smarter by:
-
-1. **Retrieving** relevant content from your data
-2. **Injecting** that content into the prompt
-3. Letting the **LLM generate** an informed response
-
----
-
-## 🧪 Real-World Analogy
-
-You: “Hey, what's the refund policy in the 2023 docs?”
-
-Your assistant:
-- Doesn’t know off-hand
-- Searches “refund” in your docs
-- Finds the right paragraph
-- Reads it and replies:
-
-> “The 2023 policy allows refunds within 30 days.”
-
-That’s RAG: **search first, generate later**.
+You’ll learn how to:
+- ✅ Dockerize your FastAPI app
+- ✅ Add a health check endpoint
+- ✅ Set up structured logging
+- ✅ Deploy it to the cloud (EC2, on-prem, etc.)
+- ✅ Understand what makes a model “production ready”
 
 ---
 
-## 🛠️ New Concepts You’ll Meet
+## 🛠️ Step 1: Dockerize Your App
 
-| Concept | Analogy | Why It Matters |
-|--------|---------|----------------|
-| **Embeddings** | Like hashing text into meaning-space | Makes text searchable by _meaning_ |
-| **Vector DB** | Like Elasticsearch for meaning | Lets you find “similar” content |
-| **Context Injection** | Like pre-filling a prompt with facts | Gives the model the right info at the right time |
-| **LangChain** | Like Django/Express for LLM apps | Helps you build LLM pipelines faster |
-| **LangFlow** | Like Node-RED or n8n for LLMs | Drag-and-drop builder for RAG + agents |
+### Create a `Dockerfile`
+```Dockerfile
+FROM python:3.11-slim
 
----
+WORKDIR /app
 
-## 🧱 How It All Fits Together
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-Let’s say your app needs to answer questions from internal docs.
+COPY . .
 
-You’ll need:
-
-1. **Ingest** the documents (PDF, markdown, etc.)
-2. **Chunk** them into smaller paragraphs
-3. **Embed** each chunk into a vector
-4. **Store** the vectors in a vector database
-5. At query time: **embed the question**, find the most similar chunks
-6. **Inject** those chunks into the LLM’s prompt
-7. Get a smart, grounded answer
-
-This pipeline is your **RAG stack**.
-
----
-
-## 🗃️ What’s a Vector Database?
-
-Think: **Search engine for meaning.**
-
-You give it:
-- A sentence like: _“I want a refund”_
-- It returns: chunks semantically similar to that, even if the words are different (e.g., _“Can I return my item?”_)
-
-Popular options:
-- **FAISS** (lightweight, fast, local)
-- **Chroma** (easy to use, Python-native)
-- **Weaviate**, **Pinecone**, **Qdrant** (scalable, cloud-ready)
-
----
-
-## 💻 Let’s Build a Mini RAG System
-
-We’ll use **LangChain** (a framework that glues all the pieces together).
-
-### Step 1: Load and Chunk Documents
-
-```python
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-loader = TextLoader("company_policy.txt")
-docs = loader.load()
-
-splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-chunks = splitter.split_documents(docs)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
-### Step 2: Embed and Store in Vector DB (FAISS)
-
-```python
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-
-embeddings = OpenAIEmbeddings()
-vectorstore = FAISS.from_documents(chunks, embeddings)
+### `requirements.txt`
+```
+fastapi
+uvicorn
+openai
+backoff
+redis
 ```
 
-> 🧠 Think of `vectorstore` as a mini search engine based on meaning, not keywords.
-
----
-
-### Step 3: Run a RAG Chain
-
-```python
-from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-
-llm = ChatOpenAI()
-qa_chain = RetrievalQA.from_chain_type(
-    llm=llm,
-    retriever=vectorstore.as_retriever()
-)
-
-response = qa_chain.run("What’s the refund deadline?")
-print(response)
+### Build & Run Locally
+```bash
+docker build -t ai-service .
+docker run -p 8000:8000 ai-service
 ```
 
-Boom — the model reads your docs and answers in plain English.
+Now your AI is portable. Anyone can run it.
 
 ---
 
-## 🖼️ Visual Workflow (Optional via LangFlow)
+## ❤️ Step 2: Add a Health Endpoint
 
-Want to see this flow as a drag-and-drop UI?  
-Try [LangFlow](https://github.com/logspace-ai/langflow) — a visual builder for LangChain apps.
+Kubernetes, Fly.io, and most orchestrators expect your service to respond at `/health`.
 
-It’s like Figma for AI workflows.
+```python
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+```
 
-You can:
-- Drop in nodes (loader, splitter, embedder, retriever, LLM)
-- Connect them visually
-- Export Python code
-
----
-
-## 🧠 LangChain vs. Barebones Code
-
-| Approach | Use When... |
-|----------|-------------|
-| **LangChain** | You want to move fast and glue pieces easily |
-| **Raw Python** | You want maximum control, minimal abstraction |
-| **LangFlow** | You want to prototype without code (great for teams!) |
-
-No lock-in. All tools work with OpenAI, Cohere, local models, etc.
+Make this fast and reliable. Don’t do any model calls here.
 
 ---
 
-## 🔁 Why RAG Wins
+## 📊 Step 3: Add Structured Logging
 
-| Fine-Tuning | RAG |
-|-------------|-----|
-| Expensive to train | Just needs vector search |
-| Slow to update | Instant document refresh |
-| Bakes in data | Keeps data external |
+```python
+import json, time
 
-Use RAG when:
-- Your data changes frequently
-- You want explainability
-- You’re building internal tools, knowledge bases, support bots, etc.
+@app.middleware("http")
+async def log_requests(request, call_next):
+    start = time.time()
+    response = await call_next(request)
+    duration = round((time.time() - start) * 1000)
 
----
+    log = {
+        "method": request.method,
+        "path": request.url.path,
+        "status": response.status_code,
+        "duration_ms": duration
+    }
+    print(json.dumps(log))
+    return response
+```
 
-## 🧠 Recap: You Now Know…
-
-✅ What embeddings, vector DBs, and RAG are  
-✅ How to build a retrieval pipeline  
-✅ When to use LangChain and LangFlow  
-✅ Why RAG is the practical way to let LLMs “read” your data
-
----
-
-## ❓Reflection Questions
-
-1. How would you update your RAG system when a new policy is released?
-2. What are the trade-offs between fine-tuning and retrieval?
-3. Could your frontend search bar be upgraded with RAG? How?
+Later, you can stream this to a log system like:
+- Logtail
+- Loki + Grafana
+- ELK Stack
 
 ---
 
-## 🧪 Mini Quiz
+## ☁️ Step 4: Deploy It Manually to the Cloud or On-Prem
 
-**Q1.** A vector DB helps you:  
-a) Store full documents  
-b) Find semantically similar chunks ✅  
-c) Host your API  
-d) Visualize neural nets
+### Option 1: Run It On-Prem or on a VM
 
-**Q2.** LangChain is like:  
-a) A new LLM model  
-b) A framework to build LLM apps ✅  
-c) A tokenizer  
-d) An analytics tool
+1. SSH into your VM (EC2, DigitalOcean, etc.):
+   ```bash
+   ssh user@your-server-ip
+   ```
+2. Clone your repo:
+   ```bash
+   git clone your-repo-url && cd your-repo
+   ```
+3. Build and run the Docker container:
+   ```bash
+   docker build -t ai-service .
+   docker run -d -p 80:8000 --env-file .env ai-service
+   ```
+
+> Use `.env` to store keys like `OPENAI_API_KEY`, and access them in code with `os.getenv()`.
+
+### Option 2: Add Reverse Proxy (Optional)
+Use Nginx to serve FastAPI through port 80/443:
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+Then reload nginx:
+```bash
+sudo systemctl reload nginx
+```
+
+### Option 3: Auto-Restart with systemd (Optional)
+Create a service unit:
+```ini
+[Unit]
+Description=AI Service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run -p 8000:8000 ai-service
+
+[Install]
+WantedBy=default.target
+```
+Then run:
+```bash
+sudo systemctl enable ai-service
+sudo systemctl start ai-service
+```
+
+Now your model API auto-restarts on boot or crash.
+
+All of this gives your dev team real control over deployment, monitoring, and scaling without relying on no-code platforms.
 
 ---
 
-## 🧪 Microproject
+## 📦 Microproject: Ship Your AI Microservice
 
-Build a mini “Internal Wiki Bot” using:
-- A `.txt` or `.pdf` with company info
-- LangChain + FAISS (or raw Python + OpenAI embeddings)
-- Ask 3–5 questions and test retrieval accuracy
+Take your `/predict` FastAPI app and:
 
-**Bonus**: Add LangFlow to visualize your pipeline.
+✅ Dockerize it with a proper `Dockerfile`  
+✅ Add a `/health` route  
+✅ Add structured logging middleware  
+✅ Deploy it to a VM or on-prem instance
+
+### Bonus:
+- Add a `/version` route with commit hash or model version  
+- Use a `.env` file to manage secrets locally  
+- Add an HTTP header for tracing requests across systems
 
 ---
 
-## 🔜 Next: Agents & Tool Use
+## 🧠 Reflection Questions
 
-Now that your LLM can read — can it also _act_?
+1. What’s the difference between running locally and deploying a container?
+2. What would you monitor in your deployed AI system?
+3. What happens if your API crashes in the middle of the night?
 
-Next chapter: turning LLMs into agents that reason, plan, and use tools like APIs, calculators, or even Python code. Let’s build a thinking assistant.
+---
+
+## ✅ Best Practices for Deployable AI Services
+
+✅ Always expose `/health` for infra tools  
+✅ Log requests in structured format (JSON)  
+✅ Use a real HTTP server (`uvicorn`, `gunicorn`) not `app.run()`  
+✅ Don’t bundle secrets in your code — use env vars  
+✅ Think about versioning early — models, APIs, logic  
+✅ Deploy from clean repos — not random zip files  
+✅ Make it easy for teammates to run your service
+
+> 🚀 If someone else can deploy it without you, you’ve done it right.
+
+---
+
+## ✅ You Now Know:
+
+✅ How to package and deploy your model as a real microservice  
+✅ How to log and monitor it like a backend engineer  
+✅ How to expose health, status, and versioning endpoints  
+✅ How to move from local hacks to production-grade AI infrastructure

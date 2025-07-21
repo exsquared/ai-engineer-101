@@ -1,313 +1,190 @@
-# Let LLMs Act, Not Just Answer  
-### _Agents, Reasoning Loops, and Tool Use_
+# Let LLMs Read Your Data  
+### _Agents, Embeddings, Retrieval, and Context Injection_
 
 ---
 
 ## 🧭 Why Are We Here?
 
-Up until now, we’ve used LLMs like really smart parrots.
+Imagine hiring a genius intern with perfect grammar, creativity, and logic skills — but no memory of your company, products, or documentation.
 
-You feed them some context.  
-They give you a great answer.  
-That’s it. One-shot, one-turn.
+That’s your LLM.
 
-But what if we want more?
+They’re trained on the internet, not your internal wikis, support tickets, or sales PDFs. So when you ask, “What’s the refund policy for product X?”, they hallucinate, guessing wildly.
 
-> “Search Google for flight options, check the weather, compare it to my calendar, and suggest the best time to travel.”
+**What if you could just _give them your docs_ and have them answer smartly — without retraining?**
 
-This isn’t just Q&A.  
-This is **multi-step reasoning + tool use**.  
-You don’t want the model to just answer.  
-You want it to **think**, **decide**, and **act**.
-
-That’s the world of **agents**.
+That’s the magic of **Retrieval-Augmented Generation (RAG)**.
 
 ---
 
-## 🤖 What Is an Agent?
+## 🧠 Core Idea (No Math Needed)
 
-An **Agent** is an LLM system that:
-1. Reads the user's intent  
-2. Plans a series of actions  
-3. Uses tools (APIs, functions, calculators, etc.)  
-4. Loops until it reaches a final answer
+> **RAG = Search + Smart Text Generation**
 
-Think of it like:
-- The LLM is the brain  
-- The tools are its hands  
-- The agent system is the “nervous system” orchestrating decisions
+Instead of asking the LLM to answer from scratch, we:
+1. **Search for relevant content** from your custom data (PDFs, docs, pages).
+2. **Inject** that content into the prompt.
+3. Let the **LLM generate** a grounded, useful response using that real data.
 
----
-
-## 🧠 Real-World Analogy
-
-You: “What’s the cheapest non-stop flight from NYC to SF next Friday under 5 hours?”
-
-Your intern:
-1. Opens Google Flights  
-2. Applies filters  
-3. Looks at durations  
-4. Picks the cheapest one  
-5. Summarizes it for you
-
-They don’t know the answer _a priori_ — they **figure it out by taking actions**.
+We’re building a system that can:
+- Ingest and understand custom documents (with _embeddings_)
+- Find relevant chunks when asked a question (with _vector search_)
+- Feed those chunks into the LLM (via _context injection_)
 
 ---
 
-## 🔁 Agent Loop in Plain English
+## 🛠️ New Concepts You’ll Meet
 
-Every time the agent thinks:
-1. **Observe**: What’s the current task or question?  
-2. **Think**: What tool do I need?  
-3. **Act**: Use a tool (e.g., search API, calculator)  
-4. **Read result**: Did it solve the task?  
-5. **Repeat**: Until it reaches an answer
-
-This is called a **Reasoning-Acting Loop**.
-
----
-
-## 🧰 Tools You Can Give an Agent
-
-| Tool Type     | Example                 |
-|---------------|-------------------------|
-| Calculator    | `"4 * 17"`              |
-| Python code   | `"Sort by date"`        |
-| Web search    | `"Scrape this page"`    |
-| File reader   | `"Read the invoice PDF"`|
-| Custom API    | `"GET /user/profile"`   |
-
-Each tool is just a **function** the agent is allowed to call.
+| Concept | What It Means | Tool |
+|--------|----------------|------|
+| **Embedding** | Turn a sentence into a list of numbers to compare meaning | `OpenAI`, `sentence-transformers` |
+| **Vector store** | Search based on meaning, not just keywords | `FAISS`, `Chroma`, `Pinecone` |
+| **Context injection** | Add relevant data directly into your prompt | Native to any LLM |
+| **LangChain** | Glue toolkit to combine LLMs + retrievers + APIs | `LangChain` |
+| **LangFlow** | Drag-and-drop GUI to visualize LangChain flows | `LangFlow` |
 
 ---
 
-## 🛠️ Frameworks That Help
+## 🧪 Real-World Analogy
 
-| Framework             | Purpose                                    |
-|------------------------|--------------------------------------------|
-| **LangChain**          | Build agents from pre-built toolkits       |
-| **OpenAI Function Calling** | Let GPT “choose” and call your functions |
-| **CrewAI / AutoGen**   | Multi-agent orchestration (advanced)       |
+You: “What’s our refund policy for product X?”
 
-We’ll focus on **LangChain + OpenAI Function Calling** for now.
+Your assistant:
+- Searches the docs
+- Finds the right paragraph
+- Summarizes it:  
+  > “Customers have 30 days to request a refund…”
 
----
-
-## ⚙️ How Function Calling Works (OpenAI)
-
-1. You define functions you want to expose  
-2. The LLM is told about their names and parameters  
-3. It chooses one and sends a structured JSON payload  
-4. Your code runs the function and feeds the result back  
-5. The model continues reasoning with the new info
-
-> The model “thinks” and _asks_ to use tools — your code runs the tool for it.
+That’s a retrieval-augmented response.
 
 ---
 
-## 💻 Let’s Build a Simple Agent
+## 💻 Let’s Build One
 
-### 🧮 Step 1: Define Tools
+### Step 1: Load and Split Documents
 
 ```python
-from langchain.agents import tool
+from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-@tool
-def get_exchange_rate(currency: str) -> str:
-    if currency == "USD":
-        return "1 USD = 83 INR"
-    return f"No data for {currency}"
+loader = TextLoader("refund_policy.txt")
+docs = loader.load()
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+chunks = splitter.split_documents(docs)
 ```
 
 ---
 
-### 🧠 Step 2: Create the Agent
+### Step 2: Embed and Store
 
 ```python
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
+
+embeddings = OpenAIEmbeddings()
+vectorstore = FAISS.from_documents(chunks, embeddings)
+```
+
+---
+
+### Step 3: Retrieve and Inject Context
+
+```python
+from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
-from langchain.agents import initialize_agent, AgentType
 
-llm = ChatOpenAI(model="gpt-4")
-
-agent = initialize_agent(
-    tools=[get_exchange_rate],
+llm = ChatOpenAI()
+qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
-    agent=AgentType.OPENAI_FUNCTIONS,
-    verbose=True,
+    retriever=vectorstore.as_retriever()
 )
 
-agent.run("What is the exchange rate for USD?")
+qa_chain.run("What’s the refund policy?")
 ```
 
----
-
-### 🔍 What’s Happening Under the Hood?
-
-1. The LLM reads your query  
-2. It decides to call `get_exchange_rate()`  
-3. It sends the input `"USD"`  
-4. Your Python function runs  
-5. The result is injected back into the prompt  
-6. The LLM completes the answer using the result
-
-You didn’t hardcode any logic — the LLM figured it out.
+✅ Done: you’ve created a semantic search → context injection → answer pipeline.
 
 ---
 
-## 🧠 Agents vs RAG
+## 🔁 RAG vs Fine-Tuning
 
-| Use Case        | RAG                            | Agent                                 |
-|------------------|----------------------------------|----------------------------------------|
-| Need doc info?   | ✅ Use vector search             | ➖ Only if you combine with RAG         |
-| Need to act?     | ➖ No tool usage                 | ✅ Call APIs, calculate, fetch, etc.    |
-| Need both?       | ✅ Combine RAG + Agents          | ✅ Smartest choice                      |
-
----
-
-## ⚠️ Gotchas & Design Tips
-
-- **Tool reliability** matters — bad APIs = broken agents  
-- **Loop limits** prevent infinite reasoning  
-- **Logging** is essential — observe the agent’s thought chain  
-- **Prompting still matters** — agents need structure and constraints
+| Strategy | Use When... |
+|----------|-------------|
+| **RAG** | You want dynamic, updatable, explainable Q&A |
+| **Fine-tuning** | You want fixed tone or style, not factual grounding |
+| **Hybrid** | You want smart retrieval and custom behavior |
 
 ---
 
-## 🔬 What Advanced Agents Can Do (Preview)
+## 🧵 Behind the Scenes
 
-- Chain tools together  
-- Maintain short-term memory  
-- Work as multiple agents with roles  
-- Execute plans from scratch (planner/executor)  
-- Monitor their own uncertainty and retry
+When a question comes in:
+1. It’s converted to an embedding (like a “meaning vector”)
+2. You find the closest doc chunks in the vector store
+3. You build a prompt like:
+
+```
+Use this info to answer:
+[chunk 1]
+[chunk 2]
+
+Q: What’s the refund window?
+```
+
+4. The model responds — **grounded in your data**
 
 ---
 
-## 📦 Patterns Emerging from Agents
+## 🔍 LangFlow: Optional GUI
+
+If you want to **drag-and-drop** your pipeline visually, try [LangFlow](https://github.com/logspace-ai/langflow).  
+It works like Figma for LLM systems.
+
+You can:
+- Add loaders, retrievers, prompt templates, LLMs
+- Connect and run chains
+- Export working code
+
+---
+
+## 🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)
 
 ### 🔹 Toolformer
 
-Models trained not just to generate text — but to **learn when and how to use tools** during pretraining.  
-Instead of hard-coding tool use, Toolformer _predicts_ when a tool is needed and automatically integrates API usage into its generation.  
-Great for automating complex decision + data workflows.
+A model trained to decide **when to use a tool** (like a retriever or calculator) — and to learn that during pretraining.  
+You can simulate it with `[TOOL:...]` markers and custom execution middleware.
 
 ### 🔹 ReAct
 
-Short for **Reasoning + Acting**. A prompt strategy where the model moves step by step:
-
-```
-Thought: I need to check the current exchange rate  
-Action: get_exchange_rate("USD")  
-Observation: 1 USD = 83 INR  
-Thought: Now I can respond  
-Answer: The rate is 83 INR
-```
-
-ReAct is helpful when you want **transparent, debuggable steps** and looping behavior.
+Chain of “Reason → Act → Observe → Reason”.  
+Useful for agents deciding what to retrieve, when, and how to verify.
 
 ### 🔹 Planner-Executor
 
-One LLM **plans the high-level steps**, another **executes** them.  
-For example:
-- Planner: “Step 1: Get exchange rate. Step 2: Calculate budget. Step 3: Suggest destination.”  
-- Executor: Runs each step using tools or APIs.
-
-This pattern:
-- Separates concerns  
-- Enables modular debugging  
-- Scales better in complex tasks
+One LLM plans steps. Another (or the same) executes them using retrieval, tool calls, or memory.
 
 ---
 
-## 🧭 What’s Coming Next: Think Beyond the Model
+## 📦 Microproject: Build Your Own Document-Aware Assistant
 
-Now that you’ve mastered retrieval and reasoning, the next frontier is **system-level intelligence**. Here are key architecture patterns you'll encounter:
+1. Load a `.txt` or `.pdf` file
+2. Chunk, embed, and store it in FAISS
+3. Write a FastAPI endpoint `/ask`
+4. Inject relevant chunks into the prompt
+5. Return the grounded answer
+6. Add a fallback if no chunks are confidently found
 
-### 🧱 MCP — Model Context Protocol
-
-A **spec for how you feed models information**. MCP defines:
-- What context types a model should receive (e.g. user history, environment, goals)
-- How that context is prioritized, formatted, and trimmed to fit the token budget
-- How to trace which context influenced which outputs
-
-It’s like OpenAPI — but for prompts.
-
-### 🔁 A2A — Agent-to-Agent Communication
-
-Just like services talk via APIs, agents can talk via language.
-- A Planner Agent can send instructions to Worker Agents
-- Agents with different capabilities or memory scopes can cooperate
-
-You’ll learn how to **route subtasks**, track ownership, and design protocols between agents.
-
-### 🧠 Context Engineering
-
-LLMs are context-hungry. The trick isn’t just more tokens — it’s **better tokens**.
-
-You’ll learn:
-- How to select the right document chunks
-- How to rank/filter based on user intent
-- How to format context (inline vs. structured)
-
-This is where **retrieval meets UX meets architecture**.
+Bonus:
+- Add a LangFlow UI
+- Track token usage
+- Stream the response
 
 ---
 
-## 🧠 Recap: You Now Know…
+## ✅ You Now Know:
 
-✅ What agents are and why they matter  
-✅ How tool-calling works using function APIs  
-✅ How the reasoning-act loop works  
-✅ How to build agents with LangChain  
-✅ When to use agents vs RAG  
-✅ Common agent patterns  
-✅ What’s coming next at the system level
-
----
-
-## ❓Reflection Questions
-
-1. When should you prefer RAG over agents? When should you combine both?  
-2. What real-world apps in your org could benefit from tool-calling?  
-3. What risks should you monitor in agent loops and tool chaining?  
-4. How would you explain the ReAct pattern to a teammate?  
-5. How might MCP help your engineering team make LLM use more robust and auditable?
-
----
-
-## 🧪 Mini Quiz
-
-**Q1.** What does an agent do that a normal LLM call doesn’t?  
-✅ c) Plans and calls tools
-
-**Q2.** Why are function-calling APIs safer than raw prompting?  
-✅ b) You get structured outputs
-
----
-
-## 🧪 Microproject
-
-Build a **Currency & Travel Advisor Agent**:
-- Ask the user: “What currency do you want to check?”  
-- Use `get_exchange_rate()` to respond  
-- Add another tool: `get_travel_advice(country)`  
-- Chain them: currency → visa → safety tips  
-- Log the agent’s full reasoning steps
-
----
-
-## 🎉 Core Track Finale: What You’ve Built
-
-You’ve now created:
-- A confident classifier  
-- A doc-aware assistant (RAG)  
-- A tool-using agent  
-- And built the foundation of **real LLM applications**
-
----
-
-## 🔜 Next Chapter: Let the Model See
-
-Next, you’ll explore **GPT-4V and multimodal models** — where LLMs can read images, screenshots, graphs, and more.
-
-Welcome to the GenAI Playground.
+✅ What RAG is and how it works  
+✅ Why embeddings and vector search matter  
+✅ How to use LangChain and FAISS  
+✅ Where this fits into real-world assistants and agents  
+✅ How to build a full RAG loop — from data to prompt to user
