@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project_3/">
+        <link rel="prev" href="../chapter_8a/">
       
       
-        <link rel="next" href="../chapter_10/">
+        <link rel="next" href="../chapter_8c/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 9 - Serving Your AI - AI Engineering 101</title>
+        <title>Chapter 8b - Prompting in Action - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-your-ai-fastapi-for-real-world-integration" class="md-skip">
+        <a href="#prompting-in-action-llms-as-classifiers-transformers-and-smart-assistants" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 9 - Serving Your AI
+              Chapter 8b - Prompting in Action
             
           </span>
         </div>
@@ -455,10 +455,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_8b/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8b - Prompting in Action
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -469,6 +491,182 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌉 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-big-idea-prompts-are-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 The Big Idea: Prompts Are Interfaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-recipe-structure-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✍️ Prompt Recipe: Structure First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-use-cases-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Prompt Use Cases in Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Prompt Use Cases in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟩 1. Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-summarization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 2. Summarization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tone-shifting-rewriting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟨 3. Tone Shifting / Rewriting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-structured-extraction-entities-intent-urgency" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟥 4. Structured Extraction (Entities, Intent, Urgency)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-template-reusable-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Prompt Template = Reusable Component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-prompt-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 Debugging Prompt Failures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Debugging Prompt Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-project-smart-llm-triage-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 Mini Project: Smart LLM Triage Assistant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Exit Outcome
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -521,32 +719,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
         
   
   
@@ -557,161 +733,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-are-we-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌉 Why Are We Here?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Why FastAPI?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -893,108 +914,129 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#the-big-idea-prompts-are-interfaces" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      🧠 The Big Idea: Prompts Are Interfaces
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#prompt-recipe-structure-first" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      ✍️ Prompt Recipe: Structure First
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#prompt-use-cases-in-action" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🧪 Prompt Use Cases in Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Prompt Use Cases in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟩 1. Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-summarization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟦 2. Summarization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tone-shifting-rewriting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟨 3. Tone Shifting / Rewriting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-structured-extraction-entities-intent-urgency" class="md-nav__link">
+    <span class="md-ellipsis">
+      🟥 4. Structured Extraction (Entities, Intent, Urgency)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-template-reusable-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Prompt Template = Reusable Component
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#debugging-prompt-failures" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      🐛 Debugging Prompt Failures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Debugging Prompt Failures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Problems:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-project-smart-llm-triage-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 Mini Project: Smart LLM Triage Assistant
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+  <a href="#reflection-corner" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
+      💬 Reflection Corner
     </span>
   </a>
   
@@ -1025,177 +1067,157 @@
 
 
 
-<h1 id="serving-your-ai-fastapi-for-real-world-integration">Serving Your AI — FastAPI for Real-World Integration</h1>
+<h1 id="prompting-in-action-llms-as-classifiers-transformers-and-smart-assistants">Prompting in Action — LLMs as Classifiers, Transformers, and Smart Assistants</h1>
 <hr />
 <h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
-<p>You’ve now built:</p>
-<ul>
-<li>Classical ML models</li>
-<li>Rule + logic pipelines</li>
-<li>LLM-powered classifiers, extractors, and transformers</li>
-</ul>
-<p>It’s time to ship. Because a model that lives in a notebook… isn’t a product.</p>
-<p>This chapter shows you how to turn your hybrid system — models + rules + prompts — into a real, usable API using FastAPI — with logging, fallbacks, caching, versioning, and testability.</p>
+<p>In Chapter 8A, you learned how language models actually work — token by token, prediction by prediction. You also saw how their behavior is shaped by structure: context windows, embeddings, and prompts.</p>
+<p>Now it’s time to put that knowledge into action.</p>
+<p>This chapter is about <strong>how to talk to LLMs</strong> so they do what you want. Whether it’s classifying a message, rewriting text, or extracting structured data — the key is great prompting.</p>
 <hr />
 <h2 id="goal">🎯 Goal</h2>
+<p>By the end of this chapter, you’ll be able to:
+- Write prompts that produce consistent, structured results
+- Use LLMs for classification, summarization, tone-shifting, and extraction
+- Debug and refine prompt behavior
+- Build reusable prompt templates that plug into real systems</p>
+<hr />
+<h2 id="the-big-idea-prompts-are-interfaces">🧠 The Big Idea: Prompts Are Interfaces</h2>
+<p>Prompts are not one-off strings. They’re <strong>contracts</strong>:
+- Between you and the model
+- Between your system and the response
+- Between your logic and what downstream code expects</p>
+<blockquote>
+<p>A good prompt = consistent output + minimal surprises</p>
+</blockquote>
+<hr />
+<h2 id="prompt-recipe-structure-first">✍️ Prompt Recipe: Structure First</h2>
+<p>When prompting for apps, you want:
+- Determinism
+- Parsability (JSON or structured text)
+- Clarity of task</p>
+<p>Here’s a best-practice recipe:</p>
+<pre><code class="language-python">SYSTEM_PROMPT = &quot;You are a helpful and structured AI assistant. Always respond in JSON.&quot;
+
+USER_PROMPT = &quot;&quot;&quot;
+Classify the following support message:
+- Choose one: Billing, Technical, Feedback, Other
+- Respond in JSON using a single key: category
+
+Message: &quot;I was charged twice for my subscription.&quot;
+&quot;&quot;&quot;
+</code></pre>
+<hr />
+<h2 id="prompt-use-cases-in-action">🧪 Prompt Use Cases in Action</h2>
+<h3 id="1-classification">🟩 1. Classification</h3>
+<pre><code class="language-text">Classify this message as one of:
+- Billing
+- Technical
+- Feedback
+- Other
+
+Message: “App keeps crashing when I open it.”
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-json">{ &quot;category&quot;: &quot;Technical&quot; }
+</code></pre>
+<hr />
+<h3 id="2-summarization">🟦 2. Summarization</h3>
+<pre><code class="language-text">Summarize this in one sentence:
+“I can’t log in after resetting my password. Keeps saying ‘invalid credentials.’”
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">User can’t log in after password reset due to invalid credential errors.
+</code></pre>
+<hr />
+<h3 id="3-tone-shifting-rewriting">🟨 3. Tone Shifting / Rewriting</h3>
+<pre><code class="language-text">Rewrite the following in a friendly, casual tone:
+
+“We regret to inform you that we cannot approve your request at this time.”
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">Sorry, but we can’t approve that request right now.
+</code></pre>
+<hr />
+<h3 id="4-structured-extraction-entities-intent-urgency">🟥 4. Structured Extraction (Entities, Intent, Urgency)</h3>
+<pre><code class="language-text">Extract the following fields from this message:
+- intent
+- urgency (low, medium, high)
+- product
+
+Message: “I was double charged for my Premium plan. Please fix this today!”
+
+Respond in JSON only.
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-json">{
+  &quot;intent&quot;: &quot;billing_issue&quot;,
+  &quot;urgency&quot;: &quot;high&quot;,
+  &quot;product&quot;: &quot;Premium plan&quot;
+}
+</code></pre>
+<hr />
+<h2 id="prompt-template-reusable-component">🧩 Prompt Template = Reusable Component</h2>
+<p>Rather than hardcoding prompts everywhere, define templates with:
+- Parameters (<code>{message}</code>)
+- Examples (few-shot)
+- Format enforcement</p>
+<pre><code class="language-python">def classify_message(message):
+    return f&quot;&quot;&quot;
+Classify the message: '{message}'
+
+Choose from:
+- Billing
+- Technical
+- Feedback
+- Other
+
+Respond in JSON.
+&quot;&quot;&quot;
+</code></pre>
+<p>Use the same template in tests, logs, and services.</p>
+<hr />
+<h2 id="debugging-prompt-failures">🐛 Debugging Prompt Failures</h2>
+<h3 id="common-problems">Common Problems:</h3>
 <ul>
-<li>Serve your hybrid AI logic as a versioned web API</li>
-<li>Apply engineering best practices (logging, caching, error handling)</li>
-<li>Prepare your AI component for team use and production deployments</li>
+<li>Output format changes randomly</li>
+<li>LLM “explains” instead of responding in JSON</li>
+<li>Hallucinated fields or incorrect keys</li>
+</ul>
+<h3 id="fixes">Fixes:</h3>
+<ul>
+<li>Use system prompts for behavioral control</li>
+<li>Set temperature = 0.2 for deterministic outputs</li>
+<li>Use “ONLY respond in JSON” language (repeat if needed)</li>
+<li>Add output examples as few-shot anchor</li>
 </ul>
 <hr />
-<h2 id="why-fastapi">🧠 Why FastAPI?</h2>
-<p>FastAPI is a developer-friendly web framework for building modern Python APIs:</p>
+<h2 id="mini-project-smart-llm-triage-assistant">🎮 Mini Project: Smart LLM Triage Assistant</h2>
+<p>Build a function that:
+1. Classifies a message into one of 4 categories
+2. Extracts urgency
+3. Returns JSON with:
+   - <code>category</code>
+   - <code>urgency</code>
+   - <code>needs_review</code> flag if confidence is low
+   - <code>explanation</code> field (optional chain-of-thought)</p>
+<p>Bonus:
+- Let the user query: “Why did you classify it that way?”</p>
+<hr />
+<h2 id="reflection-corner">💬 Reflection Corner</h2>
 <ul>
-<li>✅ Pydantic-powered request validation</li>
-<li>✅ Built-in OpenAPI docs at <code>/docs</code></li>
-<li>✅ Type hints + editor autocomplete</li>
-<li>✅ Async-ready for future scaling</li>
+<li>What prompt structures worked best for you?</li>
+<li>When would you use an LLM instead of a trained classifier?</li>
+<li>How might you productionize these prompts as a service?</li>
 </ul>
-<p>Perfect for wrapping LLM pipelines into testable, monitorable services.</p>
-<hr />
-<h2 id="recommended-project-structure">🗂️ Recommended Project Structure</h2>
-<pre><code>/ai_service
-├── main.py               # FastAPI entrypoint
-├── api/                  # Routes and endpoints
-│   └── routes.py
-├── services/             # Your ML / LLM logic
-│   └── triage_pipeline.py
-├── schemas/              # Request/response models
-│   └── models.py
-├── config.py             # App settings and secrets
-└── tests/                # Unit + integration tests
-</code></pre>
-<hr />
-<h2 id="inference-logic-servicestriage_pipelinepy">⚙️ Inference Logic (services/triage_pipeline.py)</h2>
-<pre><code class="language-python">def triage_message(message):
-    if not message or len(message.strip()) &lt; 5:
-        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty message&quot;}
-
-    if &quot;vip&quot; in message.lower():
-        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
-
-    try:
-        label = call_llm_classifier(message)
-        urgency = extract_urgency(message)
-    except Exception as e:
-        return {&quot;action&quot;: &quot;error&quot;, &quot;reason&quot;: str(e)}
-
-    return {
-        &quot;action&quot;: &quot;route&quot;,
-        &quot;category&quot;: label,
-        &quot;urgency&quot;: urgency
-    }
-</code></pre>
-<hr />
-<h2 id="pydantic-schemas-schemasmodelspy">🧾 Pydantic Schemas (schemas/models.py)</h2>
-<pre><code class="language-python">from pydantic import BaseModel
-
-class TriageRequest(BaseModel):
-    message: str
-
-class TriageResponse(BaseModel):
-    action: str
-    category: str | None = None
-    urgency: str | None = None
-    reason: str | None = None
-</code></pre>
-<hr />
-<h2 id="fastapi-endpoint-apiroutespy">🚀 FastAPI Endpoint (api/routes.py)</h2>
-<pre><code class="language-python">from fastapi import APIRouter
-from schemas.models import TriageRequest, TriageResponse
-from services.triage_pipeline import triage_message
-import logging
-
-router = APIRouter()
-
-@router.post(&quot;/v1/triage&quot;, response_model=TriageResponse)
-def handle_triage(req: TriageRequest):
-    logging.info(f&quot;Input: {req.message}&quot;)
-    result = triage_message(req.message)
-    logging.info(f&quot;Result: {result}&quot;)
-    return result
-</code></pre>
-<hr />
-<h2 id="entrypoint-mainpy">📦 Entrypoint (main.py)</h2>
-<pre><code class="language-python">from fastapi import FastAPI
-from api.routes import router
-import uvicorn
-import logging
-
-app = FastAPI()
-app.include_router(router)
-
-logging.basicConfig(level=logging.INFO)
-
-if __name__ == &quot;__main__&quot;:
-    uvicorn.run(&quot;main:app&quot;, host=&quot;0.0.0.0&quot;, port=8000, reload=True)
-</code></pre>
-<p>Test in your browser at: <code>http://localhost:8000/docs</code></p>
-<hr />
-<h2 id="caching-performance-tips">💡 Caching &amp; Performance Tips</h2>
-<ul>
-<li>Cache repeat queries using <code>functools.lru_cache</code> or Redis</li>
-<li>Cache embeddings or LLM responses to save tokens</li>
-</ul>
-<pre><code class="language-python">from functools import lru_cache
-
-@lru_cache(maxsize=128)
-def get_label(message):
-    return call_llm_classifier(message)
-</code></pre>
-<hr />
-<h2 id="error-handling-fallbacks">🛡️ Error Handling + Fallbacks</h2>
-<ul>
-<li>Always catch LLM exceptions</li>
-<li>Return consistent schema with <code>action: "error"</code></li>
-<li>Add retries using <code>tenacity</code> if needed</li>
-</ul>
-<hr />
-<h2 id="api-versioning">🔐 API Versioning</h2>
-<ul>
-<li>Use route prefixes like <code>/v1/</code> and <code>/v2/</code></li>
-<li>Add <code>/version</code> endpoint with logic details</li>
-</ul>
-<hr />
-<h2 id="logging-best-practices">📊 Logging Best Practices</h2>
-<ul>
-<li>Log: request ID, model, token usage, latency</li>
-<li>Don’t log raw PII unless masked</li>
-<li>Use <code>logging</code> levels to control output</li>
-</ul>
-<hr />
-<h2 id="health-and-metadata-endpoints">✅ Health and Metadata Endpoints</h2>
-<pre><code class="language-python">@app.get(&quot;/health&quot;)
-def health():
-    return {&quot;status&quot;: &quot;ok&quot;}
-
-@app.get(&quot;/version&quot;)
-def version():
-    return {&quot;version&quot;: &quot;1.0.1&quot;, &quot;model&quot;: &quot;gpt-4&quot;, &quot;llm_strategy&quot;: &quot;few-shot&quot;}
-</code></pre>
-<hr />
-<h2 id="unit-tests-with-fastapi">🔬 Unit Tests with FastAPI</h2>
-<pre><code class="language-python">from fastapi.testclient import TestClient
-from main import app
-
-client = TestClient(app)
-
-def test_triage():
-    res = client.post(&quot;/v1/triage&quot;, json={&quot;message&quot;: &quot;I was charged twice&quot;})
-    assert res.status_code == 200
-    assert &quot;category&quot; in res.json()
-</code></pre>
 <hr />
 <h2 id="exit-outcome">✅ Exit Outcome</h2>
-<p>You now:</p>
-<ul>
-<li>Can serve your LLM-powered logic via FastAPI</li>
-<li>Understand logging, testing, versioning, and caching</li>
-<li>Have all the tools to turn AI from notebook into deployable product</li>
-</ul>
+<p>You now:
+- Can craft practical, structured prompts for real use cases
+- Know how to turn LLMs into useful utilities
+- Understand how to debug and standardize output
+- Have patterns you can reuse across your apps</p>
 <blockquote>
-<p>Next: Let’s scale this with observability, queues, and containers.</p>
+<p>In the next chapter, we’ll explore advanced prompting strategies like few-shot, chain-of-thought, and intent detection. Let’s level up!</p>
 </blockquote>
 
 

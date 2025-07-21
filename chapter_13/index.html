@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project_3/">
+        <link rel="prev" href="./">
       
       
-        <link rel="next" href="../chapter_10/">
+        <link rel="next" href="../chapter_14/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 9 - Serving Your AI - AI Engineering 101</title>
+        <title>Chapter 13 - GenAI Playground - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-your-ai-fastapi-for-real-world-integration" class="md-skip">
+        <a href="#genai-playground" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 9 - Serving Your AI
+              Chapter 13 - GenAI Playground
             
           </span>
         </div>
@@ -521,32 +521,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
         
   
   
@@ -557,161 +535,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-are-we-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌉 Why Are We Here?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Why FastAPI?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -786,10 +609,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -800,6 +645,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-llms-can-see-draw-and-understand-the-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      When LLMs Can See, Draw, and Understand the World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-multimodal-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Is a Multimodal Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-models-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Key Models and Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-4v-seeing-and-understanding-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ GPT-4V: Seeing and Understanding Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dalle-3-generating-images-from-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 DALL·E 3: Generating Images from Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself-vision-api-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Try It Yourself (Vision API Example)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Where This Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-intuition-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 How It Works (Intuition Only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini Quiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Microproject
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -808,10 +790,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -822,6 +826,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-llms-can-see-draw-and-understand-the-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      When LLMs Can See, Draw, and Understand the World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-multimodal-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Is a Multimodal Model?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-models-and-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Key Models and Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-4v-seeing-and-understanding-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ GPT-4V: Seeing and Understanding Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dalle-3-generating-images-from-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 DALL·E 3: Generating Images from Text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself-vision-api-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Try It Yourself (Vision API Example)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Where This Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works-intuition-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 How It Works (Intuition Only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini Quiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Microproject
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Recap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -875,135 +1016,117 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#when-llms-can-see-draw-and-understand-the-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      When LLMs Can See, Draw, and Understand the World
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
-      🌉 Why Are We Here?
+      🧭 Why Are We Here?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
+  <a href="#what-is-a-multimodal-model" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Goal
+      🧠 What Is a Multimodal Model?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#key-models-and-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      🔍 Key Models and Tools
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#gpt-4v-seeing-and-understanding-images" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      🖼️ GPT-4V: Seeing and Understanding Images
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#dalle-3-generating-images-from-text" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🎨 DALL·E 3: Generating Images from Text
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#try-it-yourself-vision-api-example" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      🧪 Try It Yourself (Vision API Example)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+  <a href="#where-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
+      🧰 Where This Matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
+  <a href="#how-it-works-intuition-only" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
+      🧠 How It Works (Intuition Only)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
+      ❓Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
+  <a href="#mini-quiz" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
+      🧪 Mini Quiz
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
+  <a href="#microproject" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 API Versioning
+      🧪 Microproject
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
+  <a href="#recap" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
+      ✅ Recap
     </span>
   </a>
   
@@ -1025,178 +1148,167 @@
 
 
 
-<h1 id="serving-your-ai-fastapi-for-real-world-integration">Serving Your AI — FastAPI for Real-World Integration</h1>
+<h1 id="genai-playground">GenAI Playground</h1>
+<h3 id="when-llms-can-see-draw-and-understand-the-world"><em>When LLMs Can See, Draw, and Understand the World</em></h3>
 <hr />
-<h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
-<p>You’ve now built:</p>
-<ul>
-<li>Classical ML models</li>
-<li>Rule + logic pipelines</li>
-<li>LLM-powered classifiers, extractors, and transformers</li>
-</ul>
-<p>It’s time to ship. Because a model that lives in a notebook… isn’t a product.</p>
-<p>This chapter shows you how to turn your hybrid system — models + rules + prompts — into a real, usable API using FastAPI — with logging, fallbacks, caching, versioning, and testability.</p>
+<h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
+<p>Until now, we treated LLMs as text-only geniuses. But the real world isn’t just text.<br />
+What if our LLMs could also see images, generate pictures, and understand screenshots?</p>
+<p>Welcome to the multimodal revolution.</p>
 <hr />
-<h2 id="goal">🎯 Goal</h2>
+<h2 id="what-is-a-multimodal-model">🧠 What Is a Multimodal Model?</h2>
+<p>A multimodal model can process more than one type of input or output — like text, images, audio, or video.</p>
+<p>For this chapter, we focus on:</p>
 <ul>
-<li>Serve your hybrid AI logic as a versioned web API</li>
-<li>Apply engineering best practices (logging, caching, error handling)</li>
-<li>Prepare your AI component for team use and production deployments</li>
+<li><strong>Image + Text input</strong> → GPT-4V</li>
+<li><strong>Text → Image output</strong> → DALL·E 3</li>
 </ul>
 <hr />
-<h2 id="why-fastapi">🧠 Why FastAPI?</h2>
-<p>FastAPI is a developer-friendly web framework for building modern Python APIs:</p>
+<h2 id="key-models-and-tools">🔍 Key Models and Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool / Model</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPT-4V</strong></td>
+<td>Reads and understands images (vision + language)</td>
+</tr>
+<tr>
+<td><strong>DALL·E 3</strong></td>
+<td>Generates high-quality images from text</td>
+</tr>
+<tr>
+<td><strong>CLIP</strong></td>
+<td>Links image and text embeddings (used for image search)</td>
+</tr>
+<tr>
+<td><strong>BLIP</strong></td>
+<td>Generates captions and answers questions from images</td>
+</tr>
+<tr>
+<td><strong>VLM</strong></td>
+<td>General term for Vision-Language Models</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gpt-4v-seeing-and-understanding-images">🖼️ GPT-4V: Seeing and Understanding Images</h2>
+<p>Example prompts:</p>
 <ul>
-<li>✅ Pydantic-powered request validation</li>
-<li>✅ Built-in OpenAPI docs at <code>/docs</code></li>
-<li>✅ Type hints + editor autocomplete</li>
-<li>✅ Async-ready for future scaling</li>
+<li>“What’s shown in this chart?”  </li>
+<li>“Translate this handwritten note”  </li>
+<li>“Why is my code build failing in this screenshot?”</li>
 </ul>
-<p>Perfect for wrapping LLM pipelines into testable, monitorable services.</p>
-<hr />
-<h2 id="recommended-project-structure">🗂️ Recommended Project Structure</h2>
-<pre><code>/ai_service
-├── main.py               # FastAPI entrypoint
-├── api/                  # Routes and endpoints
-│   └── routes.py
-├── services/             # Your ML / LLM logic
-│   └── triage_pipeline.py
-├── schemas/              # Request/response models
-│   └── models.py
-├── config.py             # App settings and secrets
-└── tests/                # Unit + integration tests
-</code></pre>
-<hr />
-<h2 id="inference-logic-servicestriage_pipelinepy">⚙️ Inference Logic (services/triage_pipeline.py)</h2>
-<pre><code class="language-python">def triage_message(message):
-    if not message or len(message.strip()) &lt; 5:
-        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty message&quot;}
-
-    if &quot;vip&quot; in message.lower():
-        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
-
-    try:
-        label = call_llm_classifier(message)
-        urgency = extract_urgency(message)
-    except Exception as e:
-        return {&quot;action&quot;: &quot;error&quot;, &quot;reason&quot;: str(e)}
-
-    return {
-        &quot;action&quot;: &quot;route&quot;,
-        &quot;category&quot;: label,
-        &quot;urgency&quot;: urgency
-    }
-</code></pre>
-<hr />
-<h2 id="pydantic-schemas-schemasmodelspy">🧾 Pydantic Schemas (schemas/models.py)</h2>
-<pre><code class="language-python">from pydantic import BaseModel
-
-class TriageRequest(BaseModel):
-    message: str
-
-class TriageResponse(BaseModel):
-    action: str
-    category: str | None = None
-    urgency: str | None = None
-    reason: str | None = None
-</code></pre>
-<hr />
-<h2 id="fastapi-endpoint-apiroutespy">🚀 FastAPI Endpoint (api/routes.py)</h2>
-<pre><code class="language-python">from fastapi import APIRouter
-from schemas.models import TriageRequest, TriageResponse
-from services.triage_pipeline import triage_message
-import logging
-
-router = APIRouter()
-
-@router.post(&quot;/v1/triage&quot;, response_model=TriageResponse)
-def handle_triage(req: TriageRequest):
-    logging.info(f&quot;Input: {req.message}&quot;)
-    result = triage_message(req.message)
-    logging.info(f&quot;Result: {result}&quot;)
-    return result
-</code></pre>
-<hr />
-<h2 id="entrypoint-mainpy">📦 Entrypoint (main.py)</h2>
-<pre><code class="language-python">from fastapi import FastAPI
-from api.routes import router
-import uvicorn
-import logging
-
-app = FastAPI()
-app.include_router(router)
-
-logging.basicConfig(level=logging.INFO)
-
-if __name__ == &quot;__main__&quot;:
-    uvicorn.run(&quot;main:app&quot;, host=&quot;0.0.0.0&quot;, port=8000, reload=True)
-</code></pre>
-<p>Test in your browser at: <code>http://localhost:8000/docs</code></p>
-<hr />
-<h2 id="caching-performance-tips">💡 Caching &amp; Performance Tips</h2>
+<p>Use cases:</p>
 <ul>
-<li>Cache repeat queries using <code>functools.lru_cache</code> or Redis</li>
-<li>Cache embeddings or LLM responses to save tokens</li>
-</ul>
-<pre><code class="language-python">from functools import lru_cache
-
-@lru_cache(maxsize=128)
-def get_label(message):
-    return call_llm_classifier(message)
-</code></pre>
-<hr />
-<h2 id="error-handling-fallbacks">🛡️ Error Handling + Fallbacks</h2>
-<ul>
-<li>Always catch LLM exceptions</li>
-<li>Return consistent schema with <code>action: "error"</code></li>
-<li>Add retries using <code>tenacity</code> if needed</li>
+<li>UI/UX audits</li>
+<li>Code debugging</li>
+<li>Accessibility checks</li>
+<li>Homework help</li>
+<li>Data visualization interpretation</li>
 </ul>
 <hr />
-<h2 id="api-versioning">🔐 API Versioning</h2>
+<h2 id="dalle-3-generating-images-from-text">🎨 DALL·E 3: Generating Images from Text</h2>
+<p>Example prompts:</p>
 <ul>
-<li>Use route prefixes like <code>/v1/</code> and <code>/v2/</code></li>
-<li>Add <code>/version</code> endpoint with logic details</li>
+<li>“A cartoon robot building a web app using a laptop”  </li>
+<li>“An architecture diagram of an AI assistant system”  </li>
+<li>“Edit this image to remove the watermark”</li>
+</ul>
+<p>Use cases:</p>
+<ul>
+<li>Product mockups</li>
+<li>Slide deck visuals</li>
+<li>Quick idea sketching</li>
+<li>Inpainting (semantic edits)</li>
 </ul>
 <hr />
-<h2 id="logging-best-practices">📊 Logging Best Practices</h2>
-<ul>
-<li>Log: request ID, model, token usage, latency</li>
-<li>Don’t log raw PII unless masked</li>
-<li>Use <code>logging</code> levels to control output</li>
-</ul>
-<hr />
-<h2 id="health-and-metadata-endpoints">✅ Health and Metadata Endpoints</h2>
-<pre><code class="language-python">@app.get(&quot;/health&quot;)
-def health():
-    return {&quot;status&quot;: &quot;ok&quot;}
-
-@app.get(&quot;/version&quot;)
-def version():
-    return {&quot;version&quot;: &quot;1.0.1&quot;, &quot;model&quot;: &quot;gpt-4&quot;, &quot;llm_strategy&quot;: &quot;few-shot&quot;}
+<h2 id="try-it-yourself-vision-api-example">🧪 Try It Yourself (Vision API Example)</h2>
+<pre><code class="language-python">response = client.chat.completions.create(
+  model=&quot;gpt-4-vision-preview&quot;,
+  messages=[
+    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: [
+      {&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Describe this image&quot;},
+      {&quot;type&quot;: &quot;image_url&quot;, &quot;image_url&quot;: {&quot;url&quot;: &quot;https://...&quot;}}
+    ]}
+  ],
+  max_tokens=300
+)
 </code></pre>
 <hr />
-<h2 id="unit-tests-with-fastapi">🔬 Unit Tests with FastAPI</h2>
-<pre><code class="language-python">from fastapi.testclient import TestClient
-from main import app
-
-client = TestClient(app)
-
-def test_triage():
-    res = client.post(&quot;/v1/triage&quot;, json={&quot;message&quot;: &quot;I was charged twice&quot;})
-    assert res.status_code == 200
-    assert &quot;category&quot; in res.json()
-</code></pre>
+<h2 id="where-this-matters">🧰 Where This Matters</h2>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA Testing</td>
+<td>Screenshot analysis</td>
+</tr>
+<tr>
+<td>EdTech</td>
+<td>Homework/photo understanding</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>Reading prescriptions</td>
+</tr>
+<tr>
+<td>Retail</td>
+<td>Shelf detection, visual audits</td>
+</tr>
+<tr>
+<td>Docs &amp; Support</td>
+<td>Visual bug reports</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="exit-outcome">✅ Exit Outcome</h2>
-<p>You now:</p>
+<h2 id="how-it-works-intuition-only">🧠 How It Works (Intuition Only)</h2>
+<ol>
+<li>Images are split into small patches (like tokens)  </li>
+<li>A vision transformer understands them  </li>
+<li>That “visual embedding” is fed into a language model  </li>
+<li>The LLM continues generating text — informed by the image</li>
+</ol>
+<hr />
+<h2 id="reflection-questions">❓Reflection Questions</h2>
+<ol>
+<li>What can GPT-4V do that would help your QA, testing, or support workflows?  </li>
+<li>Where would visual generation save you time or design effort?</li>
+</ol>
+<hr />
+<h2 id="mini-quiz">🧪 Mini Quiz</h2>
+<p><strong>Q1.</strong> Which of these models can take an image as input?<br />
+✅ a) GPT-4V</p>
+<p><strong>Q2.</strong> Which model turns text into an image?<br />
+✅ b) DALL·E 3</p>
+<hr />
+<h2 id="microproject">🧪 Microproject</h2>
+<p>🎯 Build a Screenshot QA Bot  </p>
 <ul>
-<li>Can serve your LLM-powered logic via FastAPI</li>
-<li>Understand logging, testing, versioning, and caching</li>
-<li>Have all the tools to turn AI from notebook into deployable product</li>
+<li>Upload a UI screenshot  </li>
+<li>Let GPT-4V:</li>
+<li>Describe layout  </li>
+<li>Flag accessibility issues  </li>
+<li>Recommend improvements</li>
 </ul>
-<blockquote>
-<p>Next: Let’s scale this with observability, queues, and containers.</p>
-</blockquote>
+<p><strong>Bonus:</strong> Add a DALL·E-generated architecture diagram.</p>
+<hr />
+<h2 id="recap">✅ Recap</h2>
+<p>✅ What multimodal models are<br />
+✅ What GPT-4V and DALL·E can do<br />
+✅ Use cases across domains<br />
+✅ How to start playing with vision + language</p>
+<hr />
 
 
 

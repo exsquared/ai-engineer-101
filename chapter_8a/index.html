@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project_3/">
+        <link rel="prev" href="../project_2/">
       
       
-        <link rel="next" href="../chapter_10/">
+        <link rel="next" href="../chapter_8b/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 9 - Serving Your AI - AI Engineering 101</title>
+        <title>Chapter 8a - How LLMs Work - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-your-ai-fastapi-for-real-world-integration" class="md-skip">
+        <a href="#how-llms-work-context-embeddings-and-reasoning" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 9 - Serving Your AI
+              Chapter 8a - How LLMs Work
             
           </span>
         </div>
@@ -433,10 +433,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_8a/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8a - How LLMs Work
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -447,6 +469,218 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌉 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-language-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What Is a Language Model?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 What Is a Language Model?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-it-predict-the-next-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 How Does It Predict the Next Token?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens-and-context-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Tokens and Context Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Tokens and Context Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-a-context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏳ What’s a Context Window?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔠 Tokenization in Practice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embeddings-meaning-in-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Embeddings: Meaning in Vector Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intent-vs-prompt-not-the-same-thing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Intent vs Prompt — Not the Same Thing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Intent vs Prompt — Not the Same Thing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-vs-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 System vs User Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature-and-top-p-controlling-output-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Temperature and Top-p: Controlling Output Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Temperature and Top-p: Controlling Output Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Temperature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-p" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎲 Top-p
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-word-on-hallucination-at-the-end-where-it-belongs" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❗ A Word on Hallucination (At the End, Where It Belongs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❗ A Word on Hallucination (At the End, Where It Belongs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-reduce-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to reduce it:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-analogy-a-genius-autocomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Final Analogy: A Genius Autocomplete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Exit Outcome
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -521,32 +755,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
         
   
   
@@ -557,161 +769,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-are-we-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌉 Why Are We Here?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Why FastAPI?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -893,108 +950,165 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#what-is-a-language-model" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      🧠 What Is a Language Model?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 What Is a Language Model?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-it-predict-the-next-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 How Does It Predict the Next Token?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens-and-context-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Tokens and Context Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Tokens and Context Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-a-context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏳ What’s a Context Window?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔠 Tokenization in Practice
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#embeddings-meaning-in-vector-space" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      🧠 Embeddings: Meaning in Vector Space
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#intent-vs-prompt-not-the-same-thing" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🧠 Intent vs Prompt — Not the Same Thing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Intent vs Prompt — Not the Same Thing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-vs-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 System vs User Roles
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#temperature-and-top-p-controlling-output-behavior" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      ⚙️ Temperature and Top-p: Controlling Output Behavior
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Temperature and Top-p: Controlling Output Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Temperature
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#top-p" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
+      🎲 Top-p
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
+  <a href="#a-word-on-hallucination-at-the-end-where-it-belongs" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
+      ❗ A Word on Hallucination (At the End, Where It Belongs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❗ A Word on Hallucination (At the End, Where It Belongs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-reduce-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to reduce it:
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
+  <a href="#final-analogy-a-genius-autocomplete" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
+      🧠 Final Analogy: A Genius Autocomplete
     </span>
   </a>
   
@@ -1025,177 +1139,182 @@
 
 
 
-<h1 id="serving-your-ai-fastapi-for-real-world-integration">Serving Your AI — FastAPI for Real-World Integration</h1>
+<h1 id="how-llms-work-context-embeddings-and-reasoning">How LLMs Work — Context, Embeddings, and Reasoning</h1>
 <hr />
 <h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
-<p>You’ve now built:</p>
+<p>In the last chapter, you built logic pipelines combining rules, models, and LLMs. But you’ve probably noticed something weird:</p>
 <ul>
-<li>Classical ML models</li>
-<li>Rule + logic pipelines</li>
-<li>LLM-powered classifiers, extractors, and transformers</li>
+<li>Sometimes the LLM gives a brilliant answer.</li>
+<li>Sometimes it sounds confident but is dead wrong.</li>
+<li>Sometimes changing one word in your prompt <em>completely</em> changes the outcome.</li>
 </ul>
-<p>It’s time to ship. Because a model that lives in a notebook… isn’t a product.</p>
-<p>This chapter shows you how to turn your hybrid system — models + rules + prompts — into a real, usable API using FastAPI — with logging, fallbacks, caching, versioning, and testability.</p>
+<p>What’s going on?</p>
+<p>To build anything reliable with LLMs, you need to understand how they actually “think.” This chapter is that foundation.</p>
+<blockquote>
+<p>You’re not just learning how to prompt. You’re learning how the machine predicts.</p>
+</blockquote>
 <hr />
 <h2 id="goal">🎯 Goal</h2>
+<p>To build a working mental model of how LLMs operate:</p>
 <ul>
-<li>Serve your hybrid AI logic as a versioned web API</li>
-<li>Apply engineering best practices (logging, caching, error handling)</li>
-<li>Prepare your AI component for team use and production deployments</li>
+<li>What a "language model" is — and what it’s not</li>
+<li>How inputs are processed via tokens and context windows</li>
+<li>Why order, structure, and precision in prompts matter</li>
+<li>What embeddings are and how they underpin many AI systems</li>
+<li>When and why LLMs produce surprising or incorrect answers</li>
 </ul>
 <hr />
-<h2 id="why-fastapi">🧠 Why FastAPI?</h2>
-<p>FastAPI is a developer-friendly web framework for building modern Python APIs:</p>
+<h2 id="what-is-a-language-model">🧠 What Is a Language Model?</h2>
+<p>A <strong>language model</strong> is not a reasoning engine, chatbot, or planning agent.</p>
+<p>At its core, it is a system trained to do just one thing:</p>
+<blockquote>
+<p><strong>Given a sequence of text, predict the most likely next token.</strong></p>
+</blockquote>
+<p>That's it.</p>
+<pre><code class="language-text">Input: &quot;My favorite programming language is&quot;
+Model: [&quot;Python&quot; (78%), &quot;JavaScript&quot; (10%), &quot;C++&quot; (5%), ...]
+</code></pre>
+<p>Language models are trained on massive text datasets to learn:</p>
 <ul>
-<li>✅ Pydantic-powered request validation</li>
-<li>✅ Built-in OpenAPI docs at <code>/docs</code></li>
-<li>✅ Type hints + editor autocomplete</li>
-<li>✅ Async-ready for future scaling</li>
+<li>Word patterns and probabilities</li>
+<li>Syntax and semantics</li>
+<li>How different topics and tones tend to flow</li>
 </ul>
-<p>Perfect for wrapping LLM pipelines into testable, monitorable services.</p>
+<p>They do not truly <em>understand</em> or <em>reason</em>. They excel at generating plausible continuations of text — and that’s what makes them powerful (and sometimes misleading).</p>
 <hr />
-<h2 id="recommended-project-structure">🗂️ Recommended Project Structure</h2>
-<pre><code>/ai_service
-├── main.py               # FastAPI entrypoint
-├── api/                  # Routes and endpoints
-│   └── routes.py
-├── services/             # Your ML / LLM logic
-│   └── triage_pipeline.py
-├── schemas/              # Request/response models
-│   └── models.py
-├── config.py             # App settings and secrets
-└── tests/                # Unit + integration tests
-</code></pre>
-<hr />
-<h2 id="inference-logic-servicestriage_pipelinepy">⚙️ Inference Logic (services/triage_pipeline.py)</h2>
-<pre><code class="language-python">def triage_message(message):
-    if not message or len(message.strip()) &lt; 5:
-        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty message&quot;}
-
-    if &quot;vip&quot; in message.lower():
-        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
-
-    try:
-        label = call_llm_classifier(message)
-        urgency = extract_urgency(message)
-    except Exception as e:
-        return {&quot;action&quot;: &quot;error&quot;, &quot;reason&quot;: str(e)}
-
-    return {
-        &quot;action&quot;: &quot;route&quot;,
-        &quot;category&quot;: label,
-        &quot;urgency&quot;: urgency
-    }
-</code></pre>
-<hr />
-<h2 id="pydantic-schemas-schemasmodelspy">🧾 Pydantic Schemas (schemas/models.py)</h2>
-<pre><code class="language-python">from pydantic import BaseModel
-
-class TriageRequest(BaseModel):
-    message: str
-
-class TriageResponse(BaseModel):
-    action: str
-    category: str | None = None
-    urgency: str | None = None
-    reason: str | None = None
-</code></pre>
-<hr />
-<h2 id="fastapi-endpoint-apiroutespy">🚀 FastAPI Endpoint (api/routes.py)</h2>
-<pre><code class="language-python">from fastapi import APIRouter
-from schemas.models import TriageRequest, TriageResponse
-from services.triage_pipeline import triage_message
-import logging
-
-router = APIRouter()
-
-@router.post(&quot;/v1/triage&quot;, response_model=TriageResponse)
-def handle_triage(req: TriageRequest):
-    logging.info(f&quot;Input: {req.message}&quot;)
-    result = triage_message(req.message)
-    logging.info(f&quot;Result: {result}&quot;)
-    return result
-</code></pre>
-<hr />
-<h2 id="entrypoint-mainpy">📦 Entrypoint (main.py)</h2>
-<pre><code class="language-python">from fastapi import FastAPI
-from api.routes import router
-import uvicorn
-import logging
-
-app = FastAPI()
-app.include_router(router)
-
-logging.basicConfig(level=logging.INFO)
-
-if __name__ == &quot;__main__&quot;:
-    uvicorn.run(&quot;main:app&quot;, host=&quot;0.0.0.0&quot;, port=8000, reload=True)
-</code></pre>
-<p>Test in your browser at: <code>http://localhost:8000/docs</code></p>
-<hr />
-<h2 id="caching-performance-tips">💡 Caching &amp; Performance Tips</h2>
+<h3 id="how-does-it-predict-the-next-token">🧠 How Does It Predict the Next Token?</h3>
+<p>Behind the scenes, most modern LLMs use a neural network architecture called a <strong>Transformer</strong>.</p>
+<p>The Transformer has a key mechanism called <strong>attention</strong>, which allows the model to look at all the tokens in the prompt and weigh their importance differently.</p>
+<blockquote>
+<p>Think of it like reading a paragraph with a highlighter — the model "pays more attention" to the parts that matter most when choosing the next word.</p>
+</blockquote>
+<p>This allows the model to:</p>
 <ul>
-<li>Cache repeat queries using <code>functools.lru_cache</code> or Redis</li>
-<li>Cache embeddings or LLM responses to save tokens</li>
-</ul>
-<pre><code class="language-python">from functools import lru_cache
-
-@lru_cache(maxsize=128)
-def get_label(message):
-    return call_llm_classifier(message)
-</code></pre>
-<hr />
-<h2 id="error-handling-fallbacks">🛡️ Error Handling + Fallbacks</h2>
-<ul>
-<li>Always catch LLM exceptions</li>
-<li>Return consistent schema with <code>action: "error"</code></li>
-<li>Add retries using <code>tenacity</code> if needed</li>
+<li>Understand long-range dependencies</li>
+<li>Make predictions based on relationships between words</li>
+<li>Scale to very large inputs and outputs</li>
 </ul>
 <hr />
-<h2 id="api-versioning">🔐 API Versioning</h2>
+<h2 id="tokens-and-context-windows">🧩 Tokens and Context Windows</h2>
+<p>LLMs don’t see whole paragraphs — they see <strong>tokens</strong>, which are fragments of text:</p>
 <ul>
-<li>Use route prefixes like <code>/v1/</code> and <code>/v2/</code></li>
-<li>Add <code>/version</code> endpoint with logic details</li>
+<li>A word: <code>dog</code></li>
+<li>A subword: <code>un</code>, <code>believ</code>, <code>able</code></li>
+<li>Punctuation: <code>.</code> or <code>?</code></li>
 </ul>
-<hr />
-<h2 id="logging-best-practices">📊 Logging Best Practices</h2>
+<h3 id="whats-a-context-window">⏳ What’s a Context Window?</h3>
+<p>Think of it like the model’s short-term memory. It’s the number of tokens it can “see” at one time.</p>
 <ul>
-<li>Log: request ID, model, token usage, latency</li>
-<li>Don’t log raw PII unless masked</li>
-<li>Use <code>logging</code> levels to control output</li>
+<li>GPT-3.5: ~4,000 tokens (~3,000 words)</li>
+<li>GPT-4 (turbo): up to 128,000 tokens (~100,000 words)</li>
 </ul>
+<p>If your input + output exceeds this window:</p>
+<ul>
+<li>Earlier context is dropped</li>
+<li>The model starts forgetting what came before</li>
+</ul>
+<blockquote>
+<p>🧠 Analogy: Imagine whispering into a tunnel. The model only hears the last X words you say.</p>
+</blockquote>
 <hr />
-<h2 id="health-and-metadata-endpoints">✅ Health and Metadata Endpoints</h2>
-<pre><code class="language-python">@app.get(&quot;/health&quot;)
-def health():
-    return {&quot;status&quot;: &quot;ok&quot;}
+<h2 id="tokenization-in-practice">🔠 Tokenization in Practice</h2>
+<pre><code class="language-python">from transformers import GPT2Tokenizer
 
-@app.get(&quot;/version&quot;)
-def version():
-    return {&quot;version&quot;: &quot;1.0.1&quot;, &quot;model&quot;: &quot;gpt-4&quot;, &quot;llm_strategy&quot;: &quot;few-shot&quot;}
+tokenizer = GPT2Tokenizer.from_pretrained(&quot;gpt2&quot;)
+tokens = tokenizer.tokenize(&quot;Language models don't reason.&quot;)
+print(tokens)
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">['Language', 'Ġmodels', 'Ġdon', &quot;'&quot;, 't', 'Ġreason', '.']
 </code></pre>
 <hr />
-<h2 id="unit-tests-with-fastapi">🔬 Unit Tests with FastAPI</h2>
-<pre><code class="language-python">from fastapi.testclient import TestClient
-from main import app
+<h2 id="embeddings-meaning-in-vector-space">🧠 Embeddings: Meaning in Vector Space</h2>
+<p>Before LLMs predict anything, they convert text into <strong>embeddings</strong> — high-dimensional vectors that encode meaning.</p>
+<p>Embeddings allow the model to:</p>
+<ul>
+<li>Measure similarity between texts</li>
+<li>Cluster related ideas</li>
+<li>Match prompts to known patterns</li>
+</ul>
+<pre><code class="language-python">from openai import OpenAI
 
-client = TestClient(app)
-
-def test_triage():
-    res = client.post(&quot;/v1/triage&quot;, json={&quot;message&quot;: &quot;I was charged twice&quot;})
-    assert res.status_code == 200
-    assert &quot;category&quot; in res.json()
+response = openai.Embedding.create(input=&quot;How do I reset my password?&quot;, model=&quot;text-embedding-ada-002&quot;)
+vector = response['data'][0]['embedding']
 </code></pre>
+<hr />
+<h2 id="intent-vs-prompt-not-the-same-thing">🧠 Intent vs Prompt — Not the Same Thing</h2>
+<p>What you <em>want</em> and what you <em>say</em> are different.</p>
+<h3 id="example">Example:</h3>
+<p>❌ Prompt: "Tell me about our app."</p>
+<ul>
+<li>🤖 Output: vague, promotional, possibly off-topic</li>
+</ul>
+<p>✅ Prompt: "List 3 features of our app in bullet points. Include only 1 sentence per point."</p>
+<ul>
+<li>🤖 Output: clear, usable, and structured</li>
+</ul>
+<hr />
+<h2 id="system-vs-user-roles">🧱 System vs User Roles</h2>
+<p>Chat-based models use structured messages:</p>
+<pre><code class="language-python">messages = [
+  {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;You are a precise technical assistant.&quot;},
+  {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Summarize this customer complaint.&quot;}
+]
+</code></pre>
+<ul>
+<li><strong>System message</strong>: defines tone, identity, rules</li>
+<li><strong>User message</strong>: the actual task</li>
+</ul>
+<hr />
+<h2 id="temperature-and-top-p-controlling-output-behavior">⚙️ Temperature and Top-p: Controlling Output Behavior</h2>
+<h3 id="temperature">🔥 Temperature</h3>
+<ul>
+<li><code>0.0</code>: deterministic</li>
+<li><code>1.0+</code>: exploratory</li>
+</ul>
+<h3 id="top-p">🎲 Top-p</h3>
+<ul>
+<li>Select from the top <code>p%</code> of possible next tokens</li>
+</ul>
+<pre><code class="language-python">temperature=0.2, top_p=0.8  # Reliable for structured tasks
+</code></pre>
+<hr />
+<h2 id="a-word-on-hallucination-at-the-end-where-it-belongs">❗ A Word on Hallucination (At the End, Where It Belongs)</h2>
+<p>LLMs don’t “know” facts or have external memory. They guess what <em>sounds</em> right.</p>
+<p>That’s why:</p>
+<ul>
+<li>They invent URLs</li>
+<li>Misquote legal clauses</li>
+<li>Fabricate names or facts</li>
+</ul>
+<h3 id="how-to-reduce-it">How to reduce it:</h3>
+<ul>
+<li>Give more structure</li>
+<li>Add documents to prompt (RAG)</li>
+<li>Ask for sources, but verify</li>
+</ul>
+<hr />
+<h2 id="final-analogy-a-genius-autocomplete">🧠 Final Analogy: A Genius Autocomplete</h2>
+<p>Imagine a super-smart autocomplete:</p>
+<ul>
+<li>It’s read billions of documents</li>
+<li>But it only guesses what comes next — based on what it’s seen</li>
+<li>It forgets everything the moment it responds</li>
+</ul>
+<blockquote>
+<p>Powerful? Yes. Grounded? Only if you design it that way.</p>
+</blockquote>
 <hr />
 <h2 id="exit-outcome">✅ Exit Outcome</h2>
 <p>You now:</p>
 <ul>
-<li>Can serve your LLM-powered logic via FastAPI</li>
-<li>Understand logging, testing, versioning, and caching</li>
-<li>Have all the tools to turn AI from notebook into deployable product</li>
+<li>Know what a language model really is</li>
+<li>Understand tokens, context windows, and embeddings</li>
+<li>Can structure prompts with intention and control</li>
+<li>Have tools to start building reliable, debuggable LLM systems</li>
 </ul>
 <blockquote>
-<p>Next: Let’s scale this with observability, queues, and containers.</p>
+<p>In the next chapter, we’ll turn this theory into hands-on prompting — building classifiers, transformers, and smart assistants. Let’s go.</p>
 </blockquote>
 
 

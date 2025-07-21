@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../chapter_6/">
+      
+      
+        <link rel="next" href="../project_2/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Chapter 7: Hybrid Systems — When Rules and Learning Work Together - AI Engineering 101</title>
+        <title>Chapter 7 - Hybrid Systems - AI Engineering 101</title>
       
     
     
@@ -58,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-7-hybrid-systems-when-rules-and-learning-work-together" class="md-skip">
+        <a href="#hybrid-systems-when-rules-and-learning-work-together" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 7: Hybrid Systems — When Rules and Learning Work Together
+              Chapter 7 - Hybrid Systems
             
           </span>
         </div>
@@ -327,7 +331,478 @@
   
   
   <span class="md-ellipsis">
-    Checkpoint Project 1
+    Checkpoint - Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 5 - Evaluating & Debugging AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 6 - Beyond Yes/No
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 7 - Hybrid Systems
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 7 - Hybrid Systems
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌉 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-setup-why-multi-class-isnt-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 The Setup: Why Multi-Class Isn’t Enough
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-hybrid-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ What’s a Hybrid System?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-logic-model-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Building the Logic + Model Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-an-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 When to Use an LLM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy-triage-nurse" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Real-World Analogy: Triage Nurse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-your-own-hybrid-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Build Your Own Hybrid System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Exit Outcome
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coming-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⏭️ Coming Up
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint - Project 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8a - How LLMs Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8b - Prompting in Action
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8c - Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint - Project 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 9 - Serving Your AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 10 - Scaling, Microservices & DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 11 - Let LLMs Read Your Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 12 - Let LLMs Act, Not Just Answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14 - What’s Next?
     
   </span>
   
@@ -364,70 +839,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌉 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
       🎯 Goal
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🎯 Goal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-blend-logic-and-learning" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-setup-why-multi-class-isnt-enough" class="md-nav__link">
     <span class="md-ellipsis">
-      🤹 Why Blend Logic and Learning?
+      🧠 The Setup: Why Multi-Class Isn’t Enough
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#rules-still-matter" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-hybrid-system" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Rules Still Matter
+      🏗️ What’s a Hybrid System?
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#logic-model-pipeline" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#building-the-logic-model-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Logic + Model Pipeline
+      🔧 Building the Logic + Model Pipeline
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#bonus-llms-as-fallbacks" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-an-llm" class="md-nav__link">
     <span class="md-ellipsis">
-      🤖 Bonus: LLMs as Fallbacks
+      🤖 When to Use an LLM
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#exercise-build-a-hybrid-system" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy-triage-nurse" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Exercise: Build a Hybrid System
+      🔍 Real-World Analogy: Triage Nurse
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#reflection" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#build-your-own-hybrid-system" class="md-nav__link">
     <span class="md-ellipsis">
-      💭 Reflection
+      🧪 Build Your Own Hybrid System
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#reflection-corner" class="md-nav__link">
+    <span class="md-ellipsis">
+      💬 Reflection Corner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exit-outcome" class="md-nav__link">
     <span class="md-ellipsis">
       ✅ Exit Outcome
@@ -435,18 +927,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#coming-up" class="md-nav__link">
     <span class="md-ellipsis">
       ⏭️ Coming Up
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -466,123 +953,155 @@
 
 
 
-<h1 id="chapter-7-hybrid-systems-when-rules-and-learning-work-together">Chapter 7: Hybrid Systems — When Rules and Learning Work Together</h1>
+<h1 id="hybrid-systems-when-rules-and-learning-work-together">Hybrid Systems — When Rules and Learning Work Together</h1>
+<h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
+<p>In the last chapter, we built a model that could route tickets across multiple departments — from billing to tech support to feedback. It was smart. But not smart enough.</p>
+<p>Because here’s the thing about real-world AI systems:</p>
+<blockquote>
+<p>They <em>don’t just guess</em> — they <em>decide with caution</em>.</p>
+</blockquote>
+<p>What happens when the model isn’t confident? Or when it sees something it’s never encountered before? What about business rules — like escalating VIP users, or ignoring empty messages?</p>
+<p>This is where hybrid systems shine.</p>
+<p>In this chapter, you’ll learn how to combine:</p>
+<ul>
+<li>🧠 Machine learning (classifiers, confidence scores)</li>
+<li>🧾 Hand-written rules (edge cases, exceptions)</li>
+<li>🤖 LLMs (as a backup brain for ambiguous inputs)</li>
+</ul>
+<p>This is how production AI really works: <strong>not all-learning, not all-logic — but a smart, explainable blend.</strong></p>
 <hr />
 <h2 id="goal">🎯 Goal</h2>
-<p>To understand how to combine <strong>rules</strong> and <strong>machine learning models</strong> (including LLMs) in practical, production-friendly ways.</p>
-<p>This is how real systems are built: not all-learning, not all-logic — but a smart, debug-friendly mix.</p>
+<p>To design a robust, flexible pipeline that combines classical models, business rules, and fallback strategies — and knows when to ask for help.</p>
 <hr />
-<h3 id="why-blend-logic-and-learning">🤹 Why Blend Logic and Learning?</h3>
-<p>Let’s revisit our support ticket example:</p>
-<p>You now have:</p>
-<ul>
-<li>A trained urgency classifier</li>
-<li>A model to assign categories</li>
-</ul>
+<h2 id="the-setup-why-multi-class-isnt-enough">🧠 The Setup: Why Multi-Class Isn’t Enough</h2>
+<p>Remember our ticket classifier?
+It could choose from <code>Billing</code>, <code>Technical</code>, <code>Feedback</code>, or <code>Other</code>.</p>
 <p>But what happens when:</p>
 <ul>
-<li>The message is empty?</li>
-<li>The user just says “Hi”?  </li>
-<li>The model’s confidence is 41%?</li>
-<li>A known VIP user contacts support?</li>
+<li>The message is: “Hello?”</li>
+<li>The message is blank, or just an emoji</li>
+<li>A new ticket type appears: “I want to delete my account” (which doesn’t fit any current label)</li>
+<li>The model is only <strong>41% confident</strong> in its guess</li>
+<li>The message is from a <strong>VIP customer</strong></li>
 </ul>
 <blockquote>
-<p>These aren’t training issues — they’re business rules.</p>
-<p>Real-world systems need <strong>guardrails</strong>. And models need help knowing when to defer.</p>
+<p>None of these are classification problems. They’re design problems.</p>
 </blockquote>
+<p>We’ve now moved from <em>“what class?”</em> to <em>“what should we do?”</em></p>
+<p>That’s the key shift: from prediction → to action. And it’s why we need a hybrid approach.</p>
 <hr />
-<h3 id="rules-still-matter">🧠 Rules Still Matter</h3>
-<p>Here are examples of <strong>pre-model rules</strong>:</p>
-<pre><code class="language-python">if len(message.strip()) &lt; 10:
-    return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Too short&quot;}
-
-if &quot;vip_user&quot; in user_tags:
-    return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;High-value customer&quot;}
-</code></pre>
-<p>Or <strong>post-model overrides</strong>:</p>
-<pre><code class="language-python">if model_confidence &lt; 0.4:
-    return {&quot;action&quot;: &quot;human_review&quot;}
-</code></pre>
-<hr />
-<h3 id="logic-model-pipeline">🔁 Logic + Model Pipeline</h3>
-<blockquote>
-<p>🧠 <strong>Side Note:</strong> What’s a <em>pipeline</em>?<br />
-Think of it like a chain of steps:<br />
-1. You check the input<br />
-2. You run it through your model<br />
-3. You handle the result<br />
-4. You decide what to do  </p>
-<p>In ML systems, we often call this flow a <strong>pipeline</strong> — because data flows through it like a factory line.<br />
-It helps us break things into clear, testable parts.</p>
-</blockquote>
-<p>Build your system like a pipeline:</p>
-<pre><code class="language-python">def triage_pipeline(message):
-    if not is_valid_message(message):
-        return {&quot;action&quot;: &quot;ignore&quot;}
-
-    if matches_blocklist(message):
-        return {&quot;action&quot;: &quot;block&quot;}
-
-    # Pass to model
-    prediction = model.predict(message)
-
-    if prediction.confidence &lt; 0.4:
-        return {&quot;action&quot;: &quot;human_review&quot;}
-
-    return {&quot;action&quot;: &quot;route&quot;, &quot;category&quot;: prediction.category}
-</code></pre>
-<blockquote>
-<p>This is <em>hybrid engineering</em>. Models make suggestions. Logic makes decisions.</p>
-</blockquote>
-<hr />
-<h3 id="bonus-llms-as-fallbacks">🤖 Bonus: LLMs as Fallbacks</h3>
-<p>Let’s say your model says "I don’t know" (low confidence). Now what?</p>
-<p>You can try asking an LLM to help — not to replace your model, but to <strong>back it up intelligently</strong>.</p>
-<pre><code class="language-python">if model_confidence &lt; 0.4:
-    prompt = f&quot;Classify this message: '{message}'&quot;
-    llm_result = call_llm(prompt)
-    return {&quot;action&quot;: &quot;fallback_llm&quot;, &quot;category&quot;: llm_result}
-</code></pre>
-<p>Or use LLMs for specific cases:</p>
+<h2 id="whats-a-hybrid-system">🏗️ What’s a Hybrid System?</h2>
+<p>A hybrid system is like a traffic cop:</p>
 <ul>
-<li>Detect tone</li>
-<li>Extract entities</li>
-<li>Explain intent</li>
+<li>Sometimes it lets the model take the wheel.</li>
+<li>Sometimes it steps in to redirect, override, or pause.</li>
 </ul>
 <blockquote>
-<p>LLMs are great at gray areas. Use them for <em>language nuance</em>, not business rules.</p>
+<p>Think of it as a smart AI assistant with a supervisor — the rules.</p>
 </blockquote>
+<p>You might:</p>
+<ul>
+<li>Use rules <strong>before</strong> the model to catch garbage inputs</li>
+<li>Use the model to make predictions</li>
+<li>Use rules <strong>after</strong> to decide what to do with the prediction</li>
+<li>Use an LLM when the model’s answer isn’t confident or convincing</li>
+</ul>
 <hr />
-<h3 id="exercise-build-a-hybrid-system">🧪 Exercise: Build a Hybrid System</h3>
-<p>Extend your ticket triage logic:</p>
+<h2 id="building-the-logic-model-pipeline">🔧 Building the Logic + Model Pipeline</h2>
+<p>Let’s sketch the core idea:</p>
+<pre><code class="language-python">def triage_pipeline(message, user_tags):
+    if not message or len(message.strip()) &lt; 5:
+        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty or too short&quot;}
+
+    if &quot;vip&quot; in user_tags:
+        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
+
+    prediction = model.predict(message)
+    confidence = max(model.predict_proba([message])[0])
+
+    if confidence &lt; 0.5:
+        return {&quot;action&quot;: &quot;defer_to_llm&quot;, &quot;input&quot;: message, &quot;confidence&quot;: confidence}
+
+    return {&quot;action&quot;: &quot;route&quot;, &quot;label&quot;: prediction, &quot;confidence&quot;: confidence}
+</code></pre>
+<p>You’ve just built:</p>
+<ul>
+<li>✅ Pre-model logic (message validation, VIP handling)</li>
+<li>✅ Model prediction</li>
+<li>✅ Post-model routing</li>
+<li>✅ Fallback hook for LLMs</li>
+</ul>
+<p>This is real-world AI plumbing — flexible, transparent, and safe.</p>
+<hr />
+<h2 id="when-to-use-an-llm">🤖 When to Use an LLM</h2>
+<p>LLMs are not magic. But they <em>are</em> useful when things get messy:</p>
+<ul>
+<li>The model has low confidence</li>
+<li>The user says something open-ended</li>
+<li>You want to explain, rephrase, or reclassify</li>
+</ul>
+<pre><code class="language-python">if confidence &lt; 0.5:
+    prompt = f&quot;Classify this message: '{message}'&quot;
+    llm_response = call_llm(prompt)
+    return {&quot;action&quot;: &quot;llm_fallback&quot;, &quot;suggested_label&quot;: llm_response}
+</code></pre>
+<p>Think of the LLM as a junior analyst — smart, flexible, and verbose. But not in charge of critical decisions without supervision.</p>
+<hr />
+<h2 id="real-world-analogy-triage-nurse">🔍 Real-World Analogy: Triage Nurse</h2>
+<p>In hospitals, the triage nurse doesn’t diagnose — they decide where a patient should go:</p>
+<ul>
+<li>Chest pain? → Cardiologist</li>
+<li>Broken bone? → Ortho</li>
+<li>Unclear symptoms? → Doctor review</li>
+</ul>
+<p>Your pipeline does the same:</p>
+<ul>
+<li>Obvious input? → Model predicts</li>
+<li>Sensitive case? → Rule escalates</li>
+<li>Ambiguous? → LLM suggests</li>
+</ul>
+<p>This analogy helps product teams, PMs, and engineers alike reason about AI behavior.</p>
+<hr />
+<h2 id="build-your-own-hybrid-system">🧪 Build Your Own Hybrid System</h2>
+<p>Take your ticket classifier from Chapter 6 and wrap it in a pipeline:</p>
 <ol>
-<li>Add pre-checks (e.g., empty message, spam keywords)</li>
-<li>Route clear tickets through your classifier</li>
-<li>If confidence &lt; 0.5, call an LLM as a backup classifier</li>
-<li>Log all decisions and confidence levels</li>
+<li>Pre-check for empty messages</li>
+<li>Route VIPs straight to escalation</li>
+<li>Run the model and extract confidence</li>
+<li>Defer to an LLM if confidence &lt; 0.5</li>
+<li>Log every decision and why it happened</li>
 </ol>
 <blockquote>
-<p>Bonus: Show comparison between model vs LLM output</p>
+<p>Bonus: Print a side-by-side comparison of model vs. LLM label.</p>
 </blockquote>
 <hr />
-<h3 id="reflection">💭 Reflection</h3>
+<h2 id="reflection-corner">💬 Reflection Corner</h2>
 <ul>
-<li>What decisions can’t be learned — and must be hard-coded?</li>
-<li>When does it make sense to add an LLM instead of training a bigger model?</li>
-<li>Where do <em>you</em> draw the line between logic and learning?</li>
+<li>What’s a case in your product where you’d want the model to <em>not</em> decide?</li>
+<li>Where might you use hard rules to override model behavior?</li>
+<li>What’s your threshold for “low confidence”? Why?</li>
+<li>When does it make sense to blend prediction + human judgment?</li>
 </ul>
 <hr />
-<h3 id="exit-outcome">✅ Exit Outcome</h3>
-<p>You now know how to:</p>
+<h2 id="exit-outcome">✅ Exit Outcome</h2>
+<p>You now understand:</p>
 <ul>
-<li>Use <strong>rules before or after</strong> ML systems</li>
-<li>Route edge cases safely</li>
-<li>Use LLMs to <strong>extend and catch</strong> when classic models fail</li>
+<li>Why real AI systems are not just models</li>
+<li>How to build a safe, explainable ML pipeline</li>
+<li>When to rely on logic, and when to ask for help</li>
 </ul>
-<p>This is what most real production AI pipelines look like: part-logic, part-learning, part-LLM.</p>
+<p>This is the foundation for <strong>trustworthy AI in production.</strong></p>
 <hr />
-<h3 id="coming-up">⏭️ Coming Up</h3>
-<p>Next, we’ll wrap our model into a real <strong>API service</strong> using FastAPI — so it can plug into any product or app you build.</p>
+<h2 id="coming-up">⏭️ Coming Up</h2>
+<p>In the next chapter, we’ll take a bold step forward into the world of Large Language Models (LLMs) — the powerful engines behind tools like ChatGPT and GitHub Copilot.</p>
+<p>You’ve already used LLMs as fallbacks. Now, you’ll learn how to work with them directly:</p>
+<ul>
+<li>Crafting smart prompts</li>
+<li>Automating workflows</li>
+<li>Using LLMs for classification, summarization, and structured reasoning</li>
+</ul>
+<p>This is your entry into the modern AI toolkit — fast, flexible, and incredibly powerful.</p>
+<p>Let’s unlock it together. 🚀</p>
 
 
 

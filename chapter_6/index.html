@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../chapter_5/">
+      
+      
+        <link rel="next" href="../chapter_7/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Chapter 6: Beyond Yes/No — Handling Multi-Class Predictions - AI Engineering 101</title>
+        <title>Chapter 6 - Beyond Yes/No - AI Engineering 101</title>
       
     
     
@@ -58,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-6-beyond-yesno-handling-multi-class-predictions" class="md-skip">
+        <a href="#beyond-yesno-handling-multi-class-predictions" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 6: Beyond Yes/No — Handling Multi-Class Predictions
+              Chapter 6 - Beyond Yes/No
             
           </span>
         </div>
@@ -327,7 +331,553 @@
   
   
   <span class="md-ellipsis">
-    Checkpoint Project 1
+    Checkpoint - Project 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 5 - Evaluating & Debugging AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 6 - Beyond Yes/No
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 6 - Beyond Yes/No
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Real-World Motivation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Real-World Motivation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helpdesk-ticket-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Helpdesk Ticket Routing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-new-with-multi-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 What's New with Multi-Class?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough-first-multi-class-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Code Walkthrough: First Multi-Class Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-visualize-whats-going-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Let’s Visualize What’s Going On
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Let’s Visualize What’s Going On">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-per-class-precision-recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Visualize Per-Class Precision &amp; Recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-go-deeper-try-visualizing-feature-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Want to Go Deeper? Try Visualizing Feature Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-evaluation-gets-harder" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Evaluation Gets Harder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-debugging-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔎 Real Debugging Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-class-imbalance" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Understanding Class Imbalance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy-doctor-diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Real-World Analogy: Doctor Diagnoses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-top-k-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Bonus: Top-K Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-project-smart-ticket-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Hands-On Project: Smart Ticket Router
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Exit Outcome
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 7 - Hybrid Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint - Project 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8a - How LLMs Work
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8b - Prompting in Action
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_8c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8c - Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpoint - Project 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 9 - Serving Your AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 10 - Scaling, Microservices & DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 11 - Let LLMs Read Your Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 12 - Let LLMs Act, Not Just Answer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 13 - GenAI Playground
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14 - What’s Next?
     
   </span>
   
@@ -364,110 +914,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
       🎯 Goal
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🎯 Goal">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#real-world-motivation" class="md-nav__link">
     <span class="md-ellipsis">
       🧠 Real-World Motivation
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 What Changes?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-walkthrough-first-multi-class-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Code Walkthrough — First Multi-Class Model
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-multi-class-is-different" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Debugging Multi-Class Is Different
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visual-debug-confusion-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Visual Debug: Confusion Matrix
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-imbalance-matters-more-now" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Class Imbalance Matters More Now
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reflection-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      💭 Reflection Questions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercise-your-first-multi-class-classifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Exercise: Your First Multi-Class Classifier
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#small-project-multi-class-ticket-router" class="md-nav__link">
-    <span class="md-ellipsis">
-      🏁 Small Project: Multi-Class Ticket Router
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🏁 Small Project: Multi-Class Ticket Router">
+    <nav class="md-nav" aria-label="🧠 Real-World Motivation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
+  <a href="#helpdesk-ticket-routing" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenario:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build:
+      🎯 Helpdesk Ticket Routing
     </span>
   </a>
   
@@ -477,27 +954,136 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-new-with-multi-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 What's New with Multi-Class?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-walkthrough-first-multi-class-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Code Walkthrough: First Multi-Class Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-visualize-whats-going-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Let’s Visualize What’s Going On
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Let’s Visualize What’s Going On">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Confusion Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualize-per-class-precision-recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Visualize Per-Class Precision &amp; Recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-go-deeper-try-visualizing-feature-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔬 Want to Go Deeper? Try Visualizing Feature Space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-evaluation-gets-harder" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Why Evaluation Gets Harder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-debugging-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔎 Real Debugging Tips
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-class-imbalance" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Understanding Class Imbalance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy-doctor-diagnoses" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Real-World Analogy: Doctor Diagnoses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-top-k-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Bonus: Top-K Predictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-project-smart-ticket-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Hands-On Project: Smart Ticket Router
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exit-outcome" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Exit Outcome
+      🌟 Exit Outcome
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#coming-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⏭️ Coming Up
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -517,61 +1103,87 @@
 
 
 
-<h1 id="chapter-6-beyond-yesno-handling-multi-class-predictions">Chapter 6: Beyond Yes/No — Handling Multi-Class Predictions</h1>
+<h1 id="beyond-yesno-handling-multi-class-predictions">Beyond Yes/No — Handling Multi-Class Predictions</h1>
+<h2 id="why-are-we-here">🌟 Why Are We Here?</h2>
+<p>In the real world, most problems are <strong>not</strong> just about saying "yes" or "no." Imagine building a support system. It's not enough to say whether a message is urgent. You also need to <strong>route</strong> it: Should it go to the billing team? Tech support? Product feedback?</p>
+<p>This chapter is about building models that make <strong>real decisions</strong>, not just binary ones. These are the kinds of systems you actually deploy.</p>
 <hr />
 <h2 id="goal">🎯 Goal</h2>
 <p>To understand how models handle <strong>more than two outcomes</strong>, what changes in evaluation and debugging, and how to build and test a multi-class classifier — just like you’d ship in a real system.</p>
 <hr />
-<h3 id="real-world-motivation">🧠 Real-World Motivation</h3>
-<p>So far, you’ve predicted things like:</p>
+<h2 id="real-world-motivation">🧠 Real-World Motivation</h2>
+<p>So far, you’ve built classifiers to answer yes/no questions:</p>
 <ul>
-<li>Is this urgent or not?  </li>
-<li>Yes or no?  </li>
-<li>Spam or ham?</li>
+<li>Is this message urgent?</li>
+<li>Is it spam?</li>
+<li>Is the feedback positive?</li>
 </ul>
-<p>But many real-world problems aren’t binary.</p>
-<p>Let’s take support tickets again. This time, you want to classify tickets into:</p>
-<ul>
-<li><code>Billing</code></li>
-<li><code>Technical Support</code></li>
-<li><code>Product Feedback</code></li>
-<li><code>Other</code></li>
-</ul>
-<p>This is no longer a yes/no — it’s a <strong>multi-class</strong> decision.</p>
+<p>But in actual product workflows, you need your AI to decide among <strong>multiple options</strong>. For example:</p>
+<h3 id="helpdesk-ticket-routing">🎯 Helpdesk Ticket Routing</h3>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Desired Routing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"App crashed on checkout."</td>
+<td>Technical Support</td>
+</tr>
+<tr>
+<td>"Can I get a refund?"</td>
+<td>Billing</td>
+</tr>
+<tr>
+<td>"Love the new UI!"</td>
+<td>Product Feedback</td>
+</tr>
+<tr>
+<td>"Are you open on weekends?"</td>
+<td>General Inquiry</td>
+</tr>
+</tbody>
+</table>
+<p>You now need a model that doesn't just say yes or no — it has to <strong>pick the right bucket</strong>.</p>
 <hr />
-<h3 id="what-changes">🧩 What Changes?</h3>
-<p>You’re still training a model.
-You still have features and labels.</p>
+<h2 id="whats-new-with-multi-class">🧩 What's New with Multi-Class?</h2>
+<p>You still:</p>
+<ul>
+<li>Clean your data</li>
+<li>Create features</li>
+<li>Train a model</li>
+</ul>
 <p>But now:</p>
 <ul>
-<li>The label is not 0 or 1 — it’s one of several classes.</li>
-<li>The model has to <strong>pick the best class</strong> for each input.</li>
-<li>Evaluation gets trickier.</li>
+<li>Labels are not binary (<code>0</code>/<code>1</code>), they are <strong>categories</strong>.</li>
+<li>The model outputs a <strong>probability distribution</strong> over all possible classes.</li>
+<li>You evaluate how well it performs for <strong>each class individually</strong>, not just overall.</li>
 </ul>
 <hr />
-<h3 id="code-walkthrough-first-multi-class-model">🧪 Code Walkthrough — First Multi-Class Model</h3>
-<p>Let’s reuse what we already know — with a twist.</p>
+<h2 id="code-walkthrough-first-multi-class-model">🧪 Code Walkthrough: First Multi-Class Model</h2>
+<p>Let's take a simple dataset of support tickets and build a multi-class classifier.</p>
 <pre><code class="language-python">from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
-# Example dataset
+# Simple dataset
 data = [
     (&quot;Refund request for last month&quot;, &quot;Billing&quot;),
     (&quot;App crashes on login&quot;, &quot;Technical&quot;),
     (&quot;Love the new dashboard design!&quot;, &quot;Feedback&quot;),
     (&quot;What time does support close?&quot;, &quot;Other&quot;),
+    (&quot;My card was charged twice&quot;, &quot;Billing&quot;),
+    (&quot;Can't reset my password&quot;, &quot;Technical&quot;),
+    (&quot;UI is much smoother now&quot;, &quot;Feedback&quot;),
+    (&quot;Need help logging in&quot;, &quot;Technical&quot;),
 ]
 
-# Convert to features (you can add NLP later)
-# Example: use a simple vectorizer or dummy values
-# X = ... 
+# Labels and dummy features (just for structure)
 y = [label for _, label in data]
+X = [[1, 0], [0, 1], [1, 1], [0, 0], [1, 0], [0, 1], [1, 1], [0, 1]]
 
-# Placeholder for actual vectorization
-X = [[1, 0], [0, 1], [1, 1], [0, 0]]  # Dummy features
-
-# Train/test split
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y)
 
 model = LogisticRegression(multi_class='multinomial', solver='lbfgs')
@@ -581,80 +1193,133 @@ y_pred = model.predict(X_test)
 print(classification_report(y_test, y_pred))
 </code></pre>
 <hr />
-<h3 id="debugging-multi-class-is-different">🧠 Debugging Multi-Class Is Different</h3>
-<p>You can’t just fix a threshold. You need to:</p>
-<ul>
-<li><strong>Look at the confusion matrix</strong></li>
-<li><strong>Identify which classes are overlapping</strong></li>
-<li><strong>Improve your features or data balance</strong></li>
-</ul>
-<hr />
-<h3 id="visual-debug-confusion-matrix">📊 Visual Debug: Confusion Matrix</h3>
+<h2 id="lets-visualize-whats-going-on">🧠 Let’s Visualize What’s Going On</h2>
+<p>Once you've trained your multi-class model and printed the classification report, it’s time to visualize where your model shines — and where it fumbles.</p>
+<h3 id="confusion-matrix">🔍 Confusion Matrix</h3>
 <pre><code class="language-python">from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix
 
 cm = confusion_matrix(y_test, y_pred, labels=model.classes_)
-ConfusionMatrixDisplay(cm, display_labels=model.classes_).plot()
+ConfusionMatrixDisplay(cm, display_labels=model.classes_).plot(cmap=&quot;Blues&quot;)
+</code></pre>
+<blockquote>
+<p>This <strong>confusion matrix</strong> shows exactly which classes your model tends to confuse. For example, are “Billing” and “Other” frequently mixed up? This tells you what to fix next.</p>
+</blockquote>
+<hr />
+<h2 id="visualize-per-class-precision-recall">📈 Visualize Per-Class Precision &amp; Recall</h2>
+<p>Let’s look at how your model performs on each class individually:</p>
+<pre><code class="language-python">from sklearn.metrics import classification_report
+import pandas as pd
+import matplotlib.pyplot as plt
+
+report = classification_report(y_test, y_pred, output_dict=True)
+df = pd.DataFrame(report).transpose().drop(['accuracy', 'macro avg', 'weighted avg'])
+
+df[['precision', 'recall', 'f1-score']].plot(kind='bar', figsize=(10,6))
+plt.title('How well are we doing per class?')
+plt.ylim(0, 1.05)
+plt.xticks(rotation=45)
+plt.grid(axis='y')
+plt.show()
+</code></pre>
+<blockquote>
+<p>This helps you see which class is getting the best precision, which one has poor recall, and where your model might be over- or under-sensitive.</p>
+</blockquote>
+<hr />
+<h2 id="want-to-go-deeper-try-visualizing-feature-space">🔬 Want to Go Deeper? Try Visualizing Feature Space</h2>
+<p>If you're curious whether your inputs are even <em>separable</em>, try visualizing them in 2D using t-SNE:</p>
+<pre><code class="language-python">from sklearn.manifold import TSNE
+
+X_proj = TSNE(n_components=2, random_state=42).fit_transform(X_test)
+plt.scatter(X_proj[:, 0], X_proj[:, 1], c=[model.classes_.tolist().index(label) for label in y_test], cmap='tab10')
+plt.title('t-SNE Projection of Your Feature Space')
+plt.show()
+</code></pre>
+<blockquote>
+<p>If “Billing” and “Technical” are overlapping blobs, your model will struggle too — it’s not magic.</p>
+</blockquote>
+<hr />
+<h2 id="why-evaluation-gets-harder">🧠 Why Evaluation Gets Harder</h2>
+<p>With binary classification, your mistake is simple: right or wrong.</p>
+<p>In multi-class, mistakes become <strong>directional</strong>:</p>
+<ul>
+<li>Predicting "Billing" when it was actually "Feedback" is very different than predicting "Technical" when it was "Other."</li>
+</ul>
+<hr />
+<h2 id="real-debugging-tips">🔎 Real Debugging Tips</h2>
+<ul>
+<li><strong>Label Overlap:</strong> Are your classes too similar? (e.g., "Technical" vs. "Login Issues")</li>
+<li><strong>Imbalanced Data:</strong> Do you have very few examples for some categories?</li>
+<li><strong>Generic Language:</strong> Is the input too vague? (e.g., "It doesn’t work")</li>
+</ul>
+<p>Try printing low-confidence predictions:</p>
+<pre><code class="language-python">for probs in model.predict_proba(X_test):
+    print(f&quot;Confidence: {max(probs):.2f}, Prediction: {model.classes_[probs.argmax()]}&quot;)
 </code></pre>
 <hr />
-<h3 id="class-imbalance-matters-more-now">💡 Class Imbalance Matters More Now</h3>
-<p>If only 5% of tickets are “Feedback”, the model might:</p>
+<h2 id="understanding-class-imbalance">📊 Understanding Class Imbalance</h2>
+<p>Let’s say 80% of your data is "Technical." Your model may just learn to <strong>default to that class</strong> to optimize accuracy.</p>
+<p>Solution:</p>
 <ul>
-<li>Predict “Billing” 70% of the time — and still look “accurate”</li>
-<li>Ignore rare classes</li>
+<li>Use <code>class_weight='balanced'</code></li>
+<li>Collect more examples for rare classes</li>
+<li>Downsample dominant classes</li>
 </ul>
+<hr />
+<h2 id="real-world-analogy-doctor-diagnoses">🎓 Real-World Analogy: Doctor Diagnoses</h2>
+<p>Imagine an AI diagnosing diseases:</p>
+<ul>
+<li>80% of patients are healthy</li>
+<li>15% have cold</li>
+<li>5% have something rare</li>
+</ul>
+<p>A model that always predicts "healthy" might look accurate — but it’s dangerous.</p>
+<p>That’s why <strong>per-class evaluation</strong> and <strong>confidence scores</strong> matter.</p>
+<hr />
+<h2 id="bonus-top-k-predictions">🧠 Bonus: Top-K Predictions</h2>
+<p>Sometimes your model isn't confident. In those cases, showing the <strong>top 2 guesses</strong> can help:</p>
+<pre><code class="language-python">import numpy as np
+
+probs = model.predict_proba(X_test)
+for p in probs:
+    top2 = np.argsort(p)[-2:][::-1]
+    print(&quot;Top-2:&quot;, [(model.classes_[i], round(p[i], 2)) for i in top2])
+</code></pre>
 <blockquote>
-<p>Tip: Use <code>class_weight='balanced'</code> in <code>LogisticRegression</code> to help counter imbalance</p>
+<p>This is a great setup for using fallback logic or even LLMs in Chapter 7.</p>
 </blockquote>
 <hr />
-<h3 id="reflection-questions">💭 Reflection Questions</h3>
+<h2 id="reflection-questions">💡 Reflection Questions</h2>
 <ol>
-<li>Have you shipped features with more than 2 possible outcomes?</li>
-<li>What happens when one class is rare — but important?</li>
-<li>Would you prefer your model to say “unsure” rather than guess incorrectly?</li>
+<li>Have you built or used systems with multiple possible outcomes?</li>
+<li>When does it make sense to say "I’m not sure"?</li>
+<li>What’s the cost of predicting the wrong class?</li>
+<li>How can you improve class separation?</li>
+<li>Can you think of cases where Top-2 prediction might be safer?</li>
 </ol>
 <hr />
-<h3 id="exercise-your-first-multi-class-classifier">💻 Exercise: Your First Multi-Class Classifier</h3>
-<p>Build your own ticket classifier:</p>
-<ol>
-<li>Create 20–30 example messages with 3–4 categories (Billing, Tech, Feedback, Other)</li>
-<li>Extract features (start simple: keyword flags, message length)</li>
-<li>Train a LogisticRegression model with <code>multi_class='multinomial'</code></li>
-<li>Print the classification report</li>
-<li>Plot the confusion matrix</li>
-</ol>
-<hr />
-<h3 id="small-project-multi-class-ticket-router">🏁 Small Project: Multi-Class Ticket Router</h3>
-<p>Use what you’ve learned to build a smart routing engine.</p>
-<h4 id="scenario">Scenario:</h4>
-<p>You’re automating ticket routing for a helpdesk. Tickets need to go to the right team:</p>
+<h2 id="hands-on-project-smart-ticket-router">💻 Hands-On Project: Smart Ticket Router</h2>
+<p>Build a full pipeline:</p>
 <ul>
-<li><code>Billing</code></li>
-<li><code>Tech</code></li>
-<li><code>Feedback</code></li>
-<li><code>Other</code></li>
-</ul>
-<h4 id="build">Build:</h4>
-<ul>
-<li>A labeled dataset (30–40 examples)</li>
-<li>Feature extractor (keywords, patterns, length)</li>
-<li>Multinomial model</li>
-<li>Evaluation: precision/recall + confusion matrix</li>
-<li>CLI: paste in a message → see predicted department</li>
+<li>Create 30–40 sample messages (Billing, Tech, Feedback, Other)</li>
+<li>Extract simple features (keyword flags, text length)</li>
+<li>Train a <code>LogisticRegression</code> model</li>
+<li>Evaluate with confusion matrix + precision/recall</li>
+<li>Print confidence scores and top-2 guesses</li>
+<li>If max confidence &lt; 0.5, label as "uncertain"</li>
 </ul>
 <blockquote>
-<p>Bonus: Show top-2 predictions if the model is unsure</p>
+<p>Bonus: Add a basic rule like "If the message has fewer than 3 words, skip classification"</p>
 </blockquote>
 <hr />
-<h3 id="exit-outcome">✅ Exit Outcome</h3>
-<p>You now know:</p>
+<h2 id="exit-outcome">🌟 Exit Outcome</h2>
+<p>You now:</p>
 <ul>
-<li>How to build a multi-class model</li>
-<li>How to evaluate and debug per class</li>
-<li>How to deploy a real-world routing tool</li>
+<li>Understand how to build and debug multi-class models</li>
+<li>Can evaluate performance by class</li>
+<li>Know how to detect ambiguity and confidence issues</li>
 </ul>
-<hr />
-<h3 id="coming-up">⏭️ Coming Up</h3>
-<p>Next, we explore how to <strong>blend rules and learning</strong> into hybrid systems — because sometimes the best solution isn’t pure AI or pure logic, but a smart mix of both.</p>
+<p>Up next: We’ll combine everything you’ve learned into a <strong>hybrid system</strong> that mixes logic + learning — and knows when to ask for help.</p>
+<p>Let’s keep going!</p>
 
 
 

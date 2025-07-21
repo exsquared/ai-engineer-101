@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project_3/">
+        <link rel="prev" href="../chapter_9/">
       
       
-        <link rel="next" href="../chapter_10/">
+        <link rel="next" href="../chapter_11/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 9 - Serving Your AI - AI Engineering 101</title>
+        <title>Chapter 10 - Scaling, Microservices & DevOps - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-your-ai-fastapi-for-real-world-integration" class="md-skip">
+        <a href="#scaling-microservices-devops-for-ai-systems" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 9 - Serving Your AI
+              Chapter 10 - Scaling, Microservices & DevOps
             
           </span>
         </div>
@@ -521,6 +521,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 9 - Serving Your AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -538,7 +560,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
+    Chapter 10 - Scaling, Microservices & DevOps
     
   </span>
   
@@ -551,7 +573,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
+    Chapter 10 - Scaling, Microservices & DevOps
     
   </span>
   
@@ -576,124 +598,124 @@
         <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
-      🌉 Why Are We Here?
+      🧭 Why Are We Here?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
+  <a href="#system-design-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Goal
+      🏗️ System Design at a Glance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#build-a-scalable-fastapi-ai-service" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      ⚙️ Build a Scalable FastAPI AI Service
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#add-caching-with-redis" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      🧠 Add Caching with Redis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#add-retry-logic" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🔁 Add Retry Logic
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#add-logging-and-tracing" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      📊 Add Logging and Tracing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+  <a href="#add-health-check-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
+      ✅ Add Health Check Endpoint
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
+  <a href="#queueing-for-long-jobs-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
+      🧵 Queueing for Long Jobs (Optional)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
+  <a href="#microservice-thinking-what-to-separate" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
+      🧠 Microservice Thinking: What to Separate?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
+  <a href="#infra-tools-youll-want" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
+      🧰 Infra Tools You’ll Want
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
+  <a href="#recap-what-you-just-built" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 API Versioning
+      🧠 Recap: What You Just Built
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Logging Best Practices
+      ❓Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
+  <a href="#mini-quiz" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
+      🧪 Mini Quiz
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
+  <a href="#microproject" class="md-nav__link">
     <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
+      🎯 Microproject
     </span>
   </a>
   
@@ -712,28 +734,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../chapter_10/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chapter 10 - Scaling, Microservices & DevOps
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -877,124 +877,124 @@
         <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
-      🌉 Why Are We Here?
+      🧭 Why Are We Here?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
+  <a href="#system-design-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Goal
+      🏗️ System Design at a Glance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#build-a-scalable-fastapi-ai-service" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      ⚙️ Build a Scalable FastAPI AI Service
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#add-caching-with-redis" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      🧠 Add Caching with Redis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#add-retry-logic" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🔁 Add Retry Logic
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#add-logging-and-tracing" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      📊 Add Logging and Tracing
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+  <a href="#add-health-check-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
+      ✅ Add Health Check Endpoint
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
+  <a href="#queueing-for-long-jobs-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
+      🧵 Queueing for Long Jobs (Optional)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
+  <a href="#microservice-thinking-what-to-separate" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
+      🧠 Microservice Thinking: What to Separate?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
+  <a href="#infra-tools-youll-want" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
+      🧰 Infra Tools You’ll Want
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
+  <a href="#recap-what-you-just-built" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 API Versioning
+      🧠 Recap: What You Just Built
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Logging Best Practices
+      ❓Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
+  <a href="#mini-quiz" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
+      🧪 Mini Quiz
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
+  <a href="#microproject" class="md-nav__link">
     <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
+      🎯 Microproject
     </span>
   </a>
   
@@ -1025,177 +1025,204 @@
 
 
 
-<h1 id="serving-your-ai-fastapi-for-real-world-integration">Serving Your AI — FastAPI for Real-World Integration</h1>
+<h1 id="scaling-microservices-devops-for-ai-systems">🚀 Scaling, Microservices &amp; DevOps for AI Systems</h1>
+<p><em>From Local Notebooks to Real APIs That Don’t Fall Over</em></p>
 <hr />
-<h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
-<p>You’ve now built:</p>
+<h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
+<p>It’s one thing to build a model. It’s another to ship it — safely, scalably, and observably.</p>
+<p>In this chapter, we’ll show how to:</p>
 <ul>
-<li>Classical ML models</li>
-<li>Rule + logic pipelines</li>
-<li>LLM-powered classifiers, extractors, and transformers</li>
+<li>Scale a FastAPI AI service into production</li>
+<li>Handle retries, caching, queues, and timeouts</li>
+<li>Introduce observability and health monitoring</li>
+<li>Think like a microservice engineer, not a data scientist</li>
 </ul>
-<p>It’s time to ship. Because a model that lives in a notebook… isn’t a product.</p>
-<p>This chapter shows you how to turn your hybrid system — models + rules + prompts — into a real, usable API using FastAPI — with logging, fallbacks, caching, versioning, and testability.</p>
+<p>By the end, your model won’t just work — it’ll <em>work reliably under pressure</em>.</p>
 <hr />
-<h2 id="goal">🎯 Goal</h2>
+<h2 id="system-design-at-a-glance">🏗️ System Design at a Glance</h2>
+<p>Here’s what a real-world AI service looks like in production:</p>
+<pre><code class="language-txt">Client ───&gt; API Gateway ───&gt; FastAPI AI Service ───&gt; Model
+                           └──&gt; Redis / Queue / Logs
+</code></pre>
+<p>Key components:</p>
 <ul>
-<li>Serve your hybrid AI logic as a versioned web API</li>
-<li>Apply engineering best practices (logging, caching, error handling)</li>
-<li>Prepare your AI component for team use and production deployments</li>
+<li><strong>FastAPI server</strong>: Exposes model as a REST API</li>
+<li><strong>Queue (optional)</strong>: Buffers long-running jobs</li>
+<li><strong>Cache (Redis)</strong>: Prevents repeated work</li>
+<li><strong>Logger / Tracer</strong>: Tracks usage and errors</li>
+<li><strong>Retry layer</strong>: Handles flaky services</li>
+<li><strong>Health probe</strong>: Signals readiness</li>
 </ul>
 <hr />
-<h2 id="why-fastapi">🧠 Why FastAPI?</h2>
-<p>FastAPI is a developer-friendly web framework for building modern Python APIs:</p>
-<ul>
-<li>✅ Pydantic-powered request validation</li>
-<li>✅ Built-in OpenAPI docs at <code>/docs</code></li>
-<li>✅ Type hints + editor autocomplete</li>
-<li>✅ Async-ready for future scaling</li>
-</ul>
-<p>Perfect for wrapping LLM pipelines into testable, monitorable services.</p>
-<hr />
-<h2 id="recommended-project-structure">🗂️ Recommended Project Structure</h2>
-<pre><code>/ai_service
-├── main.py               # FastAPI entrypoint
-├── api/                  # Routes and endpoints
-│   └── routes.py
-├── services/             # Your ML / LLM logic
-│   └── triage_pipeline.py
-├── schemas/              # Request/response models
-│   └── models.py
-├── config.py             # App settings and secrets
-└── tests/                # Unit + integration tests
-</code></pre>
-<hr />
-<h2 id="inference-logic-servicestriage_pipelinepy">⚙️ Inference Logic (services/triage_pipeline.py)</h2>
-<pre><code class="language-python">def triage_message(message):
-    if not message or len(message.strip()) &lt; 5:
-        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty message&quot;}
-
-    if &quot;vip&quot; in message.lower():
-        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
-
-    try:
-        label = call_llm_classifier(message)
-        urgency = extract_urgency(message)
-    except Exception as e:
-        return {&quot;action&quot;: &quot;error&quot;, &quot;reason&quot;: str(e)}
-
-    return {
-        &quot;action&quot;: &quot;route&quot;,
-        &quot;category&quot;: label,
-        &quot;urgency&quot;: urgency
-    }
-</code></pre>
-<hr />
-<h2 id="pydantic-schemas-schemasmodelspy">🧾 Pydantic Schemas (schemas/models.py)</h2>
-<pre><code class="language-python">from pydantic import BaseModel
-
-class TriageRequest(BaseModel):
-    message: str
-
-class TriageResponse(BaseModel):
-    action: str
-    category: str | None = None
-    urgency: str | None = None
-    reason: str | None = None
-</code></pre>
-<hr />
-<h2 id="fastapi-endpoint-apiroutespy">🚀 FastAPI Endpoint (api/routes.py)</h2>
-<pre><code class="language-python">from fastapi import APIRouter
-from schemas.models import TriageRequest, TriageResponse
-from services.triage_pipeline import triage_message
-import logging
-
-router = APIRouter()
-
-@router.post(&quot;/v1/triage&quot;, response_model=TriageResponse)
-def handle_triage(req: TriageRequest):
-    logging.info(f&quot;Input: {req.message}&quot;)
-    result = triage_message(req.message)
-    logging.info(f&quot;Result: {result}&quot;)
-    return result
-</code></pre>
-<hr />
-<h2 id="entrypoint-mainpy">📦 Entrypoint (main.py)</h2>
-<pre><code class="language-python">from fastapi import FastAPI
-from api.routes import router
-import uvicorn
-import logging
+<h2 id="build-a-scalable-fastapi-ai-service">⚙️ Build a Scalable FastAPI AI Service</h2>
+<pre><code class="language-python">from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from openai import OpenAI
 
 app = FastAPI()
-app.include_router(router)
 
-logging.basicConfig(level=logging.INFO)
+client = OpenAI()
 
-if __name__ == &quot;__main__&quot;:
-    uvicorn.run(&quot;main:app&quot;, host=&quot;0.0.0.0&quot;, port=8000, reload=True)
-</code></pre>
-<p>Test in your browser at: <code>http://localhost:8000/docs</code></p>
-<hr />
-<h2 id="caching-performance-tips">💡 Caching &amp; Performance Tips</h2>
-<ul>
-<li>Cache repeat queries using <code>functools.lru_cache</code> or Redis</li>
-<li>Cache embeddings or LLM responses to save tokens</li>
-</ul>
-<pre><code class="language-python">from functools import lru_cache
+class Query(BaseModel):
+    prompt: str
 
-@lru_cache(maxsize=128)
-def get_label(message):
-    return call_llm_classifier(message)
+@app.post(&quot;/generate&quot;)
+def generate(q: Query):
+    try:
+        response = client.chat.completions.create(
+            model=&quot;gpt-4&quot;,
+            messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: q.prompt}],
+            timeout=10,
+        )
+        return {&quot;result&quot;: response.choices[0].message.content}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 </code></pre>
 <hr />
-<h2 id="error-handling-fallbacks">🛡️ Error Handling + Fallbacks</h2>
+<h2 id="add-caching-with-redis">🧠 Add Caching with Redis</h2>
+<pre><code class="language-python">import redis
+import hashlib
+
+r = redis.Redis()
+
+def cache_key(prompt: str):
+    return &quot;gen:&quot; + hashlib.sha1(prompt.encode()).hexdigest()
+
+@app.post(&quot;/generate&quot;)
+def generate(q: Query):
+    key = cache_key(q.prompt)
+    if (cached := r.get(key)):
+        return {&quot;result&quot;: cached.decode()}
+
+    response = client.chat.completions.create(...)
+    result = response.choices[0].message.content
+    r.set(key, result, ex=3600)
+    return {&quot;result&quot;: result}
+</code></pre>
+<hr />
+<h2 id="add-retry-logic">🔁 Add Retry Logic</h2>
+<pre><code class="language-python">import backoff
+
+@backoff.on_exception(backoff.expo, Exception, max_tries=3)
+def call_model(prompt):
+    return client.chat.completions.create(...)
+</code></pre>
+<p>Retries help handle flaky upstreams (rate limits, timeouts, etc.).</p>
+<hr />
+<h2 id="add-logging-and-tracing">📊 Add Logging and Tracing</h2>
+<pre><code class="language-python">import logging
+
+logger = logging.getLogger(&quot;uvicorn.error&quot;)
+
+@app.post(&quot;/generate&quot;)
+def generate(q: Query):
+    logger.info(f&quot;Prompt: {q.prompt}&quot;)
+    ...
+</code></pre>
+<p>✅ Use structured logs (JSON) for observability platforms like:</p>
 <ul>
-<li>Always catch LLM exceptions</li>
-<li>Return consistent schema with <code>action: "error"</code></li>
-<li>Add retries using <code>tenacity</code> if needed</li>
+<li>Datadog</li>
+<li>Prometheus</li>
+<li>Grafana Loki</li>
+<li>OpenTelemetry + LangSmith</li>
 </ul>
 <hr />
-<h2 id="api-versioning">🔐 API Versioning</h2>
-<ul>
-<li>Use route prefixes like <code>/v1/</code> and <code>/v2/</code></li>
-<li>Add <code>/version</code> endpoint with logic details</li>
-</ul>
-<hr />
-<h2 id="logging-best-practices">📊 Logging Best Practices</h2>
-<ul>
-<li>Log: request ID, model, token usage, latency</li>
-<li>Don’t log raw PII unless masked</li>
-<li>Use <code>logging</code> levels to control output</li>
-</ul>
-<hr />
-<h2 id="health-and-metadata-endpoints">✅ Health and Metadata Endpoints</h2>
+<h2 id="add-health-check-endpoint">✅ Add Health Check Endpoint</h2>
 <pre><code class="language-python">@app.get(&quot;/health&quot;)
 def health():
     return {&quot;status&quot;: &quot;ok&quot;}
-
-@app.get(&quot;/version&quot;)
-def version():
-    return {&quot;version&quot;: &quot;1.0.1&quot;, &quot;model&quot;: &quot;gpt-4&quot;, &quot;llm_strategy&quot;: &quot;few-shot&quot;}
 </code></pre>
+<p>Your orchestrator (e.g., Kubernetes) uses this to decide whether to route traffic or restart.</p>
 <hr />
-<h2 id="unit-tests-with-fastapi">🔬 Unit Tests with FastAPI</h2>
-<pre><code class="language-python">from fastapi.testclient import TestClient
-from main import app
-
-client = TestClient(app)
-
-def test_triage():
-    res = client.post(&quot;/v1/triage&quot;, json={&quot;message&quot;: &quot;I was charged twice&quot;})
-    assert res.status_code == 200
-    assert &quot;category&quot; in res.json()
+<h2 id="queueing-for-long-jobs-optional">🧵 Queueing for Long Jobs (Optional)</h2>
+<p>For heavyweight tasks (e.g. fine-tuning, PDF parsing), offload to a queue:</p>
+<pre><code class="language-txt">FastAPI ───&gt; Redis Queue ───&gt; Worker (Celery, RQ)
 </code></pre>
+<p>This lets you return 202 Accepted and poll for result later.</p>
+<hr />
+<h2 id="microservice-thinking-what-to-separate">🧠 Microservice Thinking: What to Separate?</h2>
+<ul>
+<li>Separate <strong>UI</strong> from <strong>inference</strong>  </li>
+<li>Separate <strong>retrieval</strong> from <strong>generation</strong>  </li>
+<li>Separate <strong>controller logic</strong> (agent) from tools</li>
+</ul>
+<p>Split services by:</p>
+<ul>
+<li>Different latency profiles</li>
+<li>Different observability and security needs</li>
+<li>Different ownership teams</li>
+</ul>
+<hr />
+<h2 id="infra-tools-youll-want">🧰 Infra Tools You’ll Want</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Why It Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Docker</strong></td>
+<td>Consistent deployment across envs</td>
+</tr>
+<tr>
+<td><strong>Kubernetes / ECS</strong></td>
+<td>Scales your containerized API</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>Cache or queue layer</td>
+</tr>
+<tr>
+<td><strong>Prometheus + Grafana</strong></td>
+<td>Metrics &amp; dashboards</td>
+</tr>
+<tr>
+<td><strong>Traceloop / LangSmith / Phoenix</strong></td>
+<td>LLM tracing &amp; debugging</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recap-what-you-just-built">🧠 Recap: What You Just Built</h2>
+<p>✅ A FastAPI service that wraps a model<br />
+✅ Observability: logging, retries, health checks<br />
+✅ Caching + optional queue<br />
+✅ A pattern to grow into a real AI backend</p>
+<hr />
+<h2 id="reflection-questions">❓Reflection Questions</h2>
+<ol>
+<li>What’s the first bottleneck you’d hit if 10k users hit this model?  </li>
+<li>How would you version and deploy a new model without downtime?  </li>
+<li>Which part of your API stack needs retries, caching, or batching?</li>
+</ol>
+<hr />
+<h2 id="mini-quiz">🧪 Mini Quiz</h2>
+<p><strong>Q1.</strong> What’s the benefit of Redis here?<br />
+✅ a) Avoid recomputing the same prompt response</p>
+<p><strong>Q2.</strong> Why should long-running jobs use queues?<br />
+✅ b) So they don’t block incoming API requests</p>
+<hr />
+<h2 id="microproject">🎯 Microproject</h2>
+<p>🔧 Build a deployable GPT-backed FastAPI app with:</p>
+<ul>
+<li><code>/generate</code> endpoint</li>
+<li>Redis caching</li>
+<li>Basic logging</li>
+<li>A <code>/health</code> endpoint</li>
+</ul>
+<p><strong>Bonus:</strong> Deploy it on Render or Fly.io for free.</p>
 <hr />
 <h2 id="exit-outcome">✅ Exit Outcome</h2>
 <p>You now:</p>
 <ul>
-<li>Can serve your LLM-powered logic via FastAPI</li>
-<li>Understand logging, testing, versioning, and caching</li>
-<li>Have all the tools to turn AI from notebook into deployable product</li>
+<li>Can structure and scale your AI microservice</li>
+<li>Know how to deploy, observe, retry, and cache safely</li>
+<li>Understand when to queue, when to batch, and when to split logic</li>
 </ul>
 <blockquote>
-<p>Next: Let’s scale this with observability, queues, and containers.</p>
+<p>In the next chapter: Generative AI meets images, vision, and multimodal prompts. Let’s go visual.</p>
 </blockquote>
 
 

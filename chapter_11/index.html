@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project_3/">
+        <link rel="prev" href="../chapter_10/">
       
       
-        <link rel="next" href="../chapter_10/">
+        <link rel="next" href="../chapter_12/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 9 - Serving Your AI - AI Engineering 101</title>
+        <title>Chapter 11 - Let LLMs Read Your Data - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serving-your-ai-fastapi-for-real-world-integration" class="md-skip">
+        <a href="#let-llms-read-your-data" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 9 - Serving Your AI
+              Chapter 11 - Let LLMs Read Your Data
             
           </span>
         </div>
@@ -521,32 +521,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../chapter_9/" class="md-nav__link">
         
   
   
@@ -557,161 +535,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-are-we-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌉 Why Are We Here?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Goal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Why FastAPI?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔐 API Versioning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊 Logging Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -742,10 +565,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter_11/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 11 - Let LLMs Read Your Data
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -756,6 +601,203 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-power-of-retrieval-augmented-generation-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Retrieval-Augmented Generation (RAG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Why Are We Here?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 What Is RAG?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Real-World Analogy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-concepts-youll-meet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ New Concepts You’ll Meet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-all-fits-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 How It All Fits Together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-a-vector-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃️ What’s a Vector Database?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-build-a-mini-rag-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      💻 Let’s Build a Mini RAG System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Let’s Build a Mini RAG System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-load-and-chunk-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Load and Chunk Documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-embed-and-store-in-vector-db-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Embed and Store in Vector DB (FAISS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-a-rag-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Run a RAG Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-workflow-optional-via-langflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Visual Workflow (Optional via LangFlow)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langchain-vs-barebones-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 LangChain vs. Barebones Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-rag-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Why RAG Wins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-you-now-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Recap: You Now Know…
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓Reflection Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Mini Quiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Microproject
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-agents-tool-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔜 Next: Agents &amp; Tool Use
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -875,135 +917,177 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-power-of-retrieval-augmented-generation-rag" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Power of Retrieval-Augmented Generation (RAG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
-      🌉 Why Are We Here?
+      🧭 Why Are We Here?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#goal" class="md-nav__link">
+  <a href="#what-is-rag" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Goal
+      🚀 What Is RAG?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-fastapi" class="md-nav__link">
+  <a href="#real-world-analogy" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Why FastAPI?
+      🧪 Real-World Analogy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-project-structure" class="md-nav__link">
+  <a href="#new-concepts-youll-meet" class="md-nav__link">
     <span class="md-ellipsis">
-      🗂️ Recommended Project Structure
+      🛠️ New Concepts You’ll Meet
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inference-logic-servicestriage_pipelinepy" class="md-nav__link">
+  <a href="#how-it-all-fits-together" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚙️ Inference Logic (services/triage_pipeline.py)
+      🧱 How It All Fits Together
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic-schemas-schemasmodelspy" class="md-nav__link">
+  <a href="#whats-a-vector-database" class="md-nav__link">
     <span class="md-ellipsis">
-      🧾 Pydantic Schemas (schemas/models.py)
+      🗃️ What’s a Vector Database?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fastapi-endpoint-apiroutespy" class="md-nav__link">
+  <a href="#lets-build-a-mini-rag-system" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 FastAPI Endpoint (api/routes.py)
+      💻 Let’s Build a Mini RAG System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Let’s Build a Mini RAG System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-load-and-chunk-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Load and Chunk Documents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-embed-and-store-in-vector-db-faiss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Embed and Store in Vector DB (FAISS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-run-a-rag-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Run a RAG Chain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-workflow-optional-via-langflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖼️ Visual Workflow (Optional via LangFlow)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entrypoint-mainpy" class="md-nav__link">
+  <a href="#langchain-vs-barebones-code" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Entrypoint (main.py)
+      🧠 LangChain vs. Barebones Code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching-performance-tips" class="md-nav__link">
+  <a href="#why-rag-wins" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 Caching &amp; Performance Tips
+      🔁 Why RAG Wins
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-handling-fallbacks" class="md-nav__link">
+  <a href="#recap-you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Error Handling + Fallbacks
+      🧠 Recap: You Now Know…
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-versioning" class="md-nav__link">
+  <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      🔐 API Versioning
+      ❓Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging-best-practices" class="md-nav__link">
+  <a href="#mini-quiz" class="md-nav__link">
     <span class="md-ellipsis">
-      📊 Logging Best Practices
+      🧪 Mini Quiz
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#health-and-metadata-endpoints" class="md-nav__link">
+  <a href="#microproject" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Health and Metadata Endpoints
+      🧪 Microproject
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#unit-tests-with-fastapi" class="md-nav__link">
+  <a href="#next-agents-tool-use" class="md-nav__link">
     <span class="md-ellipsis">
-      🔬 Unit Tests with FastAPI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exit-outcome" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Exit Outcome
+      🔜 Next: Agents &amp; Tool Use
     </span>
   </a>
   
@@ -1025,178 +1109,248 @@
 
 
 
-<h1 id="serving-your-ai-fastapi-for-real-world-integration">Serving Your AI — FastAPI for Real-World Integration</h1>
+<h1 id="let-llms-read-your-data">Let LLMs Read Your Data</h1>
+<h3 id="the-power-of-retrieval-augmented-generation-rag"><em>The Power of Retrieval-Augmented Generation (RAG)</em></h3>
 <hr />
-<h2 id="why-are-we-here">🌉 Why Are We Here?</h2>
-<p>You’ve now built:</p>
-<ul>
-<li>Classical ML models</li>
-<li>Rule + logic pipelines</li>
-<li>LLM-powered classifiers, extractors, and transformers</li>
-</ul>
-<p>It’s time to ship. Because a model that lives in a notebook… isn’t a product.</p>
-<p>This chapter shows you how to turn your hybrid system — models + rules + prompts — into a real, usable API using FastAPI — with logging, fallbacks, caching, versioning, and testability.</p>
-<hr />
-<h2 id="goal">🎯 Goal</h2>
-<ul>
-<li>Serve your hybrid AI logic as a versioned web API</li>
-<li>Apply engineering best practices (logging, caching, error handling)</li>
-<li>Prepare your AI component for team use and production deployments</li>
-</ul>
-<hr />
-<h2 id="why-fastapi">🧠 Why FastAPI?</h2>
-<p>FastAPI is a developer-friendly web framework for building modern Python APIs:</p>
-<ul>
-<li>✅ Pydantic-powered request validation</li>
-<li>✅ Built-in OpenAPI docs at <code>/docs</code></li>
-<li>✅ Type hints + editor autocomplete</li>
-<li>✅ Async-ready for future scaling</li>
-</ul>
-<p>Perfect for wrapping LLM pipelines into testable, monitorable services.</p>
-<hr />
-<h2 id="recommended-project-structure">🗂️ Recommended Project Structure</h2>
-<pre><code>/ai_service
-├── main.py               # FastAPI entrypoint
-├── api/                  # Routes and endpoints
-│   └── routes.py
-├── services/             # Your ML / LLM logic
-│   └── triage_pipeline.py
-├── schemas/              # Request/response models
-│   └── models.py
-├── config.py             # App settings and secrets
-└── tests/                # Unit + integration tests
-</code></pre>
-<hr />
-<h2 id="inference-logic-servicestriage_pipelinepy">⚙️ Inference Logic (services/triage_pipeline.py)</h2>
-<pre><code class="language-python">def triage_message(message):
-    if not message or len(message.strip()) &lt; 5:
-        return {&quot;action&quot;: &quot;ignore&quot;, &quot;reason&quot;: &quot;Empty message&quot;}
-
-    if &quot;vip&quot; in message.lower():
-        return {&quot;action&quot;: &quot;escalate&quot;, &quot;reason&quot;: &quot;VIP customer&quot;}
-
-    try:
-        label = call_llm_classifier(message)
-        urgency = extract_urgency(message)
-    except Exception as e:
-        return {&quot;action&quot;: &quot;error&quot;, &quot;reason&quot;: str(e)}
-
-    return {
-        &quot;action&quot;: &quot;route&quot;,
-        &quot;category&quot;: label,
-        &quot;urgency&quot;: urgency
-    }
-</code></pre>
-<hr />
-<h2 id="pydantic-schemas-schemasmodelspy">🧾 Pydantic Schemas (schemas/models.py)</h2>
-<pre><code class="language-python">from pydantic import BaseModel
-
-class TriageRequest(BaseModel):
-    message: str
-
-class TriageResponse(BaseModel):
-    action: str
-    category: str | None = None
-    urgency: str | None = None
-    reason: str | None = None
-</code></pre>
-<hr />
-<h2 id="fastapi-endpoint-apiroutespy">🚀 FastAPI Endpoint (api/routes.py)</h2>
-<pre><code class="language-python">from fastapi import APIRouter
-from schemas.models import TriageRequest, TriageResponse
-from services.triage_pipeline import triage_message
-import logging
-
-router = APIRouter()
-
-@router.post(&quot;/v1/triage&quot;, response_model=TriageResponse)
-def handle_triage(req: TriageRequest):
-    logging.info(f&quot;Input: {req.message}&quot;)
-    result = triage_message(req.message)
-    logging.info(f&quot;Result: {result}&quot;)
-    return result
-</code></pre>
-<hr />
-<h2 id="entrypoint-mainpy">📦 Entrypoint (main.py)</h2>
-<pre><code class="language-python">from fastapi import FastAPI
-from api.routes import router
-import uvicorn
-import logging
-
-app = FastAPI()
-app.include_router(router)
-
-logging.basicConfig(level=logging.INFO)
-
-if __name__ == &quot;__main__&quot;:
-    uvicorn.run(&quot;main:app&quot;, host=&quot;0.0.0.0&quot;, port=8000, reload=True)
-</code></pre>
-<p>Test in your browser at: <code>http://localhost:8000/docs</code></p>
-<hr />
-<h2 id="caching-performance-tips">💡 Caching &amp; Performance Tips</h2>
-<ul>
-<li>Cache repeat queries using <code>functools.lru_cache</code> or Redis</li>
-<li>Cache embeddings or LLM responses to save tokens</li>
-</ul>
-<pre><code class="language-python">from functools import lru_cache
-
-@lru_cache(maxsize=128)
-def get_label(message):
-    return call_llm_classifier(message)
-</code></pre>
-<hr />
-<h2 id="error-handling-fallbacks">🛡️ Error Handling + Fallbacks</h2>
-<ul>
-<li>Always catch LLM exceptions</li>
-<li>Return consistent schema with <code>action: "error"</code></li>
-<li>Add retries using <code>tenacity</code> if needed</li>
-</ul>
-<hr />
-<h2 id="api-versioning">🔐 API Versioning</h2>
-<ul>
-<li>Use route prefixes like <code>/v1/</code> and <code>/v2/</code></li>
-<li>Add <code>/version</code> endpoint with logic details</li>
-</ul>
-<hr />
-<h2 id="logging-best-practices">📊 Logging Best Practices</h2>
-<ul>
-<li>Log: request ID, model, token usage, latency</li>
-<li>Don’t log raw PII unless masked</li>
-<li>Use <code>logging</code> levels to control output</li>
-</ul>
-<hr />
-<h2 id="health-and-metadata-endpoints">✅ Health and Metadata Endpoints</h2>
-<pre><code class="language-python">@app.get(&quot;/health&quot;)
-def health():
-    return {&quot;status&quot;: &quot;ok&quot;}
-
-@app.get(&quot;/version&quot;)
-def version():
-    return {&quot;version&quot;: &quot;1.0.1&quot;, &quot;model&quot;: &quot;gpt-4&quot;, &quot;llm_strategy&quot;: &quot;few-shot&quot;}
-</code></pre>
-<hr />
-<h2 id="unit-tests-with-fastapi">🔬 Unit Tests with FastAPI</h2>
-<pre><code class="language-python">from fastapi.testclient import TestClient
-from main import app
-
-client = TestClient(app)
-
-def test_triage():
-    res = client.post(&quot;/v1/triage&quot;, json={&quot;message&quot;: &quot;I was charged twice&quot;})
-    assert res.status_code == 200
-    assert &quot;category&quot; in res.json()
-</code></pre>
-<hr />
-<h2 id="exit-outcome">✅ Exit Outcome</h2>
-<p>You now:</p>
-<ul>
-<li>Can serve your LLM-powered logic via FastAPI</li>
-<li>Understand logging, testing, versioning, and caching</li>
-<li>Have all the tools to turn AI from notebook into deployable product</li>
-</ul>
+<h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
+<p>Let’s say you’ve just deployed a customer-facing chatbot powered by GPT-4.</p>
+<p>It’s slick. It’s confident.<br />
+But then a customer asks:  </p>
 <blockquote>
-<p>Next: Let’s scale this with observability, queues, and containers.</p>
+<p>“What’s your enterprise SLA?”</p>
 </blockquote>
+<p>And the bot responds:  </p>
+<blockquote>
+<p>“We do not currently offer SLAs.”</p>
+</blockquote>
+<p>🤦‍♂️ Problem: The bot knows everything... <em>except your actual business.</em></p>
+<p>That’s because LLMs aren’t trained on your <strong>internal data</strong> — your:
+- PDFs
+- FAQs
+- Wiki pages
+- Meeting notes
+- Slack threads</p>
+<p>To fix this, we need to teach our LLM to <strong>search</strong> and <strong>use</strong> your private data — <em>without retraining it</em>.</p>
+<p>That’s what <strong>RAG</strong> does.</p>
+<hr />
+<h2 id="what-is-rag">🚀 What Is RAG?</h2>
+<p><strong>RAG = Retrieval-Augmented Generation</strong><br />
+It’s a system design pattern that makes LLMs smarter by:</p>
+<ol>
+<li><strong>Retrieving</strong> relevant content from your data</li>
+<li><strong>Injecting</strong> that content into the prompt</li>
+<li>Letting the <strong>LLM generate</strong> an informed response</li>
+</ol>
+<hr />
+<h2 id="real-world-analogy">🧪 Real-World Analogy</h2>
+<p>You: “Hey, what's the refund policy in the 2023 docs?”</p>
+<p>Your assistant:
+- Doesn’t know off-hand
+- Searches “refund” in your docs
+- Finds the right paragraph
+- Reads it and replies:</p>
+<blockquote>
+<p>“The 2023 policy allows refunds within 30 days.”</p>
+</blockquote>
+<p>That’s RAG: <strong>search first, generate later</strong>.</p>
+<hr />
+<h2 id="new-concepts-youll-meet">🛠️ New Concepts You’ll Meet</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Analogy</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Embeddings</strong></td>
+<td>Like hashing text into meaning-space</td>
+<td>Makes text searchable by <em>meaning</em></td>
+</tr>
+<tr>
+<td><strong>Vector DB</strong></td>
+<td>Like Elasticsearch for meaning</td>
+<td>Lets you find “similar” content</td>
+</tr>
+<tr>
+<td><strong>Context Injection</strong></td>
+<td>Like pre-filling a prompt with facts</td>
+<td>Gives the model the right info at the right time</td>
+</tr>
+<tr>
+<td><strong>LangChain</strong></td>
+<td>Like Django/Express for LLM apps</td>
+<td>Helps you build LLM pipelines faster</td>
+</tr>
+<tr>
+<td><strong>LangFlow</strong></td>
+<td>Like Node-RED or n8n for LLMs</td>
+<td>Drag-and-drop builder for RAG + agents</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="how-it-all-fits-together">🧱 How It All Fits Together</h2>
+<p>Let’s say your app needs to answer questions from internal docs.</p>
+<p>You’ll need:</p>
+<ol>
+<li><strong>Ingest</strong> the documents (PDF, markdown, etc.)</li>
+<li><strong>Chunk</strong> them into smaller paragraphs</li>
+<li><strong>Embed</strong> each chunk into a vector</li>
+<li><strong>Store</strong> the vectors in a vector database</li>
+<li>At query time: <strong>embed the question</strong>, find the most similar chunks</li>
+<li><strong>Inject</strong> those chunks into the LLM’s prompt</li>
+<li>Get a smart, grounded answer</li>
+</ol>
+<p>This pipeline is your <strong>RAG stack</strong>.</p>
+<hr />
+<h2 id="whats-a-vector-database">🗃️ What’s a Vector Database?</h2>
+<p>Think: <strong>Search engine for meaning.</strong></p>
+<p>You give it:
+- A sentence like: <em>“I want a refund”</em>
+- It returns: chunks semantically similar to that, even if the words are different (e.g., <em>“Can I return my item?”</em>)</p>
+<p>Popular options:
+- <strong>FAISS</strong> (lightweight, fast, local)
+- <strong>Chroma</strong> (easy to use, Python-native)
+- <strong>Weaviate</strong>, <strong>Pinecone</strong>, <strong>Qdrant</strong> (scalable, cloud-ready)</p>
+<hr />
+<h2 id="lets-build-a-mini-rag-system">💻 Let’s Build a Mini RAG System</h2>
+<p>We’ll use <strong>LangChain</strong> (a framework that glues all the pieces together).</p>
+<h3 id="step-1-load-and-chunk-documents">Step 1: Load and Chunk Documents</h3>
+<pre><code class="language-python">from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+loader = TextLoader(&quot;company_policy.txt&quot;)
+docs = loader.load()
+
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+chunks = splitter.split_documents(docs)
+</code></pre>
+<h3 id="step-2-embed-and-store-in-vector-db-faiss">Step 2: Embed and Store in Vector DB (FAISS)</h3>
+<pre><code class="language-python">from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
+
+embeddings = OpenAIEmbeddings()
+vectorstore = FAISS.from_documents(chunks, embeddings)
+</code></pre>
+<blockquote>
+<p>🧠 Think of <code>vectorstore</code> as a mini search engine based on meaning, not keywords.</p>
+</blockquote>
+<hr />
+<h3 id="step-3-run-a-rag-chain">Step 3: Run a RAG Chain</h3>
+<pre><code class="language-python">from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
+
+llm = ChatOpenAI()
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectorstore.as_retriever()
+)
+
+response = qa_chain.run(&quot;What’s the refund deadline?&quot;)
+print(response)
+</code></pre>
+<p>Boom — the model reads your docs and answers in plain English.</p>
+<hr />
+<h2 id="visual-workflow-optional-via-langflow">🖼️ Visual Workflow (Optional via LangFlow)</h2>
+<p>Want to see this flow as a drag-and-drop UI?<br />
+Try <a href="https://github.com/logspace-ai/langflow">LangFlow</a> — a visual builder for LangChain apps.</p>
+<p>It’s like Figma for AI workflows.</p>
+<p>You can:
+- Drop in nodes (loader, splitter, embedder, retriever, LLM)
+- Connect them visually
+- Export Python code</p>
+<hr />
+<h2 id="langchain-vs-barebones-code">🧠 LangChain vs. Barebones Code</h2>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Use When...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LangChain</strong></td>
+<td>You want to move fast and glue pieces easily</td>
+</tr>
+<tr>
+<td><strong>Raw Python</strong></td>
+<td>You want maximum control, minimal abstraction</td>
+</tr>
+<tr>
+<td><strong>LangFlow</strong></td>
+<td>You want to prototype without code (great for teams!)</td>
+</tr>
+</tbody>
+</table>
+<p>No lock-in. All tools work with OpenAI, Cohere, local models, etc.</p>
+<hr />
+<h2 id="why-rag-wins">🔁 Why RAG Wins</h2>
+<table>
+<thead>
+<tr>
+<th>Fine-Tuning</th>
+<th>RAG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expensive to train</td>
+<td>Just needs vector search</td>
+</tr>
+<tr>
+<td>Slow to update</td>
+<td>Instant document refresh</td>
+</tr>
+<tr>
+<td>Bakes in data</td>
+<td>Keeps data external</td>
+</tr>
+</tbody>
+</table>
+<p>Use RAG when:
+- Your data changes frequently
+- You want explainability
+- You’re building internal tools, knowledge bases, support bots, etc.</p>
+<hr />
+<h2 id="recap-you-now-know">🧠 Recap: You Now Know…</h2>
+<p>✅ What embeddings, vector DBs, and RAG are<br />
+✅ How to build a retrieval pipeline<br />
+✅ When to use LangChain and LangFlow<br />
+✅ Why RAG is the practical way to let LLMs “read” your data</p>
+<hr />
+<h2 id="reflection-questions">❓Reflection Questions</h2>
+<ol>
+<li>How would you update your RAG system when a new policy is released?</li>
+<li>What are the trade-offs between fine-tuning and retrieval?</li>
+<li>Could your frontend search bar be upgraded with RAG? How?</li>
+</ol>
+<hr />
+<h2 id="mini-quiz">🧪 Mini Quiz</h2>
+<p><strong>Q1.</strong> A vector DB helps you:<br />
+a) Store full documents<br />
+b) Find semantically similar chunks ✅<br />
+c) Host your API<br />
+d) Visualize neural nets</p>
+<p><strong>Q2.</strong> LangChain is like:<br />
+a) A new LLM model<br />
+b) A framework to build LLM apps ✅<br />
+c) A tokenizer<br />
+d) An analytics tool</p>
+<hr />
+<h2 id="microproject">🧪 Microproject</h2>
+<p>Build a mini “Internal Wiki Bot” using:
+- A <code>.txt</code> or <code>.pdf</code> with company info
+- LangChain + FAISS (or raw Python + OpenAI embeddings)
+- Ask 3–5 questions and test retrieval accuracy</p>
+<p><strong>Bonus</strong>: Add LangFlow to visualize your pipeline.</p>
+<hr />
+<h2 id="next-agents-tool-use">🔜 Next: Agents &amp; Tool Use</h2>
+<p>Now that your LLM can read — can it also <em>act</em>?</p>
+<p>Next chapter: turning LLMs into agents that reason, plan, and use tools like APIs, calculators, or even Python code. Let’s build a thinking assistant.</p>
 
 
 
