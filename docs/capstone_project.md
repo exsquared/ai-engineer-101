@@ -1,142 +1,144 @@
-# 🚀 Final Capstone Project: Compose and Deploy Your Own AI-Powered System
+# Final Project: AI-Powered Microservice — From Model to Production
 
 ---
 
-## 🎯 Why This Project?
+## 🎯 Goal
 
-You’ve completed the beginner track — from classical ML to modern LLMs, from prompting to agents, from local prototypes to scalable APIs.
+Build a complete AI system that:
 
-Now it’s time to build a complete AI system — one that shows your skills as a builder, engineer, and system thinker.
+- Classifies support tickets for urgency and category
+- Uses both classical models and LLM fallback
+- Applies rules and thresholds intelligently
+- Exposes predictions via a FastAPI service
+- Includes logging, validation, and observability
 
----
-
-## 📦 What You'll Build
-
-Design and deploy a real AI-powered application using:
-
-- LLMs (GPT-4 / OpenAI / Claude)
-- Prompt composition + context injection
-- Tool calling or API orchestration
-- Optional: memory, agent loop, or multimodal input
-
-This is your chance to demonstrate:
-✅ Technical depth  
-✅ Practical creativity  
-✅ Product-minded design
+> This project simulates what you'd ship in a real-world application — only cleaner and more explainable.
 
 ---
 
-## 🧠 Pick One of These Capstone Tracks
+## 🔧 What You’ll Build
 
-### 🅰️ Track A: Knowledge Assistant / RAG Bot
-
-Build a system that:
-
-- Answers user questions from private documents (e.g., support tickets, product docs, HR policies)
-- Injects context into LLM prompts (manual or vector search)
-- Decides when to escalate or disclaim confidently
-
-Bonus:
-
-- Add a feedback loop for user corrections  
-- Add memory (conversation tracking)  
-- Add a UI or chat interface
+| Component | Description |
+|----------|-------------|
+| 🧠 ML Model | Logistic regression to classify urgency and category |
+| 📖 LLM Fallback | Use OpenAI (or mock) when confidence is low |
+| 🧪 Rule Layer | Pre-checks, threshold overrides, human-review triggers |
+| 🌐 API | FastAPI service to expose `/predict` |
+| 📜 Logging | Save inputs, predictions, confidence, fallback source |
+| 🧰 Bonus | Add CLI, streamlit UI, or feedback loop |
 
 ---
 
-### 🅱️ Track B: Agent-Based Task Orchestrator
+## 🧩 Inputs and Outputs
 
-Build a mini agent that:
+### Input:
 
-- Accepts a task or instruction
-- Plans a sequence of steps
-- Calls tools or APIs (math, search, databases, etc.)
-- Responds with the completed result
+```json
+{
+  "message": "Hi, I got charged twice — please fix this ASAP!"
+}
+```
 
-Bonus:
+### Output:
 
-- Use LangChain or function-calling  
-- Show logging for thought/action/observation steps  
-- Add retry/fallback logic
-
----
-
-### 🅲 Track C: Multimodal GenAI App
-
-Build a vision-enhanced app that:
-
-- Takes image or screenshot input
-- Uses GPT-4V or DALL·E to process or generate images
-- Returns a visual or structured response
-
-Examples:
-
-- Screenshot explainer  
-- Product image generator  
-- Visual bug checker or chart interpreter
+```json
+{
+  "urgent": true,
+  "category": "Billing",
+  "confidence": 0.91,
+  "source": "model",
+  "action": "route"
+}
+```
 
 ---
 
-## 🔨 Tech Stack Options
+## 📁 File Layout Suggestion
 
-Use anything you’ve already seen in this course:
-
-- FastAPI or Streamlit (Ch. 9–10)  
-- OpenAI API (Ch. 8 onward)  
-- Manual prompt composition (Ch. 8c)  
-- Basic fallback logic (Ch. 8c)  
-- Function-calling or LangChain (Ch. 12)  
-- Vision tools (Ch. 13)
-
----
-
-## 📋 Capstone Deliverables
-
-Your submission must include:
-
-1. ✅ System Description
-    - What problem are you solving?
-    - What use cases does it serve?
-
-2. ✅ Architecture Diagram
-    - Show how prompts, tools, and APIs connect
-
-3. ✅ Prompt Examples
-    - Show at least 3 prompt variations you tested and refined
-
-4. ✅ Codebase (GitHub or Zip)
-    - Clean, runnable app or notebook with clear readme
-
-5. ✅ Output Examples
-    - Screenshots or logs showing real user flows
-
-6. ✅ Reflection Write-Up
-    - What worked? What failed? What surprised you?
-    - What would you improve in a v2?
-
-7. ✅ Ethics / Reliability Statement
-    - How do you prevent misuse, hallucination, or bias?
-    - What fallback logic did you implement?
+```
+/ticket_ai_microservice
+├── model_logic.py         # Feature extraction + prediction logic
+├── llm_fallback.py        # Call OpenAI or return simulated LLM response
+├── api.py                 # FastAPI wrapper
+├── utils.py               # Validation, confidence checks
+├── logs.jsonl             # Append input/output logs here
+├── data.csv               # Your labeled sample messages
+└── requirements.txt
+```
 
 ---
 
-## 🏅 Capstone Badge
+## 🛠️ Build Checklist
 
-Completing this project earns you the **“AI Systems Engineer” badge** — recognition that you’re not just prompting, you’re architecting.
+### ✅ Part 1: Rule + Model Pipeline
+
+- Load trained `LogisticRegression` models
+- Extract features (e.g., word count, exclamations)
+- Predict `urgent` and `category`
+- Log predictions and confidence
+
+### ✅ Part 2: Add Fallback Logic
+
+- If `confidence < 0.5`, call `llm_fallback(prompt)`
+- Ensure LLM returns structured output (e.g., via regex or mock)
+
+### ✅ Part 3: Serve with FastAPI
+
+```http
+POST /predict
+{
+  "message": "My plan is not working. Please help!"
+}
+```
+
+Return:
+
+- prediction
+- confidence
+- source ("model" or "llm")
+- action ("route", "review", or "ignore")
+
+### ✅ Part 4: Add Logging
+
+- Append every request/response to `logs.jsonl`
+- Include confidence, token usage (if LLM), and any errors
 
 ---
 
-## 🧐 Reflection Prompts (Optional)
+## 🧪 Bonus Features
 
-- What part of the system challenged your assumptions?  
-- What design decisions had the biggest impact on usability?  
-- Where did you choose to trust the model, and where not to?
+| Feature | Description |
+|--------|-------------|
+| 🔁 Feedback Loop | Let user submit “correct category” |
+| 📉 Rate Limiting | Prevent spam or rapid requests |
+| 🧑‍💼 Admin View | Review predictions with low confidence |
+| 🎛️ Config File | Tune thresholds without editing code |
+| 🌍 Streamlit UI | Input message + show model/LLM response live |
 
 ---
 
-## 🌟 Congratulations!
+## 💭 Reflection Prompts
 
-You’ve built your own AI-powered app — from problem to prompt to product.  
-This is just the beginning. The next step? Start solving problems in the real world with what you now know.
+- What decisions were hardest to trust the model for?
+- What failure types did you catch with logging?
+- How would you monitor this in production?
+- What would you add to make this secure?
 
-You’re not just an AI engineer. You’re a system builder. 🚀
+---
+
+## ✅ What You’ve Practiced
+
+- Real model training (LogisticRegression)
+- Confidence-aware fallback to LLMs
+- API design and structured inputs
+- Logging, explainability, and observability
+- Blending AI with production software skills
+
+> You didn’t just build a model. You built a **shippable, testable, explainable AI service**.
+
+---
+
+### 🏆 Stretch Goal
+
+Deploy your API on Render, Railway, or Hugging Face Spaces.  
+Even a demo in Streamlit counts.
