@@ -8,4 +8,19 @@ nav:
   - Chapter 3 - Train Your First Model: chapter_3.md
   - Chapter 4 - When to Trust the Model: chapter_4.md
   - Chapter 4.5 (Optional) - The ML Toolbox: fun_ml_toolbox.md 
-  - Checkpoint Project 1: project_1.md
+  - Checkpoint - Project 1: project_1.md
+  - Chapter 5 - Evaluating & Debugging AI Models: chapter_5.md
+  - Chapter 6 - Beyond Yes/No: chapter_6.md
+  - Chapter 7 - Hybrid Systems: chapter_7.md
+  - Checkpoint - Project 2: project_2.md
+  - Chapter 8a - How LLMs Work: chapter_8a.md
+  - Chapter 8b - Prompting in Action: chapter_8b.md
+  - Chapter 8c - Prompting Strategies: chapter_8c.md
+  - Checkpoint - Project 3: project_3.md
+  - Chapter 9 - Serving Your AI: chapter_9.md
+  - Chapter 10 - Scaling, Microservices & DevOps: chapter_10.md
+  - Chapter 11 - Let LLMs Read Your Data: chapter_11.md
+  - Chapter 12 - Let LLMs Act, Not Just Answer: chapter_12.md
+  - Chapter 13 - GenAI Playground: chapter_13.md
+  - Capstone Project: chapter_13.md
+  - Chapter 14 - What’s Next?: chapter_14.md
