@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#let-llms-act-not-just-answer" class="md-skip">
+        <a href="#let-llms-read-your-data" class="md-skip">
           Skip to content
         </a>
       
@@ -524,12 +524,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_9/" class="md-nav__link">
+      <a href="../chapter_9.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
+    Chapter 9 - Serve Your Model Like an Engineer
     
   </span>
   
@@ -551,7 +551,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 10 - Scaling, Microservices & DevOps
+    Chapter 10 - Make Your Model Trustworthy
     
   </span>
   
@@ -573,7 +573,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 11 - Let LLMs Read Your Data
+    Chapter 11 - Build Your First AI Microservice
     
   </span>
   
@@ -640,9 +640,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#agents-reasoning-loops-and-tool-use" class="md-nav__link">
+  <a href="#agents-embeddings-retrieval-and-context-injection" class="md-nav__link">
     <span class="md-ellipsis">
-      Agents, Reasoning Loops, and Tool Use
+      Agents, Embeddings, Retrieval, and Context Injection
     </span>
   </a>
   
@@ -658,9 +658,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-an-agent" class="md-nav__link">
+  <a href="#core-idea-no-math-needed" class="md-nav__link">
     <span class="md-ellipsis">
-      🤖 What Is an Agent?
+      🧠 Core Idea (No Math Needed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-concepts-youll-meet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ New Concepts You’ll Meet
     </span>
   </a>
   
@@ -669,80 +678,44 @@
         <li class="md-nav__item">
   <a href="#real-world-analogy" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Real-World Analogy
+      🧪 Real-World Analogy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-loop-in-plain-english" class="md-nav__link">
+  <a href="#lets-build-one" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Agent Loop in Plain English
+      💻 Let’s Build One
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-you-can-give-an-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 Tools You Can Give an Agent
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frameworks-that-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Frameworks That Help
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-function-calling-works-openai" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ How Function Calling Works (OpenAI)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-build-a-simple-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Let’s Build a Simple Agent
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💻 Let’s Build a Simple Agent">
+    <nav class="md-nav" aria-label="💻 Let’s Build One">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-define-tools" class="md-nav__link">
+  <a href="#step-1-load-and-split-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      🧮 Step 1: Define Tools
+      Step 1: Load and Split Documents
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-the-agent" class="md-nav__link">
+  <a href="#step-2-embed-and-store" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Step 2: Create the Agent
+      Step 2: Embed and Store
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#whats-happening-under-the-hood" class="md-nav__link">
+  <a href="#step-3-retrieve-and-inject-context" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 What’s Happening Under the Hood?
+      Step 3: Retrieve and Inject Context
     </span>
   </a>
   
@@ -754,40 +727,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agents-vs-rag" class="md-nav__link">
+  <a href="#rag-vs-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Agents vs RAG
+      🔁 RAG vs Fine-Tuning
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gotchas-design-tips" class="md-nav__link">
+  <a href="#behind-the-scenes" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Gotchas &amp; Design Tips
+      🧵 Behind the Scenes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-advanced-agents-can-do-preview" class="md-nav__link">
+  <a href="#langflow-optional-gui" class="md-nav__link">
     <span class="md-ellipsis">
-      🔬 What Advanced Agents Can Do (Preview)
+      🔍 LangFlow: Optional GUI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#patterns-emerging-from-agents" class="md-nav__link">
+  <a href="#toolformer-react-and-planner-executor-optional-deep-dive" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Patterns Emerging from Agents
+      🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Patterns Emerging from Agents">
+    <nav class="md-nav" aria-label="🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -823,96 +796,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#whats-coming-next-think-beyond-the-model" class="md-nav__link">
+  <a href="#microproject-build-your-own-document-aware-assistant" class="md-nav__link">
     <span class="md-ellipsis">
-      🧭 What’s Coming Next: Think Beyond the Model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 What’s Coming Next: Think Beyond the Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp-model-context-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 MCP — Model Context Protocol
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a2a-agent-to-agent-communication" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 A2A — Agent-to-Agent Communication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#context-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Context Engineering
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recap-you-now-know" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Recap: You Now Know…
+      📦 Microproject: Build Your Own Document-Aware Assistant
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reflection-questions" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Mini Quiz
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-track-finale-what-youve-built" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎉 Core Track Finale: What You’ve Built
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-chapter-let-the-model-see" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔜 Next Chapter: Let the Model See
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -938,7 +833,29 @@
   
   
   <span class="md-ellipsis">
-    Chapter 13 - GenAI Playground
+    Chapter 13 - Let Your Model Think and Act
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14 - GenAI Playground
     
   </span>
   
@@ -977,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_14/" class="md-nav__link">
+      <a href="../chapter_15.md" class="md-nav__link">
         
   
   
@@ -1019,9 +936,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#agents-reasoning-loops-and-tool-use" class="md-nav__link">
+  <a href="#agents-embeddings-retrieval-and-context-injection" class="md-nav__link">
     <span class="md-ellipsis">
-      Agents, Reasoning Loops, and Tool Use
+      Agents, Embeddings, Retrieval, and Context Injection
     </span>
   </a>
   
@@ -1037,9 +954,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-an-agent" class="md-nav__link">
+  <a href="#core-idea-no-math-needed" class="md-nav__link">
     <span class="md-ellipsis">
-      🤖 What Is an Agent?
+      🧠 Core Idea (No Math Needed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-concepts-youll-meet" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ New Concepts You’ll Meet
     </span>
   </a>
   
@@ -1048,80 +974,44 @@
         <li class="md-nav__item">
   <a href="#real-world-analogy" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Real-World Analogy
+      🧪 Real-World Analogy
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-loop-in-plain-english" class="md-nav__link">
+  <a href="#lets-build-one" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Agent Loop in Plain English
+      💻 Let’s Build One
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-you-can-give-an-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 Tools You Can Give an Agent
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frameworks-that-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Frameworks That Help
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-function-calling-works-openai" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ How Function Calling Works (OpenAI)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-build-a-simple-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Let’s Build a Simple Agent
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💻 Let’s Build a Simple Agent">
+    <nav class="md-nav" aria-label="💻 Let’s Build One">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-define-tools" class="md-nav__link">
+  <a href="#step-1-load-and-split-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      🧮 Step 1: Define Tools
+      Step 1: Load and Split Documents
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-the-agent" class="md-nav__link">
+  <a href="#step-2-embed-and-store" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Step 2: Create the Agent
+      Step 2: Embed and Store
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#whats-happening-under-the-hood" class="md-nav__link">
+  <a href="#step-3-retrieve-and-inject-context" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 What’s Happening Under the Hood?
+      Step 3: Retrieve and Inject Context
     </span>
   </a>
   
@@ -1133,40 +1023,40 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agents-vs-rag" class="md-nav__link">
+  <a href="#rag-vs-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Agents vs RAG
+      🔁 RAG vs Fine-Tuning
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gotchas-design-tips" class="md-nav__link">
+  <a href="#behind-the-scenes" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Gotchas &amp; Design Tips
+      🧵 Behind the Scenes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-advanced-agents-can-do-preview" class="md-nav__link">
+  <a href="#langflow-optional-gui" class="md-nav__link">
     <span class="md-ellipsis">
-      🔬 What Advanced Agents Can Do (Preview)
+      🔍 LangFlow: Optional GUI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#patterns-emerging-from-agents" class="md-nav__link">
+  <a href="#toolformer-react-and-planner-executor-optional-deep-dive" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Patterns Emerging from Agents
+      🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="📦 Patterns Emerging from Agents">
+    <nav class="md-nav" aria-label="🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1202,96 +1092,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#whats-coming-next-think-beyond-the-model" class="md-nav__link">
+  <a href="#microproject-build-your-own-document-aware-assistant" class="md-nav__link">
     <span class="md-ellipsis">
-      🧭 What’s Coming Next: Think Beyond the Model
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🧭 What’s Coming Next: Think Beyond the Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mcp-model-context-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 MCP — Model Context Protocol
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a2a-agent-to-agent-communication" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔁 A2A — Agent-to-Agent Communication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#context-engineering" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Context Engineering
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recap-you-now-know" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Recap: You Now Know…
+      📦 Microproject: Build Your Own Document-Aware Assistant
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reflection-questions" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Mini Quiz
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-track-finale-what-youve-built" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎉 Core Track Finale: What You’ve Built
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-chapter-let-the-model-see" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔜 Next Chapter: Let the Model See
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -1313,294 +1125,188 @@
 
 
 
-<h1 id="let-llms-act-not-just-answer">Let LLMs Act, Not Just Answer</h1>
-<h3 id="agents-reasoning-loops-and-tool-use"><em>Agents, Reasoning Loops, and Tool Use</em></h3>
+<h1 id="let-llms-read-your-data">Let LLMs Read Your Data</h1>
+<h3 id="agents-embeddings-retrieval-and-context-injection"><em>Agents, Embeddings, Retrieval, and Context Injection</em></h3>
 <hr />
 <h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
-<p>Up until now, we’ve used LLMs like really smart parrots.</p>
-<p>You feed them some context.<br />
-They give you a great answer.<br />
-That’s it. One-shot, one-turn.</p>
-<p>But what if we want more?</p>
+<p>Imagine hiring a genius intern with perfect grammar, creativity, and logic skills — but no memory of your company, products, or documentation.</p>
+<p>That’s your LLM.</p>
+<p>They’re trained on the internet, not your internal wikis, support tickets, or sales PDFs. So when you ask, “What’s the refund policy for product X?”, they hallucinate, guessing wildly.</p>
+<p><strong>What if you could just <em>give them your docs</em> and have them answer smartly — without retraining?</strong></p>
+<p>That’s the magic of <strong>Retrieval-Augmented Generation (RAG)</strong>.</p>
+<hr />
+<h2 id="core-idea-no-math-needed">🧠 Core Idea (No Math Needed)</h2>
 <blockquote>
-<p>“Search Google for flight options, check the weather, compare it to my calendar, and suggest the best time to travel.”</p>
+<p><strong>RAG = Search + Smart Text Generation</strong></p>
 </blockquote>
-<p>This isn’t just Q&amp;A.<br />
-This is <strong>multi-step reasoning + tool use</strong>.<br />
-You don’t want the model to just answer.<br />
-You want it to <strong>think</strong>, <strong>decide</strong>, and <strong>act</strong>.</p>
-<p>That’s the world of <strong>agents</strong>.</p>
+<p>Instead of asking the LLM to answer from scratch, we:
+1. <strong>Search for relevant content</strong> from your custom data (PDFs, docs, pages).
+2. <strong>Inject</strong> that content into the prompt.
+3. Let the <strong>LLM generate</strong> a grounded, useful response using that real data.</p>
+<p>We’re building a system that can:
+- Ingest and understand custom documents (with <em>embeddings</em>)
+- Find relevant chunks when asked a question (with <em>vector search</em>)
+- Feed those chunks into the LLM (via <em>context injection</em>)</p>
 <hr />
-<h2 id="what-is-an-agent">🤖 What Is an Agent?</h2>
-<p>An <strong>Agent</strong> is an LLM system that:
-1. Reads the user's intent<br />
-2. Plans a series of actions<br />
-3. Uses tools (APIs, functions, calculators, etc.)<br />
-4. Loops until it reaches a final answer</p>
-<p>Think of it like:
-- The LLM is the brain<br />
-- The tools are its hands<br />
-- The agent system is the “nervous system” orchestrating decisions</p>
-<hr />
-<h2 id="real-world-analogy">🧠 Real-World Analogy</h2>
-<p>You: “What’s the cheapest non-stop flight from NYC to SF next Friday under 5 hours?”</p>
-<p>Your intern:
-1. Opens Google Flights<br />
-2. Applies filters<br />
-3. Looks at durations<br />
-4. Picks the cheapest one<br />
-5. Summarizes it for you</p>
-<p>They don’t know the answer <em>a priori</em> — they <strong>figure it out by taking actions</strong>.</p>
-<hr />
-<h2 id="agent-loop-in-plain-english">🔁 Agent Loop in Plain English</h2>
-<p>Every time the agent thinks:
-1. <strong>Observe</strong>: What’s the current task or question?<br />
-2. <strong>Think</strong>: What tool do I need?<br />
-3. <strong>Act</strong>: Use a tool (e.g., search API, calculator)<br />
-4. <strong>Read result</strong>: Did it solve the task?<br />
-5. <strong>Repeat</strong>: Until it reaches an answer</p>
-<p>This is called a <strong>Reasoning-Acting Loop</strong>.</p>
-<hr />
-<h2 id="tools-you-can-give-an-agent">🧰 Tools You Can Give an Agent</h2>
+<h2 id="new-concepts-youll-meet">🛠️ New Concepts You’ll Meet</h2>
 <table>
 <thead>
 <tr>
-<th>Tool Type</th>
-<th>Example</th>
+<th>Concept</th>
+<th>What It Means</th>
+<th>Tool</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Calculator</td>
-<td><code>"4 * 17"</code></td>
+<td><strong>Embedding</strong></td>
+<td>Turn a sentence into a list of numbers to compare meaning</td>
+<td><code>OpenAI</code>, <code>sentence-transformers</code></td>
 </tr>
 <tr>
-<td>Python code</td>
-<td><code>"Sort by date"</code></td>
+<td><strong>Vector store</strong></td>
+<td>Search based on meaning, not just keywords</td>
+<td><code>FAISS</code>, <code>Chroma</code>, <code>Pinecone</code></td>
 </tr>
 <tr>
-<td>Web search</td>
-<td><code>"Scrape this page"</code></td>
+<td><strong>Context injection</strong></td>
+<td>Add relevant data directly into your prompt</td>
+<td>Native to any LLM</td>
 </tr>
-<tr>
-<td>File reader</td>
-<td><code>"Read the invoice PDF"</code></td>
-</tr>
-<tr>
-<td>Custom API</td>
-<td><code>"GET /user/profile"</code></td>
-</tr>
-</tbody>
-</table>
-<p>Each tool is just a <strong>function</strong> the agent is allowed to call.</p>
-<hr />
-<h2 id="frameworks-that-help">🛠️ Frameworks That Help</h2>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td><strong>LangChain</strong></td>
-<td>Build agents from pre-built toolkits</td>
+<td>Glue toolkit to combine LLMs + retrievers + APIs</td>
+<td><code>LangChain</code></td>
 </tr>
 <tr>
-<td><strong>OpenAI Function Calling</strong></td>
-<td>Let GPT “choose” and call your functions</td>
-</tr>
-<tr>
-<td><strong>CrewAI / AutoGen</strong></td>
-<td>Multi-agent orchestration (advanced)</td>
+<td><strong>LangFlow</strong></td>
+<td>Drag-and-drop GUI to visualize LangChain flows</td>
+<td><code>LangFlow</code></td>
 </tr>
 </tbody>
 </table>
-<p>We’ll focus on <strong>LangChain + OpenAI Function Calling</strong> for now.</p>
 <hr />
-<h2 id="how-function-calling-works-openai">⚙️ How Function Calling Works (OpenAI)</h2>
-<ol>
-<li>You define functions you want to expose  </li>
-<li>The LLM is told about their names and parameters  </li>
-<li>It chooses one and sends a structured JSON payload  </li>
-<li>Your code runs the function and feeds the result back  </li>
-<li>The model continues reasoning with the new info</li>
-</ol>
+<h2 id="real-world-analogy">🧪 Real-World Analogy</h2>
+<p>You: “What’s our refund policy for product X?”</p>
+<p>Your assistant:
+- Searches the docs
+- Finds the right paragraph
+- Summarizes it:  </p>
 <blockquote>
-<p>The model “thinks” and <em>asks</em> to use tools — your code runs the tool for it.</p>
+<p>“Customers have 30 days to request a refund…”</p>
 </blockquote>
+<p>That’s a retrieval-augmented response.</p>
 <hr />
-<h2 id="lets-build-a-simple-agent">💻 Let’s Build a Simple Agent</h2>
-<h3 id="step-1-define-tools">🧮 Step 1: Define Tools</h3>
-<pre><code class="language-python">from langchain.agents import tool
+<h2 id="lets-build-one">💻 Let’s Build One</h2>
+<h3 id="step-1-load-and-split-documents">Step 1: Load and Split Documents</h3>
+<pre><code class="language-python">from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-@tool
-def get_exchange_rate(currency: str) -&gt; str:
-    if currency == &quot;USD&quot;:
-        return &quot;1 USD = 83 INR&quot;
-    return f&quot;No data for {currency}&quot;
+loader = TextLoader(&quot;refund_policy.txt&quot;)
+docs = loader.load()
+splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+chunks = splitter.split_documents(docs)
 </code></pre>
 <hr />
-<h3 id="step-2-create-the-agent">🧠 Step 2: Create the Agent</h3>
-<pre><code class="language-python">from langchain.chat_models import ChatOpenAI
-from langchain.agents import initialize_agent, AgentType
+<h3 id="step-2-embed-and-store">Step 2: Embed and Store</h3>
+<pre><code class="language-python">from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import FAISS
 
-llm = ChatOpenAI(model=&quot;gpt-4&quot;)
+embeddings = OpenAIEmbeddings()
+vectorstore = FAISS.from_documents(chunks, embeddings)
+</code></pre>
+<hr />
+<h3 id="step-3-retrieve-and-inject-context">Step 3: Retrieve and Inject Context</h3>
+<pre><code class="language-python">from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
 
-agent = initialize_agent(
-    tools=[get_exchange_rate],
+llm = ChatOpenAI()
+qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
-    agent=AgentType.OPENAI_FUNCTIONS,
-    verbose=True,
+    retriever=vectorstore.as_retriever()
 )
 
-agent.run(&quot;What is the exchange rate for USD?&quot;)
+qa_chain.run(&quot;What’s the refund policy?&quot;)
 </code></pre>
+<p>✅ Done: you’ve created a semantic search → context injection → answer pipeline.</p>
 <hr />
-<h3 id="whats-happening-under-the-hood">🔍 What’s Happening Under the Hood?</h3>
-<ol>
-<li>The LLM reads your query  </li>
-<li>It decides to call <code>get_exchange_rate()</code>  </li>
-<li>It sends the input <code>"USD"</code>  </li>
-<li>Your Python function runs  </li>
-<li>The result is injected back into the prompt  </li>
-<li>The LLM completes the answer using the result</li>
-</ol>
-<p>You didn’t hardcode any logic — the LLM figured it out.</p>
-<hr />
-<h2 id="agents-vs-rag">🧠 Agents vs RAG</h2>
+<h2 id="rag-vs-fine-tuning">🔁 RAG vs Fine-Tuning</h2>
 <table>
 <thead>
 <tr>
-<th>Use Case</th>
-<th>RAG</th>
-<th>Agent</th>
+<th>Strategy</th>
+<th>Use When...</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Need doc info?</td>
-<td>✅ Use vector search</td>
-<td>➖ Only if you combine with RAG</td>
+<td><strong>RAG</strong></td>
+<td>You want dynamic, updatable, explainable Q&amp;A</td>
 </tr>
 <tr>
-<td>Need to act?</td>
-<td>➖ No tool usage</td>
-<td>✅ Call APIs, calculate, fetch, etc.</td>
+<td><strong>Fine-tuning</strong></td>
+<td>You want fixed tone or style, not factual grounding</td>
 </tr>
 <tr>
-<td>Need both?</td>
-<td>✅ Combine RAG + Agents</td>
-<td>✅ Smartest choice</td>
+<td><strong>Hybrid</strong></td>
+<td>You want smart retrieval and custom behavior</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="gotchas-design-tips">⚠️ Gotchas &amp; Design Tips</h2>
-<ul>
-<li><strong>Tool reliability</strong> matters — bad APIs = broken agents  </li>
-<li><strong>Loop limits</strong> prevent infinite reasoning  </li>
-<li><strong>Logging</strong> is essential — observe the agent’s thought chain  </li>
-<li><strong>Prompting still matters</strong> — agents need structure and constraints</li>
-</ul>
-<hr />
-<h2 id="what-advanced-agents-can-do-preview">🔬 What Advanced Agents Can Do (Preview)</h2>
-<ul>
-<li>Chain tools together  </li>
-<li>Maintain short-term memory  </li>
-<li>Work as multiple agents with roles  </li>
-<li>Execute plans from scratch (planner/executor)  </li>
-<li>Monitor their own uncertainty and retry</li>
-</ul>
-<hr />
-<h2 id="patterns-emerging-from-agents">📦 Patterns Emerging from Agents</h2>
-<h3 id="toolformer">🔹 Toolformer</h3>
-<p>Models trained not just to generate text — but to <strong>learn when and how to use tools</strong> during pretraining.<br />
-Instead of hard-coding tool use, Toolformer <em>predicts</em> when a tool is needed and automatically integrates API usage into its generation.<br />
-Great for automating complex decision + data workflows.</p>
-<h3 id="react">🔹 ReAct</h3>
-<p>Short for <strong>Reasoning + Acting</strong>. A prompt strategy where the model moves step by step:</p>
-<pre><code>Thought: I need to check the current exchange rate  
-Action: get_exchange_rate(&quot;USD&quot;)  
-Observation: 1 USD = 83 INR  
-Thought: Now I can respond  
-Answer: The rate is 83 INR
+<h2 id="behind-the-scenes">🧵 Behind the Scenes</h2>
+<p>When a question comes in:
+1. It’s converted to an embedding (like a “meaning vector”)
+2. You find the closest doc chunks in the vector store
+3. You build a prompt like:</p>
+<pre><code>Use this info to answer:
+[chunk 1]
+[chunk 2]
+
+Q: What’s the refund window?
 </code></pre>
-<p>ReAct is helpful when you want <strong>transparent, debuggable steps</strong> and looping behavior.</p>
-<h3 id="planner-executor">🔹 Planner-Executor</h3>
-<p>One LLM <strong>plans the high-level steps</strong>, another <strong>executes</strong> them.<br />
-For example:
-- Planner: “Step 1: Get exchange rate. Step 2: Calculate budget. Step 3: Suggest destination.”<br />
-- Executor: Runs each step using tools or APIs.</p>
-<p>This pattern:
-- Separates concerns<br />
-- Enables modular debugging<br />
-- Scales better in complex tasks</p>
-<hr />
-<h2 id="whats-coming-next-think-beyond-the-model">🧭 What’s Coming Next: Think Beyond the Model</h2>
-<p>Now that you’ve mastered retrieval and reasoning, the next frontier is <strong>system-level intelligence</strong>. Here are key architecture patterns you'll encounter:</p>
-<h3 id="mcp-model-context-protocol">🧱 MCP — Model Context Protocol</h3>
-<p>A <strong>spec for how you feed models information</strong>. MCP defines:
-- What context types a model should receive (e.g. user history, environment, goals)
-- How that context is prioritized, formatted, and trimmed to fit the token budget
-- How to trace which context influenced which outputs</p>
-<p>It’s like OpenAPI — but for prompts.</p>
-<h3 id="a2a-agent-to-agent-communication">🔁 A2A — Agent-to-Agent Communication</h3>
-<p>Just like services talk via APIs, agents can talk via language.
-- A Planner Agent can send instructions to Worker Agents
-- Agents with different capabilities or memory scopes can cooperate</p>
-<p>You’ll learn how to <strong>route subtasks</strong>, track ownership, and design protocols between agents.</p>
-<h3 id="context-engineering">🧠 Context Engineering</h3>
-<p>LLMs are context-hungry. The trick isn’t just more tokens — it’s <strong>better tokens</strong>.</p>
-<p>You’ll learn:
-- How to select the right document chunks
-- How to rank/filter based on user intent
-- How to format context (inline vs. structured)</p>
-<p>This is where <strong>retrieval meets UX meets architecture</strong>.</p>
-<hr />
-<h2 id="recap-you-now-know">🧠 Recap: You Now Know…</h2>
-<p>✅ What agents are and why they matter<br />
-✅ How tool-calling works using function APIs<br />
-✅ How the reasoning-act loop works<br />
-✅ How to build agents with LangChain<br />
-✅ When to use agents vs RAG<br />
-✅ Common agent patterns<br />
-✅ What’s coming next at the system level</p>
-<hr />
-<h2 id="reflection-questions">❓Reflection Questions</h2>
 <ol>
-<li>When should you prefer RAG over agents? When should you combine both?  </li>
-<li>What real-world apps in your org could benefit from tool-calling?  </li>
-<li>What risks should you monitor in agent loops and tool chaining?  </li>
-<li>How would you explain the ReAct pattern to a teammate?  </li>
-<li>How might MCP help your engineering team make LLM use more robust and auditable?</li>
+<li>The model responds — <strong>grounded in your data</strong></li>
 </ol>
 <hr />
-<h2 id="mini-quiz">🧪 Mini Quiz</h2>
-<p><strong>Q1.</strong> What does an agent do that a normal LLM call doesn’t?<br />
-✅ c) Plans and calls tools</p>
-<p><strong>Q2.</strong> Why are function-calling APIs safer than raw prompting?<br />
-✅ b) You get structured outputs</p>
+<h2 id="langflow-optional-gui">🔍 LangFlow: Optional GUI</h2>
+<p>If you want to <strong>drag-and-drop</strong> your pipeline visually, try <a href="https://github.com/logspace-ai/langflow">LangFlow</a>.<br />
+It works like Figma for LLM systems.</p>
+<p>You can:
+- Add loaders, retrievers, prompt templates, LLMs
+- Connect and run chains
+- Export working code</p>
 <hr />
-<h2 id="microproject">🧪 Microproject</h2>
-<p>Build a <strong>Currency &amp; Travel Advisor Agent</strong>:
-- Ask the user: “What currency do you want to check?”<br />
-- Use <code>get_exchange_rate()</code> to respond<br />
-- Add another tool: <code>get_travel_advice(country)</code><br />
-- Chain them: currency → visa → safety tips<br />
-- Log the agent’s full reasoning steps</p>
+<h2 id="toolformer-react-and-planner-executor-optional-deep-dive">🧠 Toolformer, ReAct, and Planner-Executor (Optional Deep Dive)</h2>
+<h3 id="toolformer">🔹 Toolformer</h3>
+<p>A model trained to decide <strong>when to use a tool</strong> (like a retriever or calculator) — and to learn that during pretraining.<br />
+You can simulate it with <code>[TOOL:...]</code> markers and custom execution middleware.</p>
+<h3 id="react">🔹 ReAct</h3>
+<p>Chain of “Reason → Act → Observe → Reason”.<br />
+Useful for agents deciding what to retrieve, when, and how to verify.</p>
+<h3 id="planner-executor">🔹 Planner-Executor</h3>
+<p>One LLM plans steps. Another (or the same) executes them using retrieval, tool calls, or memory.</p>
 <hr />
-<h2 id="core-track-finale-what-youve-built">🎉 Core Track Finale: What You’ve Built</h2>
-<p>You’ve now created:
-- A confident classifier<br />
-- A doc-aware assistant (RAG)<br />
-- A tool-using agent<br />
-- And built the foundation of <strong>real LLM applications</strong></p>
+<h2 id="microproject-build-your-own-document-aware-assistant">📦 Microproject: Build Your Own Document-Aware Assistant</h2>
+<ol>
+<li>Load a <code>.txt</code> or <code>.pdf</code> file</li>
+<li>Chunk, embed, and store it in FAISS</li>
+<li>Write a FastAPI endpoint <code>/ask</code></li>
+<li>Inject relevant chunks into the prompt</li>
+<li>Return the grounded answer</li>
+<li>Add a fallback if no chunks are confidently found</li>
+</ol>
+<p>Bonus:
+- Add a LangFlow UI
+- Track token usage
+- Stream the response</p>
 <hr />
-<h2 id="next-chapter-let-the-model-see">🔜 Next Chapter: Let the Model See</h2>
-<p>Next, you’ll explore <strong>GPT-4V and multimodal models</strong> — where LLMs can read images, screenshots, graphs, and more.</p>
-<p>Welcome to the GenAI Playground.</p>
+<h2 id="you-now-know">✅ You Now Know:</h2>
+<p>✅ What RAG is and how it works<br />
+✅ Why embeddings and vector search matter<br />
+✅ How to use LangChain and FAISS<br />
+✅ Where this fits into real-world assistants and agents<br />
+✅ How to build a full RAG loop — from data to prompt to user</p>
 
 
 

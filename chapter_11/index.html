@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 11 - Let LLMs Read Your Data - AI Engineering 101</title>
+        <title>Chapter 11 - Build Your First AI Microservice - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#let-llms-read-your-data" class="md-skip">
+        <a href="#build-your-first-ai-microservice" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 11 - Let LLMs Read Your Data
+              Chapter 11 - Build Your First AI Microservice
             
           </span>
         </div>
@@ -524,12 +524,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_9/" class="md-nav__link">
+      <a href="../chapter_9.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
+    Chapter 9 - Serve Your Model Like an Engineer
     
   </span>
   
@@ -551,7 +551,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 10 - Scaling, Microservices & DevOps
+    Chapter 10 - Make Your Model Trustworthy
     
   </span>
   
@@ -582,7 +582,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 11 - Let LLMs Read Your Data
+    Chapter 11 - Build Your First AI Microservice
     
   </span>
   
@@ -595,7 +595,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 11 - Let LLMs Read Your Data
+    Chapter 11 - Build Your First AI Microservice
     
   </span>
   
@@ -618,15 +618,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-power-of-retrieval-augmented-generation-rag" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Power of Retrieval-Augmented Generation (RAG)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
       🧭 Why Are We Here?
@@ -636,82 +627,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-rag" class="md-nav__link">
+  <a href="#what-youll-build" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 What Is RAG?
+      🎯 What You’ll Build
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#real-world-analogy" class="md-nav__link">
+  <a href="#step-1-dockerize-your-app" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Real-World Analogy
+      🛠️ Step 1: Dockerize Your App
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-concepts-youll-meet" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ New Concepts You’ll Meet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-all-fits-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 How It All Fits Together
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-a-vector-database" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗃️ What’s a Vector Database?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-build-a-mini-rag-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Let’s Build a Mini RAG System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💻 Let’s Build a Mini RAG System">
+    <nav class="md-nav" aria-label="🛠️ Step 1: Dockerize Your App">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-load-and-chunk-documents" class="md-nav__link">
+  <a href="#create-a-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Load and Chunk Documents
+      Create a Dockerfile
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-embed-and-store-in-vector-db-faiss" class="md-nav__link">
+  <a href="#requirementstxt" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Embed and Store in Vector DB (FAISS)
+      requirements.txt
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-run-a-rag-chain" class="md-nav__link">
+  <a href="#build-run-locally" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Run a RAG Chain
+      Build &amp; Run Locally
     </span>
   </a>
   
@@ -723,72 +678,111 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visual-workflow-optional-via-langflow" class="md-nav__link">
+  <a href="#step-2-add-a-health-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      🖼️ Visual Workflow (Optional via LangFlow)
+      ❤️ Step 2: Add a Health Endpoint
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#langchain-vs-barebones-code" class="md-nav__link">
+  <a href="#step-3-add-structured-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 LangChain vs. Barebones Code
+      📊 Step 3: Add Structured Logging
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-rag-wins" class="md-nav__link">
+  <a href="#step-4-deploy-it-manually-to-the-cloud-or-on-prem" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Why RAG Wins
+      ☁️ Step 4: Deploy It Manually to the Cloud or On-Prem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="☁️ Step 4: Deploy It Manually to the Cloud or On-Prem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-run-it-on-prem-or-on-a-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Run It On-Prem or on a VM
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#recap-you-now-know" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#option-2-add-reverse-proxy-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Recap: You Now Know…
+      Option 2: Add Reverse Proxy (Optional)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-auto-restart-with-systemd-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3: Auto-Restart with systemd (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject-ship-your-ai-microservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Microproject: Ship Your AI Microservice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Microproject: Ship Your AI Microservice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
+      🧠 Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
+  <a href="#best-practices-for-deployable-ai-services" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Mini Quiz
+      ✅ Best Practices for Deployable AI Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-agents-tool-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔜 Next: Agents &amp; Tool Use
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -836,7 +830,29 @@
   
   
   <span class="md-ellipsis">
-    Chapter 13 - GenAI Playground
+    Chapter 13 - Let Your Model Think and Act
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14 - GenAI Playground
     
   </span>
   
@@ -875,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_14/" class="md-nav__link">
+      <a href="../chapter_15.md" class="md-nav__link">
         
   
   
@@ -917,15 +933,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-power-of-retrieval-augmented-generation-rag" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Power of Retrieval-Augmented Generation (RAG)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
       🧭 Why Are We Here?
@@ -935,82 +942,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-rag" class="md-nav__link">
+  <a href="#what-youll-build" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 What Is RAG?
+      🎯 What You’ll Build
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#real-world-analogy" class="md-nav__link">
+  <a href="#step-1-dockerize-your-app" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Real-World Analogy
+      🛠️ Step 1: Dockerize Your App
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-concepts-youll-meet" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ New Concepts You’ll Meet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-all-fits-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 How It All Fits Together
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-a-vector-database" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗃️ What’s a Vector Database?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-build-a-mini-rag-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      💻 Let’s Build a Mini RAG System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="💻 Let’s Build a Mini RAG System">
+    <nav class="md-nav" aria-label="🛠️ Step 1: Dockerize Your App">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-load-and-chunk-documents" class="md-nav__link">
+  <a href="#create-a-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Load and Chunk Documents
+      Create a Dockerfile
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-embed-and-store-in-vector-db-faiss" class="md-nav__link">
+  <a href="#requirementstxt" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Embed and Store in Vector DB (FAISS)
+      requirements.txt
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-run-a-rag-chain" class="md-nav__link">
+  <a href="#build-run-locally" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Run a RAG Chain
+      Build &amp; Run Locally
     </span>
   </a>
   
@@ -1022,72 +993,111 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#visual-workflow-optional-via-langflow" class="md-nav__link">
+  <a href="#step-2-add-a-health-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
-      🖼️ Visual Workflow (Optional via LangFlow)
+      ❤️ Step 2: Add a Health Endpoint
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#langchain-vs-barebones-code" class="md-nav__link">
+  <a href="#step-3-add-structured-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 LangChain vs. Barebones Code
+      📊 Step 3: Add Structured Logging
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-rag-wins" class="md-nav__link">
+  <a href="#step-4-deploy-it-manually-to-the-cloud-or-on-prem" class="md-nav__link">
     <span class="md-ellipsis">
-      🔁 Why RAG Wins
+      ☁️ Step 4: Deploy It Manually to the Cloud or On-Prem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="☁️ Step 4: Deploy It Manually to the Cloud or On-Prem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-run-it-on-prem-or-on-a-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Run It On-Prem or on a VM
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#recap-you-now-know" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#option-2-add-reverse-proxy-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Recap: You Now Know…
+      Option 2: Add Reverse Proxy (Optional)
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-auto-restart-with-systemd-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 3: Auto-Restart with systemd (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject-ship-your-ai-microservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Microproject: Ship Your AI Microservice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Microproject: Ship Your AI Microservice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
+      🧠 Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
+  <a href="#best-practices-for-deployable-ai-services" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Mini Quiz
+      ✅ Best Practices for Deployable AI Services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-agents-tool-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔜 Next: Agents &amp; Tool Use
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -1109,248 +1119,175 @@
 
 
 
-<h1 id="let-llms-read-your-data">Let LLMs Read Your Data</h1>
-<h3 id="the-power-of-retrieval-augmented-generation-rag"><em>The Power of Retrieval-Augmented Generation (RAG)</em></h3>
+<h1 id="build-your-first-ai-microservice">Build Your First AI Microservice</h1>
+<p><em>From API to Docker to Deployment</em></p>
 <hr />
 <h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
-<p>Let’s say you’ve just deployed a customer-facing chatbot powered by GPT-4.</p>
-<p>It’s slick. It’s confident.<br />
-But then a customer asks:  </p>
+<p>You now have a solid, reliable FastAPI app wrapping your model — with retries, fallbacks, and caching. That’s great for development.</p>
+<p>But if you want other teams, clients, or services to use your model in production, you need to:
+- Package it
+- Ship it
+- Monitor it
+- Make it easy to restart, scale, and secure</p>
 <blockquote>
-<p>“What’s your enterprise SLA?”</p>
+<p>This chapter shows you how to take your working API and turn it into a <strong>deployable, monitorable microservice</strong>.</p>
 </blockquote>
-<p>And the bot responds:  </p>
-<blockquote>
-<p>“We do not currently offer SLAs.”</p>
-</blockquote>
-<p>🤦‍♂️ Problem: The bot knows everything... <em>except your actual business.</em></p>
-<p>That’s because LLMs aren’t trained on your <strong>internal data</strong> — your:
-- PDFs
-- FAQs
-- Wiki pages
-- Meeting notes
-- Slack threads</p>
-<p>To fix this, we need to teach our LLM to <strong>search</strong> and <strong>use</strong> your private data — <em>without retraining it</em>.</p>
-<p>That’s what <strong>RAG</strong> does.</p>
 <hr />
-<h2 id="what-is-rag">🚀 What Is RAG?</h2>
-<p><strong>RAG = Retrieval-Augmented Generation</strong><br />
-It’s a system design pattern that makes LLMs smarter by:</p>
+<h2 id="what-youll-build">🎯 What You’ll Build</h2>
+<p>You’ll learn how to:
+- ✅ Dockerize your FastAPI app
+- ✅ Add a health check endpoint
+- ✅ Set up structured logging
+- ✅ Deploy it to the cloud (EC2, on-prem, etc.)
+- ✅ Understand what makes a model “production ready”</p>
+<hr />
+<h2 id="step-1-dockerize-your-app">🛠️ Step 1: Dockerize Your App</h2>
+<h3 id="create-a-dockerfile">Create a <code>Dockerfile</code></h3>
+<pre><code class="language-Dockerfile">FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [&quot;uvicorn&quot;, &quot;main:app&quot;, &quot;--host&quot;, &quot;0.0.0.0&quot;, &quot;--port&quot;, &quot;8000&quot;]
+</code></pre>
+<h3 id="requirementstxt"><code>requirements.txt</code></h3>
+<pre><code>fastapi
+uvicorn
+openai
+backoff
+redis
+</code></pre>
+<h3 id="build-run-locally">Build &amp; Run Locally</h3>
+<pre><code class="language-bash">docker build -t ai-service .
+docker run -p 8000:8000 ai-service
+</code></pre>
+<p>Now your AI is portable. Anyone can run it.</p>
+<hr />
+<h2 id="step-2-add-a-health-endpoint">❤️ Step 2: Add a Health Endpoint</h2>
+<p>Kubernetes, Fly.io, and most orchestrators expect your service to respond at <code>/health</code>.</p>
+<pre><code class="language-python">@app.get(&quot;/health&quot;)
+def health():
+    return {&quot;status&quot;: &quot;ok&quot;}
+</code></pre>
+<p>Make this fast and reliable. Don’t do any model calls here.</p>
+<hr />
+<h2 id="step-3-add-structured-logging">📊 Step 3: Add Structured Logging</h2>
+<pre><code class="language-python">import json, time
+
+@app.middleware(&quot;http&quot;)
+async def log_requests(request, call_next):
+    start = time.time()
+    response = await call_next(request)
+    duration = round((time.time() - start) * 1000)
+
+    log = {
+        &quot;method&quot;: request.method,
+        &quot;path&quot;: request.url.path,
+        &quot;status&quot;: response.status_code,
+        &quot;duration_ms&quot;: duration
+    }
+    print(json.dumps(log))
+    return response
+</code></pre>
+<p>Later, you can stream this to a log system like:
+- Logtail
+- Loki + Grafana
+- ELK Stack</p>
+<hr />
+<h2 id="step-4-deploy-it-manually-to-the-cloud-or-on-prem">☁️ Step 4: Deploy It Manually to the Cloud or On-Prem</h2>
+<h3 id="option-1-run-it-on-prem-or-on-a-vm">Option 1: Run It On-Prem or on a VM</h3>
 <ol>
-<li><strong>Retrieving</strong> relevant content from your data</li>
-<li><strong>Injecting</strong> that content into the prompt</li>
-<li>Letting the <strong>LLM generate</strong> an informed response</li>
+<li>SSH into your VM (EC2, DigitalOcean, etc.):
+   <code>bash
+   ssh user@your-server-ip</code></li>
+<li>Clone your repo:
+   <code>bash
+   git clone your-repo-url &amp;&amp; cd your-repo</code></li>
+<li>Build and run the Docker container:
+   <code>bash
+   docker build -t ai-service .
+   docker run -d -p 80:8000 --env-file .env ai-service</code></li>
+</ol>
+<blockquote>
+<p>Use <code>.env</code> to store keys like <code>OPENAI_API_KEY</code>, and access them in code with <code>os.getenv()</code>.</p>
+</blockquote>
+<h3 id="option-2-add-reverse-proxy-optional">Option 2: Add Reverse Proxy (Optional)</h3>
+<p>Use Nginx to serve FastAPI through port 80/443:</p>
+<pre><code class="language-nginx">server {
+    listen 80;
+    server_name your-domain.com;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+</code></pre>
+<p>Then reload nginx:</p>
+<pre><code class="language-bash">sudo systemctl reload nginx
+</code></pre>
+<h3 id="option-3-auto-restart-with-systemd-optional">Option 3: Auto-Restart with systemd (Optional)</h3>
+<p>Create a service unit:</p>
+<pre><code class="language-ini">[Unit]
+Description=AI Service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run -p 8000:8000 ai-service
+
+[Install]
+WantedBy=default.target
+</code></pre>
+<p>Then run:</p>
+<pre><code class="language-bash">sudo systemctl enable ai-service
+sudo systemctl start ai-service
+</code></pre>
+<p>Now your model API auto-restarts on boot or crash.</p>
+<p>All of this gives your dev team real control over deployment, monitoring, and scaling without relying on no-code platforms.</p>
+<hr />
+<h2 id="microproject-ship-your-ai-microservice">📦 Microproject: Ship Your AI Microservice</h2>
+<p>Take your <code>/predict</code> FastAPI app and:</p>
+<p>✅ Dockerize it with a proper <code>Dockerfile</code><br />
+✅ Add a <code>/health</code> route<br />
+✅ Add structured logging middleware<br />
+✅ Deploy it to a VM or on-prem instance</p>
+<h3 id="bonus">Bonus:</h3>
+<ul>
+<li>Add a <code>/version</code> route with commit hash or model version  </li>
+<li>Use a <code>.env</code> file to manage secrets locally  </li>
+<li>Add an HTTP header for tracing requests across systems</li>
+</ul>
+<hr />
+<h2 id="reflection-questions">🧠 Reflection Questions</h2>
+<ol>
+<li>What’s the difference between running locally and deploying a container?</li>
+<li>What would you monitor in your deployed AI system?</li>
+<li>What happens if your API crashes in the middle of the night?</li>
 </ol>
 <hr />
-<h2 id="real-world-analogy">🧪 Real-World Analogy</h2>
-<p>You: “Hey, what's the refund policy in the 2023 docs?”</p>
-<p>Your assistant:
-- Doesn’t know off-hand
-- Searches “refund” in your docs
-- Finds the right paragraph
-- Reads it and replies:</p>
+<h2 id="best-practices-for-deployable-ai-services">✅ Best Practices for Deployable AI Services</h2>
+<p>✅ Always expose <code>/health</code> for infra tools<br />
+✅ Log requests in structured format (JSON)<br />
+✅ Use a real HTTP server (<code>uvicorn</code>, <code>gunicorn</code>) not <code>app.run()</code><br />
+✅ Don’t bundle secrets in your code — use env vars<br />
+✅ Think about versioning early — models, APIs, logic<br />
+✅ Deploy from clean repos — not random zip files<br />
+✅ Make it easy for teammates to run your service</p>
 <blockquote>
-<p>“The 2023 policy allows refunds within 30 days.”</p>
-</blockquote>
-<p>That’s RAG: <strong>search first, generate later</strong>.</p>
-<hr />
-<h2 id="new-concepts-youll-meet">🛠️ New Concepts You’ll Meet</h2>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Analogy</th>
-<th>Why It Matters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Embeddings</strong></td>
-<td>Like hashing text into meaning-space</td>
-<td>Makes text searchable by <em>meaning</em></td>
-</tr>
-<tr>
-<td><strong>Vector DB</strong></td>
-<td>Like Elasticsearch for meaning</td>
-<td>Lets you find “similar” content</td>
-</tr>
-<tr>
-<td><strong>Context Injection</strong></td>
-<td>Like pre-filling a prompt with facts</td>
-<td>Gives the model the right info at the right time</td>
-</tr>
-<tr>
-<td><strong>LangChain</strong></td>
-<td>Like Django/Express for LLM apps</td>
-<td>Helps you build LLM pipelines faster</td>
-</tr>
-<tr>
-<td><strong>LangFlow</strong></td>
-<td>Like Node-RED or n8n for LLMs</td>
-<td>Drag-and-drop builder for RAG + agents</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="how-it-all-fits-together">🧱 How It All Fits Together</h2>
-<p>Let’s say your app needs to answer questions from internal docs.</p>
-<p>You’ll need:</p>
-<ol>
-<li><strong>Ingest</strong> the documents (PDF, markdown, etc.)</li>
-<li><strong>Chunk</strong> them into smaller paragraphs</li>
-<li><strong>Embed</strong> each chunk into a vector</li>
-<li><strong>Store</strong> the vectors in a vector database</li>
-<li>At query time: <strong>embed the question</strong>, find the most similar chunks</li>
-<li><strong>Inject</strong> those chunks into the LLM’s prompt</li>
-<li>Get a smart, grounded answer</li>
-</ol>
-<p>This pipeline is your <strong>RAG stack</strong>.</p>
-<hr />
-<h2 id="whats-a-vector-database">🗃️ What’s a Vector Database?</h2>
-<p>Think: <strong>Search engine for meaning.</strong></p>
-<p>You give it:
-- A sentence like: <em>“I want a refund”</em>
-- It returns: chunks semantically similar to that, even if the words are different (e.g., <em>“Can I return my item?”</em>)</p>
-<p>Popular options:
-- <strong>FAISS</strong> (lightweight, fast, local)
-- <strong>Chroma</strong> (easy to use, Python-native)
-- <strong>Weaviate</strong>, <strong>Pinecone</strong>, <strong>Qdrant</strong> (scalable, cloud-ready)</p>
-<hr />
-<h2 id="lets-build-a-mini-rag-system">💻 Let’s Build a Mini RAG System</h2>
-<p>We’ll use <strong>LangChain</strong> (a framework that glues all the pieces together).</p>
-<h3 id="step-1-load-and-chunk-documents">Step 1: Load and Chunk Documents</h3>
-<pre><code class="language-python">from langchain.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-loader = TextLoader(&quot;company_policy.txt&quot;)
-docs = loader.load()
-
-splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-chunks = splitter.split_documents(docs)
-</code></pre>
-<h3 id="step-2-embed-and-store-in-vector-db-faiss">Step 2: Embed and Store in Vector DB (FAISS)</h3>
-<pre><code class="language-python">from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
-
-embeddings = OpenAIEmbeddings()
-vectorstore = FAISS.from_documents(chunks, embeddings)
-</code></pre>
-<blockquote>
-<p>🧠 Think of <code>vectorstore</code> as a mini search engine based on meaning, not keywords.</p>
+<p>🚀 If someone else can deploy it without you, you’ve done it right.</p>
 </blockquote>
 <hr />
-<h3 id="step-3-run-a-rag-chain">Step 3: Run a RAG Chain</h3>
-<pre><code class="language-python">from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-
-llm = ChatOpenAI()
-qa_chain = RetrievalQA.from_chain_type(
-    llm=llm,
-    retriever=vectorstore.as_retriever()
-)
-
-response = qa_chain.run(&quot;What’s the refund deadline?&quot;)
-print(response)
-</code></pre>
-<p>Boom — the model reads your docs and answers in plain English.</p>
-<hr />
-<h2 id="visual-workflow-optional-via-langflow">🖼️ Visual Workflow (Optional via LangFlow)</h2>
-<p>Want to see this flow as a drag-and-drop UI?<br />
-Try <a href="https://github.com/logspace-ai/langflow">LangFlow</a> — a visual builder for LangChain apps.</p>
-<p>It’s like Figma for AI workflows.</p>
-<p>You can:
-- Drop in nodes (loader, splitter, embedder, retriever, LLM)
-- Connect them visually
-- Export Python code</p>
-<hr />
-<h2 id="langchain-vs-barebones-code">🧠 LangChain vs. Barebones Code</h2>
-<table>
-<thead>
-<tr>
-<th>Approach</th>
-<th>Use When...</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>LangChain</strong></td>
-<td>You want to move fast and glue pieces easily</td>
-</tr>
-<tr>
-<td><strong>Raw Python</strong></td>
-<td>You want maximum control, minimal abstraction</td>
-</tr>
-<tr>
-<td><strong>LangFlow</strong></td>
-<td>You want to prototype without code (great for teams!)</td>
-</tr>
-</tbody>
-</table>
-<p>No lock-in. All tools work with OpenAI, Cohere, local models, etc.</p>
-<hr />
-<h2 id="why-rag-wins">🔁 Why RAG Wins</h2>
-<table>
-<thead>
-<tr>
-<th>Fine-Tuning</th>
-<th>RAG</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Expensive to train</td>
-<td>Just needs vector search</td>
-</tr>
-<tr>
-<td>Slow to update</td>
-<td>Instant document refresh</td>
-</tr>
-<tr>
-<td>Bakes in data</td>
-<td>Keeps data external</td>
-</tr>
-</tbody>
-</table>
-<p>Use RAG when:
-- Your data changes frequently
-- You want explainability
-- You’re building internal tools, knowledge bases, support bots, etc.</p>
-<hr />
-<h2 id="recap-you-now-know">🧠 Recap: You Now Know…</h2>
-<p>✅ What embeddings, vector DBs, and RAG are<br />
-✅ How to build a retrieval pipeline<br />
-✅ When to use LangChain and LangFlow<br />
-✅ Why RAG is the practical way to let LLMs “read” your data</p>
-<hr />
-<h2 id="reflection-questions">❓Reflection Questions</h2>
-<ol>
-<li>How would you update your RAG system when a new policy is released?</li>
-<li>What are the trade-offs between fine-tuning and retrieval?</li>
-<li>Could your frontend search bar be upgraded with RAG? How?</li>
-</ol>
-<hr />
-<h2 id="mini-quiz">🧪 Mini Quiz</h2>
-<p><strong>Q1.</strong> A vector DB helps you:<br />
-a) Store full documents<br />
-b) Find semantically similar chunks ✅<br />
-c) Host your API<br />
-d) Visualize neural nets</p>
-<p><strong>Q2.</strong> LangChain is like:<br />
-a) A new LLM model<br />
-b) A framework to build LLM apps ✅<br />
-c) A tokenizer<br />
-d) An analytics tool</p>
-<hr />
-<h2 id="microproject">🧪 Microproject</h2>
-<p>Build a mini “Internal Wiki Bot” using:
-- A <code>.txt</code> or <code>.pdf</code> with company info
-- LangChain + FAISS (or raw Python + OpenAI embeddings)
-- Ask 3–5 questions and test retrieval accuracy</p>
-<p><strong>Bonus</strong>: Add LangFlow to visualize your pipeline.</p>
-<hr />
-<h2 id="next-agents-tool-use">🔜 Next: Agents &amp; Tool Use</h2>
-<p>Now that your LLM can read — can it also <em>act</em>?</p>
-<p>Next chapter: turning LLMs into agents that reason, plan, and use tools like APIs, calculators, or even Python code. Let’s build a thinking assistant.</p>
+<h2 id="you-now-know">✅ You Now Know:</h2>
+<p>✅ How to package and deploy your model as a real microservice<br />
+✅ How to log and monitor it like a backend engineer<br />
+✅ How to expose health, status, and versioning endpoints<br />
+✅ How to move from local hacks to production-grade AI infrastructure</p>
 
 
 

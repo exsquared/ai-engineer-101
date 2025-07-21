@@ -12,7 +12,7 @@
         <link rel="prev" href="../chapter_12/">
       
       
-        <link rel="next" href="../capstone_project/">
+        <link rel="next" href="../chapter_14/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 13 - GenAI Playground - AI Engineering 101</title>
+        <title>Chapter 13 - Let Your Model Think and Act - AI Engineering 101</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#genai-playground" class="md-skip">
+        <a href="#let-your-model-think-and-act" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 13 - GenAI Playground
+              Chapter 13 - Let Your Model Think and Act
             
           </span>
         </div>
@@ -524,12 +524,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_9/" class="md-nav__link">
+      <a href="../chapter_9.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Chapter 9 - Serving Your AI
+    Chapter 9 - Serve Your Model Like an Engineer
     
   </span>
   
@@ -551,7 +551,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 10 - Scaling, Microservices & DevOps
+    Chapter 10 - Make Your Model Trustworthy
     
   </span>
   
@@ -573,7 +573,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 11 - Let LLMs Read Your Data
+    Chapter 11 - Build Your First AI Microservice
     
   </span>
   
@@ -626,7 +626,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 13 - GenAI Playground
+    Chapter 13 - Let Your Model Think and Act
     
   </span>
   
@@ -639,7 +639,7 @@
   
   
   <span class="md-ellipsis">
-    Chapter 13 - GenAI Playground
+    Chapter 13 - Let Your Model Think and Act
     
   </span>
   
@@ -662,15 +662,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#when-llms-can-see-draw-and-understand-the-world" class="md-nav__link">
-    <span class="md-ellipsis">
-      When LLMs Can See, Draw, and Understand the World
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
       🧭 Why Are We Here?
@@ -680,63 +671,165 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-multimodal-model" class="md-nav__link">
+  <a href="#before-agents-the-intent-routing-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 What Is a Multimodal Model?
+      🔁 Before Agents: The Intent Routing Phase
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-models-and-tools" class="md-nav__link">
+  <a href="#react-function-calling-changed-everything" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Key Models and Tools
+      ⚡ ReAct + Function Calling Changed Everything
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpt-4v-seeing-and-understanding-images" class="md-nav__link">
+  <a href="#mini-exercise-before-vs-after" class="md-nav__link">
     <span class="md-ellipsis">
-      🖼️ GPT-4V: Seeing and Understanding Images
+      🧪 Mini-Exercise: Before vs After
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Mini-Exercise: Before vs After">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-do-it-manually-with-ifelif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Do it manually with if/elif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-refactor-using" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Refactor using:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflect:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 What Is an Agent?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dalle-3-generating-images-from-text" class="md-nav__link">
+  <a href="#agentic-thinking" class="md-nav__link">
     <span class="md-ellipsis">
-      🎨 DALL·E 3: Generating Images from Text
+      🧠 Agentic Thinking
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#try-it-yourself-vision-api-example" class="md-nav__link">
+  <a href="#agent-design-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Try It Yourself (Vision API Example)
+      🧱 Agent Design Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Agent Design Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 ReAct Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plannerexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Planner–Executor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-as-api-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Agent-as-API-Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-as-backend-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Agent-as-Backend-Brain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What Are Tools?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-this-matters" class="md-nav__link">
+  <a href="#build-a-tool-using-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 Where This Matters
+      🛠️ Build a Tool-Using Agent
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works-intuition-only" class="md-nav__link">
+  <a href="#when-do-agents-replace-microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 How It Works (Intuition Only)
+      🧠 When Do Agents Replace Microservices?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject-agentify-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Microproject: Agentify Your App
     </span>
   </a>
   
@@ -745,34 +838,25 @@
         <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
+      🧠 Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
+  <a href="#best-practices-for-agent-design" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Mini Quiz
+      ✅ Best Practices for Agent Design
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Recap
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -782,6 +866,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 14 - GenAI Playground
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -815,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chapter_14/" class="md-nav__link">
+      <a href="../chapter_15.md" class="md-nav__link">
         
   
   
@@ -857,15 +963,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#when-llms-can-see-draw-and-understand-the-world" class="md-nav__link">
-    <span class="md-ellipsis">
-      When LLMs Can See, Draw, and Understand the World
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-are-we-here" class="md-nav__link">
     <span class="md-ellipsis">
       🧭 Why Are We Here?
@@ -875,63 +972,165 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-multimodal-model" class="md-nav__link">
+  <a href="#before-agents-the-intent-routing-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 What Is a Multimodal Model?
+      🔁 Before Agents: The Intent Routing Phase
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-models-and-tools" class="md-nav__link">
+  <a href="#react-function-calling-changed-everything" class="md-nav__link">
     <span class="md-ellipsis">
-      🔍 Key Models and Tools
+      ⚡ ReAct + Function Calling Changed Everything
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gpt-4v-seeing-and-understanding-images" class="md-nav__link">
+  <a href="#mini-exercise-before-vs-after" class="md-nav__link">
     <span class="md-ellipsis">
-      🖼️ GPT-4V: Seeing and Understanding Images
+      🧪 Mini-Exercise: Before vs After
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Mini-Exercise: Before vs After">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-do-it-manually-with-ifelif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Do it manually with if/elif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-refactor-using" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Refactor using:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflect:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 What Is an Agent?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dalle-3-generating-images-from-text" class="md-nav__link">
+  <a href="#agentic-thinking" class="md-nav__link">
     <span class="md-ellipsis">
-      🎨 DALL·E 3: Generating Images from Text
+      🧠 Agentic Thinking
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#try-it-yourself-vision-api-example" class="md-nav__link">
+  <a href="#agent-design-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Try It Yourself (Vision API Example)
+      🧱 Agent Design Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Agent Design Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 ReAct Loop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plannerexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Planner–Executor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-as-api-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Agent-as-API-Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-as-backend-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Agent-as-Backend-Brain
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What Are Tools?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-this-matters" class="md-nav__link">
+  <a href="#build-a-tool-using-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 Where This Matters
+      🛠️ Build a Tool-Using Agent
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works-intuition-only" class="md-nav__link">
+  <a href="#when-do-agents-replace-microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 How It Works (Intuition Only)
+      🧠 When Do Agents Replace Microservices?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microproject-agentify-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧪 Microproject: Agentify Your App
     </span>
   </a>
   
@@ -940,34 +1139,25 @@
         <li class="md-nav__item">
   <a href="#reflection-questions" class="md-nav__link">
     <span class="md-ellipsis">
-      ❓Reflection Questions
+      🧠 Reflection Questions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mini-quiz" class="md-nav__link">
+  <a href="#best-practices-for-agent-design" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Mini Quiz
+      ✅ Best Practices for Agent Design
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#microproject" class="md-nav__link">
+  <a href="#you-now-know" class="md-nav__link">
     <span class="md-ellipsis">
-      🧪 Microproject
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recap" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Recap
+      ✅ You Now Know:
     </span>
   </a>
   
@@ -989,167 +1179,238 @@
 
 
 
-<h1 id="genai-playground">GenAI Playground</h1>
-<h3 id="when-llms-can-see-draw-and-understand-the-world"><em>When LLMs Can See, Draw, and Understand the World</em></h3>
+<h1 id="let-your-model-think-and-act">Let Your Model Think and Act</h1>
+<p><em>Agents, Tool Use, and the Reasoning Loop</em></p>
 <hr />
 <h2 id="why-are-we-here">🧭 Why Are We Here?</h2>
-<p>Until now, we treated LLMs as text-only geniuses. But the real world isn’t just text.<br />
-What if our LLMs could also see images, generate pictures, and understand screenshots?</p>
-<p>Welcome to the multimodal revolution.</p>
+<p>You’ve built models. You’ve served them with FastAPI. You’ve retrieved documents with RAG.</p>
+<p>But real-world questions don’t always have obvious answers or clean one-shot responses. Users ask things that require multi-step thinking, calling tools, searching, calculating, retrying.</p>
+<blockquote>
+<p>This is where <strong>agents</strong> shine — giving LLMs the ability to think step-by-step, take actions, observe outcomes, and adapt.</p>
+</blockquote>
+<p>We’re now entering the era of <strong>agentic systems</strong>.</p>
 <hr />
-<h2 id="what-is-a-multimodal-model">🧠 What Is a Multimodal Model?</h2>
-<p>A multimodal model can process more than one type of input or output — like text, images, audio, or video.</p>
-<p>For this chapter, we focus on:</p>
-<ul>
-<li><strong>Image + Text input</strong> → GPT-4V</li>
-<li><strong>Text → Image output</strong> → DALL·E 3</li>
-</ul>
-<hr />
-<h2 id="key-models-and-tools">🔍 Key Models and Tools</h2>
-<table>
-<thead>
-<tr>
-<th>Tool / Model</th>
-<th>What It Does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>GPT-4V</strong></td>
-<td>Reads and understands images (vision + language)</td>
-</tr>
-<tr>
-<td><strong>DALL·E 3</strong></td>
-<td>Generates high-quality images from text</td>
-</tr>
-<tr>
-<td><strong>CLIP</strong></td>
-<td>Links image and text embeddings (used for image search)</td>
-</tr>
-<tr>
-<td><strong>BLIP</strong></td>
-<td>Generates captions and answers questions from images</td>
-</tr>
-<tr>
-<td><strong>VLM</strong></td>
-<td>General term for Vision-Language Models</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="gpt-4v-seeing-and-understanding-images">🖼️ GPT-4V: Seeing and Understanding Images</h2>
-<p>Example prompts:</p>
-<ul>
-<li>“What’s shown in this chart?”  </li>
-<li>“Translate this handwritten note”  </li>
-<li>“Why is my code build failing in this screenshot?”</li>
-</ul>
-<p>Use cases:</p>
-<ul>
-<li>UI/UX audits</li>
-<li>Code debugging</li>
-<li>Accessibility checks</li>
-<li>Homework help</li>
-<li>Data visualization interpretation</li>
-</ul>
-<hr />
-<h2 id="dalle-3-generating-images-from-text">🎨 DALL·E 3: Generating Images from Text</h2>
-<p>Example prompts:</p>
-<ul>
-<li>“A cartoon robot building a web app using a laptop”  </li>
-<li>“An architecture diagram of an AI assistant system”  </li>
-<li>“Edit this image to remove the watermark”</li>
-</ul>
-<p>Use cases:</p>
-<ul>
-<li>Product mockups</li>
-<li>Slide deck visuals</li>
-<li>Quick idea sketching</li>
-<li>Inpainting (semantic edits)</li>
-</ul>
-<hr />
-<h2 id="try-it-yourself-vision-api-example">🧪 Try It Yourself (Vision API Example)</h2>
-<pre><code class="language-python">response = client.chat.completions.create(
-  model=&quot;gpt-4-vision-preview&quot;,
-  messages=[
-    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: [
-      {&quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Describe this image&quot;},
-      {&quot;type&quot;: &quot;image_url&quot;, &quot;image_url&quot;: {&quot;url&quot;: &quot;https://...&quot;}}
-    ]}
-  ],
-  max_tokens=300
-)
+<h2 id="before-agents-the-intent-routing-phase">🔁 Before Agents: The Intent Routing Phase</h2>
+<p>Even after LLMs arrived, we still built logic-heavy, brittle systems.</p>
+<p>The pattern looked like this:</p>
+<ol>
+<li>Ask the LLM to return an intent:</li>
+</ol>
+<pre><code class="language-json">{&quot;intent&quot;: &quot;get_weather&quot;, &quot;location&quot;: &quot;London&quot;}
 </code></pre>
+<ol>
+<li>Manually route in code:</li>
+</ol>
+<pre><code class="language-python">if intent == &quot;get_weather&quot;:
+    return get_weather(location)
+elif intent == &quot;convert_currency&quot;:
+    return convert_currency(from_curr, to_curr)
+else:
+    return &quot;Sorry, I can't help with that.&quot;
+</code></pre>
+<p>✅ This worked.<br />
+❌ But it was rigid:
+- Every new tool = more branching logic<br />
+- You had to trust the intent parser completely<br />
+- Multi-intent or follow-up tasks? Forget it<br />
+- Hard to retry, inspect, or trace reasoning</p>
+<p>The LLM was just an <strong>intent extractor</strong> — all logic lived in your backend.</p>
+<p>This was better than rules, but still far from agentic thinking.</p>
 <hr />
-<h2 id="where-this-matters">🧰 Where This Matters</h2>
+<h2 id="react-function-calling-changed-everything">⚡ ReAct + Function Calling Changed Everything</h2>
+<p><strong>ReAct (Reason + Act + Observe)</strong> lets the model:</p>
+<ul>
+<li>Think out loud</li>
+<li>Decide which tool to call</li>
+<li>Use the result to continue reasoning</li>
+</ul>
+<p><strong>Function calling</strong> gives the model access to real tools in a safe, structured way.</p>
+<p>Instead of hardcoded logic, the model says:</p>
+<pre><code>Thought: I need to convert USD to INR.
+Action: get_exchange_rate(&quot;USD&quot;)
+Observation: 1 USD = 83 INR
+Answer: You’ll get 83 rupees per dollar.
+</code></pre>
+<p>Now <strong>LLMs can orchestrate logic — not just output text</strong>.</p>
+<hr />
+<h2 id="mini-exercise-before-vs-after">🧪 Mini-Exercise: Before vs After</h2>
+<p>Build this system:</p>
+<ul>
+<li>If user asks for a joke → tell one</li>
+<li>If they ask for weather → call a fake API</li>
+<li>If they ask for exchange rate → call another function</li>
+</ul>
+<h3 id="step-1-do-it-manually-with-ifelif">Step 1: Do it manually with <code>if</code>/<code>elif</code></h3>
+<h3 id="step-2-refactor-using">Step 2: Refactor using:</h3>
+<ul>
+<li>ReAct-style prompt</li>
+<li>Function calling with LangChain or OpenAI</li>
+</ul>
+<h3 id="reflect">Reflect:</h3>
+<ul>
+<li>What changed?</li>
+<li>Which version is easier to extend?</li>
+<li>Where does the reasoning now live?</li>
+</ul>
+<hr />
+<h2 id="what-is-an-agent">🤖 What Is an Agent?</h2>
+<p>An <strong>agent</strong> is an LLM system that:</p>
+<ol>
+<li><strong>Thinks</strong> about what it needs to do</li>
+<li><strong>Chooses a tool</strong> to take action</li>
+<li><strong>Observes the result</strong></li>
+<li><strong>Repeats or finishes</strong></li>
+</ol>
+<p>This is called an <strong>agent loop</strong>.</p>
+<hr />
+<h2 id="agentic-thinking">🧠 Agentic Thinking</h2>
 <table>
 <thead>
 <tr>
-<th>Domain</th>
-<th>Use Case</th>
+<th>Traditional APIs</th>
+<th>Agentic Systems</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>QA Testing</td>
-<td>Screenshot analysis</td>
+<td>Developer wires logic</td>
+<td>Model decides flow</td>
 </tr>
 <tr>
-<td>EdTech</td>
-<td>Homework/photo understanding</td>
+<td>Tools are hardwired</td>
+<td>Tools are exposed and selected dynamically</td>
 </tr>
 <tr>
-<td>Healthcare</td>
-<td>Reading prescriptions</td>
-</tr>
-<tr>
-<td>Retail</td>
-<td>Shelf detection, visual audits</td>
-</tr>
-<tr>
-<td>Docs &amp; Support</td>
-<td>Visual bug reports</td>
+<td>Input → logic → response</td>
+<td>Input → thoughts → actions → response</td>
 </tr>
 </tbody>
 </table>
+<p>Agents blur the line between logic and language — and put decision-making inside the model.</p>
 <hr />
-<h2 id="how-it-works-intuition-only">🧠 How It Works (Intuition Only)</h2>
-<ol>
-<li>Images are split into small patches (like tokens)  </li>
-<li>A vision transformer understands them  </li>
-<li>That “visual embedding” is fed into a language model  </li>
-<li>The LLM continues generating text — informed by the image</li>
-</ol>
-<hr />
-<h2 id="reflection-questions">❓Reflection Questions</h2>
-<ol>
-<li>What can GPT-4V do that would help your QA, testing, or support workflows?  </li>
-<li>Where would visual generation save you time or design effort?</li>
-</ol>
-<hr />
-<h2 id="mini-quiz">🧪 Mini Quiz</h2>
-<p><strong>Q1.</strong> Which of these models can take an image as input?<br />
-✅ a) GPT-4V</p>
-<p><strong>Q2.</strong> Which model turns text into an image?<br />
-✅ b) DALL·E 3</p>
-<hr />
-<h2 id="microproject">🧪 Microproject</h2>
-<p>🎯 Build a Screenshot QA Bot  </p>
+<h2 id="agent-design-patterns">🧱 Agent Design Patterns</h2>
+<h3 id="react-loop">🧠 ReAct Loop</h3>
+<pre><code>Thought → Action → Observation → Thought → Answer
+</code></pre>
+<h3 id="plannerexecutor">🧠 Planner–Executor</h3>
 <ul>
-<li>Upload a UI screenshot  </li>
-<li>Let GPT-4V:</li>
-<li>Describe layout  </li>
-<li>Flag accessibility issues  </li>
-<li>Recommend improvements</li>
+<li>Agent 1: plans steps</li>
+<li>Agent 2: executes tools</li>
 </ul>
-<p><strong>Bonus:</strong> Add a DALL·E-generated architecture diagram.</p>
+<h3 id="agent-as-api-router">🧠 Agent-as-API-Router</h3>
+<p>Let a single LLM route requests to the right API or logic layer based on intent.</p>
+<h3 id="agent-as-backend-brain">🧠 Agent-as-Backend-Brain</h3>
+<p>Instead of chaining APIs in microservices, the agent decides what to call, when, and in what order.</p>
 <hr />
-<h2 id="recap">✅ Recap</h2>
-<p>✅ What multimodal models are<br />
-✅ What GPT-4V and DALL·E can do<br />
-✅ Use cases across domains<br />
-✅ How to start playing with vision + language</p>
+<h2 id="what-are-tools">🔧 What Are Tools?</h2>
+<p>In LangChain or OpenAI:</p>
+<blockquote>
+<p>A <strong>tool</strong> is a function the model can call.</p>
+</blockquote>
+<p>You define:</p>
+<pre><code class="language-python">@tool
+def get_weather(city: str) -&gt; str:
+    return &quot;Sunny and 23°C in Delhi&quot;
+</code></pre>
+<p>And the model decides when to call it — with what args.</p>
 <hr />
+<h2 id="build-a-tool-using-agent">🛠️ Build a Tool-Using Agent</h2>
+<pre><code class="language-python">from langchain.agents import tool
+
+@tool
+def get_exchange_rate(currency: str) -&gt; str:
+    return &quot;1 USD = 83 INR&quot;
+</code></pre>
+<p>Then:</p>
+<pre><code class="language-python">from langchain.chat_models import ChatOpenAI
+from langchain.agents import initialize_agent, AgentType
+
+llm = ChatOpenAI(model=&quot;gpt-4&quot;)
+agent = initialize_agent(
+    tools=[get_exchange_rate],
+    llm=llm,
+    agent=AgentType.OPENAI_FUNCTIONS,
+    verbose=True,
+)
+
+agent.run(&quot;Convert $1 to INR&quot;)
+</code></pre>
+<p>✅ Now the model thinks + acts — not just responds.</p>
+<hr />
+<h2 id="when-do-agents-replace-microservices">🧠 When Do Agents Replace Microservices?</h2>
+<p>Sometimes the LLM + tool layer <strong>is</strong> your backend logic.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Traditional Microservice</th>
+<th>Agentic Alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intent classification</td>
+<td>Flask route or model</td>
+<td>LLM with ReAct routing</td>
+</tr>
+<tr>
+<td>Email triage</td>
+<td>Rules or model → API call</td>
+<td>Agent chooses tool based on message</td>
+</tr>
+<tr>
+<td>Q&amp;A + math + lookup</td>
+<td>Separate endpoints</td>
+<td>One agent choosing which to do</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>You’re no longer hardwiring decision trees — you’re exposing tools and letting the agent drive.</p>
+</blockquote>
+<p>Agents let you <strong>move logic from code into controlled language</strong> — making systems more flexible.</p>
+<hr />
+<h2 id="microproject-agentify-your-app">🧪 Microproject: Agentify Your App</h2>
+<p>Take a mini FastAPI app with 2–3 tools:</p>
+<ul>
+<li>Joke generator</li>
+<li>Weather API stub</li>
+<li>Exchange rate calculator</li>
+</ul>
+<p>Build:
+✅ A hardcoded <code>if/elif</code> version<br />
+✅ An agent-driven version using function calling<br />
+✅ Log <code>thought</code>, <code>action</code>, <code>observation</code> at each step</p>
+<p>Bonus:</p>
+<ul>
+<li>Add retry if a tool fails</li>
+<li>Add a loop limit (max 5 steps)</li>
+</ul>
+<hr />
+<h2 id="reflection-questions">🧠 Reflection Questions</h2>
+<ol>
+<li>What logic can you move from backend code into a prompt?</li>
+<li>When should you <em>not</em> let the model pick tools?</li>
+<li>Where might agents introduce risk or fragility?</li>
+</ol>
+<hr />
+<h2 id="best-practices-for-agent-design">✅ Best Practices for Agent Design</h2>
+<p>✅ Tools must be deterministic, safe, and well-typed<br />
+✅ Log every thought, action, observation<br />
+✅ Use short tool names + descriptions for LLM clarity<br />
+✅ Cap max steps — agents can loop forever if you’re not careful<br />
+✅ Fallback to static logic when confidence is low<br />
+✅ Let tools fail gracefully — model should adapt</p>
+<blockquote>
+<p>🔐 Don’t give agents the kitchen sink. Give them power <strong>with guardrails</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="you-now-know">✅ You Now Know:</h2>
+<p>✅ Why agents changed how we build AI systems<br />
+✅ How to build a reasoning + acting loop<br />
+✅ How to expose tools to the model<br />
+✅ How to design agentic workflows that feel like dynamic APIs<br />
+✅ When to replace brittle logic with LLM reasoning</p>
 
 
 
